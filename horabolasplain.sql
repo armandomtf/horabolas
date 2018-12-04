@@ -5,7 +5,7 @@
 -- Dumped from database version 9.4.20
 -- Dumped by pg_dump version 9.5.5
 
--- Started on 2018-11-29 23:36:40
+-- Started on 2018-12-03 23:39:08
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,7 +24,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2046 (class 0 OID 0)
+-- TOC entry 2025 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -55,36 +55,7 @@ CREATE TABLE agendamento (
 ALTER TABLE agendamento OWNER TO postgres;
 
 --
--- TOC entry 174 (class 1259 OID 16484)
--- Name: comentar; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE comentar (
-    nm_texto character varying,
-    dt_data date,
-    tm_hora time with time zone,
-    usuario_cd_usuario integer
-);
-
-
-ALTER TABLE comentar OWNER TO postgres;
-
---
--- TOC entry 175 (class 1259 OID 16490)
--- Name: curtir; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE curtir (
-    tm_hora time with time zone,
-    dt_data date,
-    usuario_cd_usuario integer
-);
-
-
-ALTER TABLE curtir OWNER TO postgres;
-
---
--- TOC entry 176 (class 1259 OID 16493)
+-- TOC entry 174 (class 1259 OID 16493)
 -- Name: grupos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -99,22 +70,7 @@ CREATE TABLE grupos (
 ALTER TABLE grupos OWNER TO postgres;
 
 --
--- TOC entry 177 (class 1259 OID 16496)
--- Name: post; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE post (
-    nm_texto character varying,
-    tm_hora time with time zone,
-    dt_data date,
-    usuario_cd_usuario integer
-);
-
-
-ALTER TABLE post OWNER TO postgres;
-
---
--- TOC entry 178 (class 1259 OID 16502)
+-- TOC entry 175 (class 1259 OID 16502)
 -- Name: quadras; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -129,7 +85,7 @@ CREATE TABLE quadras (
 ALTER TABLE quadras OWNER TO postgres;
 
 --
--- TOC entry 179 (class 1259 OID 16508)
+-- TOC entry 176 (class 1259 OID 16508)
 -- Name: usuario; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -146,7 +102,7 @@ CREATE TABLE usuario (
 ALTER TABLE usuario OWNER TO postgres;
 
 --
--- TOC entry 2032 (class 0 OID 16481)
+-- TOC entry 2014 (class 0 OID 16481)
 -- Dependencies: 173
 -- Data for Name: agendamento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -156,28 +112,8 @@ COPY agendamento (dt_agendamento, tm_inicial, tm_final, id_aprovado, grupo_cd_gr
 
 
 --
--- TOC entry 2033 (class 0 OID 16484)
+-- TOC entry 2015 (class 0 OID 16493)
 -- Dependencies: 174
--- Data for Name: comentar; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY comentar (nm_texto, dt_data, tm_hora, usuario_cd_usuario) FROM stdin;
-\.
-
-
---
--- TOC entry 2034 (class 0 OID 16490)
--- Dependencies: 175
--- Data for Name: curtir; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY curtir (tm_hora, dt_data, usuario_cd_usuario) FROM stdin;
-\.
-
-
---
--- TOC entry 2035 (class 0 OID 16493)
--- Dependencies: 176
 -- Data for Name: grupos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -186,18 +122,8 @@ COPY grupos (cd_nome_grupo, dt_data, tm_hora, usuario_cd_usuario) FROM stdin;
 
 
 --
--- TOC entry 2036 (class 0 OID 16496)
--- Dependencies: 177
--- Data for Name: post; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY post (nm_texto, tm_hora, dt_data, usuario_cd_usuario) FROM stdin;
-\.
-
-
---
--- TOC entry 2037 (class 0 OID 16502)
--- Dependencies: 178
+-- TOC entry 2016 (class 0 OID 16502)
+-- Dependencies: 175
 -- Data for Name: quadras; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -206,8 +132,8 @@ COPY quadras (tm_hrdispinicial, tm_hrdispfinal, grupo_cd_grupo, nm_quadra) FROM 
 
 
 --
--- TOC entry 2038 (class 0 OID 16508)
--- Dependencies: 179
+-- TOC entry 2017 (class 0 OID 16508)
+-- Dependencies: 176
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -216,7 +142,7 @@ COPY usuario (cd_usuario, nm_name, cd_email, cd_telefone, cd_cpf, ds_senha) FROM
 
 
 --
--- TOC entry 1909 (class 2606 OID 16584)
+-- TOC entry 1895 (class 2606 OID 16584)
 -- Name: pk_codagendamento; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -225,7 +151,7 @@ ALTER TABLE ONLY agendamento
 
 
 --
--- TOC entry 1912 (class 2606 OID 16515)
+-- TOC entry 1898 (class 2606 OID 16515)
 -- Name: pk_codgrupo; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -234,7 +160,7 @@ ALTER TABLE ONLY grupos
 
 
 --
--- TOC entry 1916 (class 2606 OID 16517)
+-- TOC entry 1901 (class 2606 OID 16517)
 -- Name: pk_codusuario; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -243,15 +169,7 @@ ALTER TABLE ONLY usuario
 
 
 --
--- TOC entry 1913 (class 1259 OID 16518)
--- Name: fki_cod_usuario; Type: INDEX; Schema: public; Owner: postgres
---
-
-CREATE INDEX fki_cod_usuario ON public.post USING btree (usuario_cd_usuario);
-
-
---
--- TOC entry 1914 (class 1259 OID 16519)
+-- TOC entry 1899 (class 1259 OID 16519)
 -- Name: fki_codgrupo; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -259,7 +177,7 @@ CREATE INDEX fki_codgrupo ON public.quadras USING btree (grupo_cd_grupo);
 
 
 --
--- TOC entry 1907 (class 1259 OID 16561)
+-- TOC entry 1893 (class 1259 OID 16561)
 -- Name: fki_codgrupo2; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -267,7 +185,7 @@ CREATE INDEX fki_codgrupo2 ON public.agendamento USING btree (grupo_cd_grupo);
 
 
 --
--- TOC entry 1910 (class 1259 OID 16520)
+-- TOC entry 1896 (class 1259 OID 16520)
 -- Name: fki_codusuario; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -275,7 +193,7 @@ CREATE INDEX fki_codusuario ON public.grupos USING btree (usuario_cd_usuario);
 
 
 --
--- TOC entry 1922 (class 2606 OID 16521)
+-- TOC entry 1904 (class 2606 OID 16521)
 -- Name: fk_codgrupo; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -284,7 +202,7 @@ ALTER TABLE ONLY quadras
 
 
 --
--- TOC entry 1917 (class 2606 OID 16556)
+-- TOC entry 1902 (class 2606 OID 16556)
 -- Name: fk_codgrupo; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -293,16 +211,7 @@ ALTER TABLE ONLY agendamento
 
 
 --
--- TOC entry 1921 (class 2606 OID 16526)
--- Name: fk_codusuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY post
-    ADD CONSTRAINT fk_codusuario FOREIGN KEY (usuario_cd_usuario) REFERENCES usuario(cd_usuario);
-
-
---
--- TOC entry 1920 (class 2606 OID 16531)
+-- TOC entry 1903 (class 2606 OID 16531)
 -- Name: fk_codusuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -311,25 +220,7 @@ ALTER TABLE ONLY grupos
 
 
 --
--- TOC entry 1919 (class 2606 OID 16536)
--- Name: fk_codusuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY curtir
-    ADD CONSTRAINT fk_codusuario FOREIGN KEY (usuario_cd_usuario) REFERENCES usuario(cd_usuario);
-
-
---
--- TOC entry 1918 (class 2606 OID 16541)
--- Name: fk_codusuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY comentar
-    ADD CONSTRAINT fk_codusuario FOREIGN KEY (usuario_cd_usuario) REFERENCES usuario(cd_usuario);
-
-
---
--- TOC entry 2045 (class 0 OID 0)
+-- TOC entry 2024 (class 0 OID 0)
 -- Dependencies: 7
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -340,7 +231,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2018-11-29 23:36:40
+-- Completed on 2018-12-03 23:39:08
 
 --
 -- PostgreSQL database dump complete
