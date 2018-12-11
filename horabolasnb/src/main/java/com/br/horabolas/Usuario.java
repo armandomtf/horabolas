@@ -1,69 +1,38 @@
 package com.br.horabolas;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
-public class Usuario {
 
 
     /**
      *
      *@author aluno
      */
-    @Entity
+@Entity
 @Table(name = "usuario")
-public class usuario implements Serializable {
+public class Usuario implements Serializable {
 
-        
-        
-        
-        
-        /**
-         * @return the codusuario
-         */
-        public Set <Usuario> getCodusuario() {
-            return codusuario;
-        }
-
-        /**
-         * @param codusuario the codusuario to set
-         */
-        public void setCodusuario(Set <Usuario> codusuario) {
-            this.codusuario = codusuario;
-        }
-
-
-    /**
-     * @return the senha
-     */
-    public String getSenha() {
-        return senha;
-    }
-
-    /**
-     * @param senha the senha to set
-     */
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
     /**
      * @return the email
      */
-    public Integer getEmail() {
+    public String getEmail() {
         return email;
     }
 
     /**
      * @param email the email to set
      */
-    public void setEmail(Integer email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -82,38 +51,73 @@ public class usuario implements Serializable {
     }
 
     /**
-     * @return the usuario
+     * @return the sobrenome
      */
-    public Integer getUsuario() {
-        return usuario;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
     /**
-     * @param usuario the usuario to set
+     * @param sobrenome the sobrenome to set
      */
-    public void setUsuario(Integer usuario) {
-        this.usuario = usuario;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
-
 
     /**
-     * @param usuario
+     * @return the nick
      */
-    public void setUsuario(int usuario) {
-        this.setUsuario((Integer) usuario);
+    public String getNick() {
+        return nick;
     }
-    @Id
-    @Column (name="cd_usuario")
-    private Integer usuario; 
-    @Column (name="nm_name")
+
+    /**
+     * @param nick the nick to set
+     */
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    /**
+     * @return the senha
+     */
+    public String getSenha() {
+        return senha;
+    }
+
+    /**
+     * @param senha the senha to set
+     */
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    /**
+     * @return the cdUsuario
+     */
+    public Integer getCdUsuario() {
+        return cdUsuario;
+    }
+
+    /**
+     * @param cdUsuario the cdUsuario to set
+     */
+    public void setCdUsuario(Integer cdUsuario) {
+        this.cdUsuario = cdUsuario;
+    }
+
+    @Column (name="ds_email")
+    private String email;
+    @Column(name = "nm_name")
     private String nome;
-    @Column (name="cd_email")
-    private Integer email;
-    @Column (name="ds_senha")
+    @Column (name="nm_lastname")
+    private String sobrenome;
+    @Column (name="ds_nick")
+    private String nick;
+    @Column (name="ds_password")
     private String senha;
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="pk_codusuario")
-    private Set <Usuario> codusuario;
-
-}
+    @Id
+    @Column(name="cd_usuario")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_usuario")
+    @SequenceGenerator(name = "sequence_usuario", sequenceName = "sq_cd_usuario")
+    private Integer cdUsuario;
 }
