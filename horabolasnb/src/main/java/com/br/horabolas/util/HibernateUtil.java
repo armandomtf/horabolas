@@ -47,10 +47,10 @@ public class HibernateUtil {
         }
         
         Usuario usuario = new Usuario();
-        usuario.setEmail("eu@g.c");
-        usuario.setNick("Eu");
-        usuario.setNome("Eu 2");
-        usuario.setSobrenome("Eu 3");
+        usuario.setEmail("jogador@hb.com");
+        usuario.setNick("jgd");
+        usuario.setNome("jogador");
+        usuario.setSobrenome("10");
         usuario.setSenha("123");
         
         session.save(usuario);
