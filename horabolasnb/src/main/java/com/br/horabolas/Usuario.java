@@ -23,6 +23,20 @@ import javax.persistence.Temporal;
 public class Usuario implements Serializable {
 
     /**
+     * @return the usuario
+     */
+    public String getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    /**
      * @return the cpf
      */
     public String getCpf() {
@@ -48,34 +62,6 @@ public class Usuario implements Serializable {
      */
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    /**
-     * @return the nome
-     */
-    public String getNome() {
-        return nome;
-    }
-
-    /**
-     * @param nome the nome to set
-     */
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    /**
-     * @return the sobrenome
-     */
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    /**
-     * @param sobrenome the sobrenome to set
-     */
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
     }
 
     /**
@@ -105,12 +91,10 @@ public class Usuario implements Serializable {
         this.cdUsuario = cdUsuario;
     }
 
+    @Column (name="cd_Usuario")
+    private String usuario;
     @Column (name="ds_email")
     private String email;
-    @Column(name = "nm_name")
-    private String nome;
-    @Column (name="nm_lastname")
-    private String sobrenome;
     @Column (name="ds_cpf")
     private String cpf;
     @Column (name="ds_password")
