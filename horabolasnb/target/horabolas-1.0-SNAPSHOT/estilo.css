@@ -1,6 +1,9 @@
-#teste{
-    
-    background-color: #28a745;
-          color: white;
-}
+body {
+ background-image: url("imagens/fundodepagina.jpg") ;
 
+}
+#rodape {
+	position: relative;
+	bottom: 0;
+	background-color:#343a40; height:400px;
+	}

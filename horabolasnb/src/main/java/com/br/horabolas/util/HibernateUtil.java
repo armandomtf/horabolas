@@ -48,8 +48,8 @@ public class HibernateUtil {
         
         Usuario usuario = new Usuario();
         usuario.setEmail("jogador@hb.com");
-        usuario.setNick("jgd");
         usuario.setNome("jogador");
+        usuario.setCpf("00000000000");
         usuario.setSobrenome("10");
         usuario.setSenha("123");
         

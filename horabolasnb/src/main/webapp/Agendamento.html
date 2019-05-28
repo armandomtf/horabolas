@@ -13,26 +13,23 @@
 <body>
 
 
-	<!---------------------NAVBAR---------------------->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+		<!---------------------NAVBAR---------------------->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
 	<div class="container">
 
-		<a class="navbar-brand h1" href="a">HB</a>
-		<button class=" navbar-toggler" type="button" data-toggles="collapse" data-target="@navbarSite"></button>
-		<samp class="navbar-toggler-icon"></samp>
-
-		<div class="collapse navbar-collapse" id="navbarSite">
+		
+		<img src="imagens/logo.png" width="120px">
 
 <ul class="navbar-nav mr-auto">
 	<li class="nav-item">
-		<a class="nav-link " href="a">Inicio</a>
+		<a class="nav-link " href="Hora bolas.html">Inicio</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link " href="a">Agendamento</a>
+		<a class="nav-link " href="Agendamento.html">Agendamento</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link " href="a">Timeline</a>
+		<a class="nav-link " href="">Timeline</a>
 	</li>
 <li class="nav-item">
 		<a class="nav-link " href="a">Contato</a>
@@ -58,9 +55,9 @@
              </div>
 
 			<div class=" form-group">
-				<input type="password" name="Senha" class="form-control" placeholder="Usuario">
+				<input type="password" name="Senha" class="form-control" placeholder="Senha">
              </div>
-<a href="file:///C:/Users/bboiver/Desktop/HoraBolasOficial/Registro.html?Entre+Usuario=&Senha=">Não possue uma conta?</a>
+<a href="Registro.html">Não possui uma conta?</a>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -80,72 +77,191 @@
 	</nav>
 <!---------------------Fim NAVBAR---------------------->
 
-<!-----------Logo no inicio----------------->
+<p></p>	
 
-<div id="teste">
-    
-<center>
-<img src="imagens/testelogo.png" width="280"> 
-</center>
+	<!---------------------Cards---------------------->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      	<img src="imagens/ginasiopoliesportivo.jpg" width="700 px">
+        <h5 class="card-title">Ginasio Poliesportivo</h5>
+        <p class="card-text">A maior e principal quadra de Quissamã</p>
+        
+        <!--modal de horarios-->
 
-<center>
-Site oficial		
-</center>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+	Escolha seu horario
+</button>
 
+<div class="modal fade" role="dialog" id="mymodal1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Divirta Se!</h2>
+			</div>
+			<div class="modal-body">
+				
+				<button> 8:00 as 10:00 </button>
+				<button> 10:00 as 12:00 </button>
+				<button> 13:00 as 15:00 </button>
+				<button> 15:00 as 17:00 </button>
+				<button> 17:00 as 19:00 </button>
+				<button> 19:00 as 21:00 </button>
 
+			</div>
+		</div>
+	</div>
 </div>
 
+        <!--modal de horarios final-->
 
-<!-----------Fim logo no inicio-------------------------->
-
-
-<!---------------------Cards---------------------->
-<p></p>
-  <div class="col-sm-4">
-    <div class="card">
-    	  <img class="card-img-top" src="imagens/vermelho.jpg" alt="Imagem de capa do card">
-      <div class="card-body">
-        <h5 class="card-title">Ginasio Poliesportivo</h5>
-        <p class="card-text">A maior e principal quadra de Quissamã.</p>
-        <a href="#" class="btn btn-primary">19:00 as 20:00h</a>
       </div>
     </div>
   </div>
-  
-  <p></p>
 
-  <div class="col-sm-4" >
+  <!------------------------------>
+
+  <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-      	<img class="card-img-top" src="imagens/amarelo.jpg" alt="Imagem de capa do card">
+      	<img src="imagens/quadradocarmo.jpg" width="700 px">
         <h5 class="card-title">Quadra do carmo</h5>
         <p class="card-text">Uma das maiores e mais usadas quadras de Quissamã.</p>
-        <a href="#" class="btn btn-primary">19:00h as 20:00h</a>
+        
+        <!--modal de horarios-->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal2">
+	Escolha seu horario
+</button>
+
+<div class="modal fade" role="dialog" id="mymodal2">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Divirta Se!</h2>
+			</div>
+
+			<div class="modal-body">
+				<button> 8:00 as 10:00 </button>
+				<button> 10:00 as 12:00 </button>
+				<button> 13:00 as 15:00 </button>
+				<button> 15:00 as 17:00 </button>
+				<button> 17:00 as 19:00 </button>
+				<button> 19:00 as 21:00 </button>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+
+        <!--modal de horarios final-->
+
       </div>
     </div>
   </div>
 </div>
-
+<!-------------------------->
 <p></p>
+<!------------------------------>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      	<img src="imagens/quadracantodasaudade.jpg" width="700 px">
+        <h5 class="card-title">Quadra do canto da saudade</h5>
+        <p class="card-text">Localizada proxima ao simiterio da cidade, é uma das menores quadras da cidade.</p>
+        
+<!--modal de horarios-->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal3">
+	Escolha seu horario
+</button>
+
+<div class="modal fade" role="dialog" id="mymodal3">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Divirta Se!</h2>
+			</div>
+			<div class="modal-body">
+				
+			<button> 8:00 as 10:00 </button>
+				<button> 10:00 as 12:00 </button>
+				<button> 13:00 as 15:00 </button>
+				<button> 15:00 as 17:00 </button>
+				<button> 17:00 as 19:00 </button>
+				<button> 19:00 as 21:00 </button>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+        <!--modal de horarios final-->
+
+      </div>
+    </div>
+  </div>
+
+<!-------------------------->
+<!------------------------------>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      	<img src="imagens/parqueaquatico.jpg" width="700 px">
+        <h5 class="card-title">Parque Aquático</h5>
+        <p class="card-text">....</p>
+
+        <!--modal de horarios-->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal4">
+	Escolha seu horario
+</button>
+
+<div class="modal fade" role="dialog" id="mymodal4">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Divirta Se!</h2>
+			</div>
+			<div class="modal-body">
+				
+				<button> 8:00 as 10:00 </button>
+				<button> 10:00 as 12:00 </button>
+				<button> 13:00 as 15:00 </button>
+				<button> 15:00 as 17:00 </button>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+        <!--modal de horarios final-->
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-------------------------->
 
 <!---------------------Fim Cards---------------------->
 
 
 <!-----------rodapé----------------->
+<p></p>
+<div id="rodape">
+	<center>
+<img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
+	<img src="imagens/nomedosenvolvidos.png"  width="300px;">
+	</center>
 
-<div id="teste">
-    
-<center>
-<img src="imagens/testelogo.png" width="280"> 
-</center>
-
-<center>
-Armando Tavares | Brian Leite		
-</center>
-© 2018
+	
 
 </div>
-
 
 <!-----------Fim do rodapé-------------------------->
 

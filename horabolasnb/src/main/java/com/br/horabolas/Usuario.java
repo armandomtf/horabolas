@@ -23,6 +23,20 @@ import javax.persistence.Temporal;
 public class Usuario implements Serializable {
 
     /**
+     * @return the cpf
+     */
+    public String getCpf() {
+        return cpf;
+    }
+
+    /**
+     * @param cpf the cpf to set
+     */
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    /**
      * @return the email
      */
     public String getEmail() {
@@ -65,20 +79,6 @@ public class Usuario implements Serializable {
     }
 
     /**
-     * @return the nick
-     */
-    public String getNick() {
-        return nick;
-    }
-
-    /**
-     * @param nick the nick to set
-     */
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
-    /**
      * @return the senha
      */
     public String getSenha() {
@@ -111,8 +111,8 @@ public class Usuario implements Serializable {
     private String nome;
     @Column (name="nm_lastname")
     private String sobrenome;
-    @Column (name="ds_nick")
-    private String nick;
+    @Column (name="ds_cpf")
+    private String cpf;
     @Column (name="ds_password")
     private String senha;
     @Id

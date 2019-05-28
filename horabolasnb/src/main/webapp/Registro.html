@@ -14,25 +14,22 @@
 
 
 	<!---------------------NAVBAR---------------------->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
 	<div class="container">
 
-		<a class="navbar-brand h1" href="a">HB</a>
-		<button class=" navbar-toggler" type="button" data-toggles="collapse" data-target="@navbarSite"></button>
-		<samp class="navbar-toggler-icon"></samp>
-
-		<div class="collapse navbar-collapse" id="navbarSite">
+		
+		<img src="imagens/logo.png" width="120px">
 
 <ul class="navbar-nav mr-auto">
 	<li class="nav-item">
-		<a class="nav-link " href="a">Inicio</a>
+		<a class="nav-link " href="Hora bolas.html">Inicio</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link " href="a">Agendamento</a>
+		<a class="nav-link " href="Agendamento.html">Agendamento</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link " href="a">Timeline</a>
+		<a class="nav-link " href="">Timeline</a>
 	</li>
 <li class="nav-item">
 		<a class="nav-link " href="a">Contato</a>
@@ -40,6 +37,38 @@
 </ul>
 
 <ul class="navbar-nav ml-auto">
+	<!---------------------MODAL  Entra---------------------->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
+	Entrar
+</button>
+
+<div class="modal fade" role="dialog" id="mymodal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Login</h2>
+			</div>
+			<div class="modal-body">
+				<div class=" form-group">
+				<input type="text" name="Usuario" class="form-control" placeholder="Usuario">
+             </div>
+
+			<div class=" form-group">
+				<input type="password" name="Senha" class="form-control" placeholder="Senha">
+             </div>
+<a href="Registro.html">Não possui uma conta?</a>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				<button type="button" class="btn btn-success" data-dismiss="modal">Seguir</button>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<!---------------------Final MODAL Entra---------------------->
 </ul>
 
 		</div>
@@ -48,34 +77,17 @@
 	</nav>
 <!---------------------Fim NAVBAR---------------------->
 
-<!-----------Logo no inicio----------------->
-
-<div id="teste">
-    
-<center>
-<img src="imagens/testelogo.png" width="280"> 
-</center>
-
-<center>
-Site oficial		
-</center>
-
-
-</div>
-
-
-<!-----------Fim logo no inicio-------------------------->
-
+<p></p>	
 
 <center>
 	<div class="container">
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 	<div class="jumbotron" style="margin-top: 150px">
-	<form>
+	<form method="post" action="Registro">
 		<div class="form-group">
 			Usuario
-		<input type="text" class="form-control" name=" Usuario">
+		<input type="text" class="form-control" name="Usuario">
 		</div>
 		<div class="form-group">
 			Email
@@ -90,7 +102,10 @@ Site oficial
 			Senha
 		<input type="password" class="form-control" name="Senha">
 		</div>
-		<button type="submit" class="btn btn-primary form-control">Envia</button>
+            
+            <input type="button" class="btn btn-primary form-control" name="envia">Envia<input>
+         
+            <input type="submit" name="envia" value="submit">
 	</form>
 
 	</div>
@@ -104,20 +119,16 @@ Site oficial
 </center>
 
 <!-----------rodapé----------------->
+<p></p>
+<div id="rodape">
+	<center>
+<img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
+	<img src="imagens/nomedosenvolvidos.png"  width="300px;">
+	</center>
 
-<div id="teste">
-    
-<center>
-<img src="imagens/testelogo.png" width="280"> 
-</center>
-
-<center>
-Armando Tavares | Brian Leite		
-</center>
-© 2018
+	
 
 </div>
-
 
 <!-----------Fim do rodapé-------------------------->
 
