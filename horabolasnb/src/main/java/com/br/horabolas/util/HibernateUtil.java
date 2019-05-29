@@ -6,8 +6,6 @@
 package com.br.horabolas.util;
 
 import com.br.horabolas.Usuario;
-import java.time.Instant;
-import java.util.Date;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -43,14 +41,13 @@ public class HibernateUtil {
         if (user == null) {
             System.out.println("Usuário não encontrado.");
         } else {
-            System.out.println("Nome: "+user.getNome());
+            System.out.println("Usuario: "+user.getUsuario());
         }
         
         Usuario usuario = new Usuario();
         usuario.setEmail("jogador@hb.com");
-        usuario.setNome("jogador");
+        usuario.setUsuario("jogador");
         usuario.setCpf("00000000000");
-        usuario.setSobrenome("10");
         usuario.setSenha("123");
         
         session.save(usuario);
