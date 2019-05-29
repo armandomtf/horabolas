@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.7
 -- Dumped by pg_dump version 9.5.7
 
--- Started on 2019-05-28 12:09:10 BRT
+-- Started on 2019-05-29 08:58:08 BRT
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,7 +24,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2172 (class 0 OID 0)
+-- TOC entry 2169 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -39,7 +39,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 181 (class 1259 OID 33067)
+-- TOC entry 181 (class 1259 OID 41207)
 -- Name: agendamento; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -56,7 +56,7 @@ CREATE TABLE agendamento (
 ALTER TABLE agendamento OWNER TO postgres;
 
 --
--- TOC entry 182 (class 1259 OID 33070)
+-- TOC entry 182 (class 1259 OID 41210)
 -- Name: grupos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -71,31 +71,27 @@ CREATE TABLE grupos (
 ALTER TABLE grupos OWNER TO postgres;
 
 --
--- TOC entry 183 (class 1259 OID 33073)
+-- TOC entry 183 (class 1259 OID 41213)
 -- Name: quadras; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE quadras (
     tm_hrdispinicial time with time zone,
     tm_hrdispfinal time with time zone,
-    grupo_cd_grupo integer,
-    cd_codquadra integer NOT NULL,
-    usuario_cd_usuario integer
+    cd_codquadra integer NOT NULL
 );
 
 
 ALTER TABLE quadras OWNER TO postgres;
 
 --
--- TOC entry 184 (class 1259 OID 33079)
+-- TOC entry 184 (class 1259 OID 41216)
 -- Name: usuario; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE usuario (
     cd_usuario integer NOT NULL,
-    nm_name character varying,
     ds_password character varying,
-    nm_lastname character varying,
     ds_email character varying,
     ds_cpf integer
 );
@@ -104,7 +100,7 @@ CREATE TABLE usuario (
 ALTER TABLE usuario OWNER TO postgres;
 
 --
--- TOC entry 2161 (class 0 OID 33067)
+-- TOC entry 2158 (class 0 OID 41207)
 -- Dependencies: 181
 -- Data for Name: agendamento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -114,7 +110,7 @@ COPY agendamento (dt_agendamento, tm_inicial, tm_final, id_aprovado, grupo_cd_gr
 
 
 --
--- TOC entry 2162 (class 0 OID 33070)
+-- TOC entry 2159 (class 0 OID 41210)
 -- Dependencies: 182
 -- Data for Name: grupos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -124,27 +120,27 @@ COPY grupos (cd_nome_grupo, dt_data, tm_hora, usuario_cd_usuario) FROM stdin;
 
 
 --
--- TOC entry 2163 (class 0 OID 33073)
+-- TOC entry 2160 (class 0 OID 41213)
 -- Dependencies: 183
 -- Data for Name: quadras; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY quadras (tm_hrdispinicial, tm_hrdispfinal, grupo_cd_grupo, cd_codquadra, usuario_cd_usuario) FROM stdin;
+COPY quadras (tm_hrdispinicial, tm_hrdispfinal, cd_codquadra) FROM stdin;
 \.
 
 
 --
--- TOC entry 2164 (class 0 OID 33079)
+-- TOC entry 2161 (class 0 OID 41216)
 -- Dependencies: 184
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY usuario (cd_usuario, nm_name, ds_password, nm_lastname, ds_email, ds_cpf) FROM stdin;
+COPY usuario (cd_usuario, ds_password, ds_email, ds_cpf) FROM stdin;
 \.
 
 
 --
--- TOC entry 2034 (class 2606 OID 33086)
+-- TOC entry 2033 (class 2606 OID 41223)
 -- Name: pk_codagendamento; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -153,7 +149,7 @@ ALTER TABLE ONLY agendamento
 
 
 --
--- TOC entry 2037 (class 2606 OID 33088)
+-- TOC entry 2036 (class 2606 OID 41225)
 -- Name: pk_codgrupo; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -162,7 +158,7 @@ ALTER TABLE ONLY grupos
 
 
 --
--- TOC entry 2041 (class 2606 OID 33423)
+-- TOC entry 2038 (class 2606 OID 41227)
 -- Name: pk_codquadra; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -171,7 +167,7 @@ ALTER TABLE ONLY quadras
 
 
 --
--- TOC entry 2043 (class 2606 OID 33090)
+-- TOC entry 2040 (class 2606 OID 41229)
 -- Name: pk_codusuario; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -180,23 +176,7 @@ ALTER TABLE ONLY usuario
 
 
 --
--- TOC entry 2038 (class 1259 OID 33434)
--- Name: fk_codusuario; Type: INDEX; Schema: public; Owner: postgres
---
-
-CREATE INDEX fk_codusuario ON quadras USING btree (usuario_cd_usuario);
-
-
---
--- TOC entry 2039 (class 1259 OID 33091)
--- Name: fki_codgrupo; Type: INDEX; Schema: public; Owner: postgres
---
-
-CREATE INDEX fki_codgrupo ON quadras USING btree (grupo_cd_grupo);
-
-
---
--- TOC entry 2031 (class 1259 OID 33092)
+-- TOC entry 2030 (class 1259 OID 41232)
 -- Name: fki_codgrupo2; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -204,7 +184,7 @@ CREATE INDEX fki_codgrupo2 ON agendamento USING btree (grupo_cd_grupo);
 
 
 --
--- TOC entry 2032 (class 1259 OID 33436)
+-- TOC entry 2031 (class 1259 OID 41233)
 -- Name: fki_codusario2; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -212,7 +192,7 @@ CREATE INDEX fki_codusario2 ON agendamento USING btree (usuario_cd_usuario);
 
 
 --
--- TOC entry 2035 (class 1259 OID 33435)
+-- TOC entry 2034 (class 1259 OID 41234)
 -- Name: fki_codusuario; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -220,7 +200,7 @@ CREATE INDEX fki_codusuario ON grupos USING btree (usuario_cd_usuario);
 
 
 --
--- TOC entry 2044 (class 2606 OID 33099)
+-- TOC entry 2041 (class 2606 OID 41235)
 -- Name: fk_codgrupo; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -229,7 +209,7 @@ ALTER TABLE ONLY agendamento
 
 
 --
--- TOC entry 2046 (class 2606 OID 33104)
+-- TOC entry 2043 (class 2606 OID 41240)
 -- Name: fk_codusuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -238,7 +218,7 @@ ALTER TABLE ONLY grupos
 
 
 --
--- TOC entry 2045 (class 2606 OID 33437)
+-- TOC entry 2042 (class 2606 OID 41245)
 -- Name: fk_codusuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -247,7 +227,7 @@ ALTER TABLE ONLY agendamento
 
 
 --
--- TOC entry 2171 (class 0 OID 0)
+-- TOC entry 2168 (class 0 OID 0)
 -- Dependencies: 7
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -258,7 +238,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-05-28 12:09:10 BRT
+-- Completed on 2019-05-29 08:58:08 BRT
 
 --
 -- PostgreSQL database dump complete
