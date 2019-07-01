@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet;
+package com.br.horabolas.servlet;
 
-import entidades.Usuario;
+import com.br.horabolas.entidades.Usuario;
 import com.br.horabolas.util.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -77,10 +77,10 @@ public class ServletCadastro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Usuario usuario = new Usuario();
-        usuario.setNmName(request.getParameter("nm_nome"));
-        usuario.setDsSenha(request.getParameter("ds_senha"));
-        usuario.setNmNick(request.getParameter("nm_nick"));
-        usuario.setDsEmail(request.getParameter("ds_email"));
+        usuario.setNome(request.getParameter("nome"));
+        usuario.setSenha(request.getParameter("senha"));
+        usuario.setNick(request.getParameter("nick"));
+        usuario.setEmail(request.getParameter("email"));
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();

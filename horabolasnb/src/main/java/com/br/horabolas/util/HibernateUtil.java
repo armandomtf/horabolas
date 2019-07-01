@@ -5,7 +5,7 @@
  */
 package com.br.horabolas.util;
 
-import entidades.Usuario;
+import com.br.horabolas.entidades.Usuario;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
