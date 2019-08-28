@@ -44,9 +44,9 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE public.usuario (
-    nome character varying(50),
-    nick character varying(20) NOT NULL,
-    email character varying(40),
+    nome character varying(50) UNIQUE,
+    nick character varying(20) NOT NULL UNIQUE,
+    email character varying(40) UNIQUE,
     senha character varying(20)
 );
 
