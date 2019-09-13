@@ -41,7 +41,7 @@ Contributor(s):
 -->
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:postgresql://localhost/bolo</property>
+    <property name="connection.url">jdbc:postgresql://localhost/hb</property>
     <!-- BD Mane -->
     <property name="connection.driver_class">org.postgresql.Driver</property>
     <!-- DB Driver -->

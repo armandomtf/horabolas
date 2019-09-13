@@ -9,9 +9,12 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -26,35 +29,44 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
+    , @NamedQuery(name = "Usuario.findById", query = "SELECT u FROM Usuario u WHERE u.id = :id")
     , @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome = :nome")
-    , @NamedQuery(name = "Usuario.findByNick", query = "SELECT u FROM Usuario u WHERE u.nick = :nick")
     , @NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email")
     , @NamedQuery(name = "Usuario.findBySenha", query = "SELECT u FROM Usuario u WHERE u.senha = :senha")})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Size(max = 50)
+    @Id
+    @Basic(optional = false)    
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
+    @SequenceGenerator(name="meugerador", sequenceName = "sq_usuario")
+    @Column(name = "id")
+    private Integer id;    
+    @Size(max = 2147483647)
     @Column(name = "nome")
     private String nome;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 20)
-    @Column(name = "nick")
-    private String nick;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="E-mail inválido")//if the field contains email address consider using this annotation to enforce field validation
-    @Size(max = 40)
+    @Size(max = 2147483647)
     @Column(name = "email")
     private String email;
-    @Size(max = 20)
+    @Size(max = 2147483647)
     @Column(name = "senha")
     private String senha;
 
     public Usuario() {
     }
 
-    public Usuario(String nick) {
-        this.nick = nick;
+    public Usuario(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -63,14 +75,6 @@ public class Usuario implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getNick() {
-        return nick;
-    }
-
-    public void setNick(String nick) {
-        this.nick = nick;
     }
 
     public String getEmail() {
@@ -92,7 +96,7 @@ public class Usuario implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (nick != null ? nick.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -103,7 +107,7 @@ public class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.nick == null && other.nick != null) || (this.nick != null && !this.nick.equals(other.nick))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -111,7 +115,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mandin.recheio.Usuario[ nick=" + nick + " ]";
+        return "com.br.horabolas.entidades.Usuario[ id=" + id + " ]";
     }
     
 }

@@ -49,19 +49,27 @@
 			<div class="modal-header">
 				<h2>Login</h2>
 			</div>
-			<div class="modal-body">
-				<div class=" form-group">
-				<input type="text" name="Usuario" class="form-control" placeholder="Usuario">
+                    <form action="UsuarioServletLogin" method="post"> 
+                    <div class="modal-body">
+                                Email:
+				<div class=" form-group"> 
+				<input type="text" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
+                                
+                                
              </div>
-
+Senha:
 			<div class=" form-group">
-				<input type="password" name="Senha" class="form-control" placeholder="Senha">
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
+                                <input type="submit" value="Entrar" class="btn-btn-default">
              </div>
+                    </form>
+			
+                    
 <a href="Registro.html">Não possui uma conta?</a>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-				<button type="button" class="btn btn-success" data-dismiss="modal">Seguir</button>
+			
 			</div>
 			
 		</div>
