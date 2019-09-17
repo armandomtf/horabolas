@@ -45,15 +45,9 @@
 <ul class="navbar-nav ml-auto">
 	<!---------------------MODAL  Entra---------------------->
 <%
-    Usuario usuario = new Usuario();
-    Session sessionRecheio;
-    sessionRecheio = HibernateUtil.getSession();
-    Transaction tr = sessionRecheio.beginTransaction();
-    usuario = (Usuario)sessionRecheio.createQuery("from Usuario where nome='Armando Tavares' ").uniqueResult();
-    String nome= usuario.getNome();
-
-%>
-<a class="nav-link">Bem vindo, <%=nome%>!</a>
+    Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
+    %>
+<a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
 <!---------------------Final MODAL Entra---------------------->
 </ul>
 

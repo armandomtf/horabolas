@@ -15,7 +15,7 @@ public class UsuarioServletLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Captura parametros da tela
-//        String idtext = request.getParameter("pid");
+        String idtext = request.getParameter("pid");
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
 
@@ -27,6 +27,7 @@ public class UsuarioServletLogin extends HttpServlet {
             response.sendRedirect("index.html");
         } else {
             HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("UsuarioLogado", usuario);
             response.sendRedirect("principal.jsp");
             
 }
