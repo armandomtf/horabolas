@@ -28,12 +28,9 @@
 	<div class="container">
 
 		
-		<img src="imagens/logo.png" width="120px">
-
+<a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
 <ul class="navbar-nav mr-auto">
-	<li class="nav-item">
-		<a class="nav-link " href="Hora bolas.html">Inicio</a>
-	</li>
+
 	<li class="nav-item">
 		<a class="nav-link " href="Agendamento.html">Agendamento</a>
 	</li>
