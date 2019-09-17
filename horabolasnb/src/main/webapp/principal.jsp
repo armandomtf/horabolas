@@ -28,7 +28,7 @@
 	<div class="container">
 
 		
-<a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
+<a href="principal.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 <ul class="navbar-nav mr-auto">
 
 	<li class="nav-item">
@@ -48,6 +48,7 @@
     Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
     %>
 <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
+<a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
 <!---------------------Final MODAL Entra---------------------->
 </ul>
 
