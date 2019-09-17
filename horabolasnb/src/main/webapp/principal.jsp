@@ -34,9 +34,7 @@
 	<li class="nav-item">
 		<a class="nav-link " href="Agendamento.jsp">Agendamento</a>
 	</li>
-	<li class="nav-item">
-		<a class="nav-link " href="">Timeline</a>
-	</li>
+
 <li class="nav-item">
 		<a class="nav-link " href="a">Contato</a>
 	</li>	
