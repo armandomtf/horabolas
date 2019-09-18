@@ -1,6 +1,7 @@
 package com.br.horabolas.servlet;
 
 import com.br.horabolas.entidades.Usuario;
+import com.br.horabolas.entidades.Usuarioadm;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -15,6 +16,20 @@ public class UsuarioControle {
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
             sessionRecheio.saveOrUpdate(usuario);
+            tr.commit();
+            return true;
+        }
+        catch(Exception ex){
+            return false;
+        }        
+    }
+        //Função de salvar/atualizar um usuario
+    public static boolean salvaradm(Usuarioadm usuarioadm){
+        try{
+            Session sessionRecheio;
+            sessionRecheio = HibernateUtil.getSession();
+            Transaction tr = sessionRecheio.beginTransaction();
+            sessionRecheio.saveOrUpdate(usuarioadm);
             tr.commit();
             return true;
         }
