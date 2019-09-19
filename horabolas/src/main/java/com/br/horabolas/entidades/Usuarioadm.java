@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author aluno
+ * @author mandin
  */
 @Entity
 @Table(name = "usuarioadm")
@@ -41,7 +41,7 @@ public class Usuarioadm implements Serializable {
     @Size(min = 1, max = 20)
     @Column(name = "senha")
     private String senha;
-     @Id
+    @Id
     @Basic(optional = false)    
     @NotNull
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")

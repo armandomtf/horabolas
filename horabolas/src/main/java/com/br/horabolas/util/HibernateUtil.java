@@ -6,6 +6,7 @@
 package com.br.horabolas.util;
 
 import com.br.horabolas.entidades.Usuario;
+import com.br.horabolas.entidades.Usuarioadm;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -34,6 +35,7 @@ public class HibernateUtil {
         AnnotationConfiguration cfg = new AnnotationConfiguration();
         cfg.configure();
         cfg.addAnnotatedClass(Usuario.class);
+        cfg.addAnnotatedClass(Usuarioadm.class);
         factory = cfg.buildSessionFactory();
     }
 

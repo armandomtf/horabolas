@@ -27,8 +27,8 @@ public class UsuarioAdmServletLogin extends HttpServlet {
             response.sendRedirect("index.html");
         } else {
             HttpSession httpSession = request.getSession();
-            httpSession.setAttribute("UsuarioLogado", usuarioadm);
-            response.sendRedirect("principal.jsp");
+            httpSession.setAttribute("UsuarioAdmLogado", usuarioadm);
+            response.sendRedirect("principaladm.jsp");
             
 }
         }
