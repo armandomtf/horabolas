@@ -24,6 +24,10 @@
         <servlet-name>UsuarioAdmServletLogin</servlet-name>
         <servlet-class>com.br.horabolas.servlet.UsuarioAdmServletLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsuarioServletAlterar</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.UsuarioServletAlterar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
         <url-pattern>/UsuarioServletSA</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>UsuarioAdmServletLogin</servlet-name>
         <url-pattern>/UsuarioAdmServletLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioServletAlterar</servlet-name>
+        <url-pattern>/UsuarioServletAlterar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -28,7 +28,7 @@
 	<div class="container">
 
 		
-		<a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
+		<a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
 <ul class="navbar-nav mr-auto">
 
@@ -77,17 +77,13 @@
             <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
             <display:column property="nome" title="Nome Completo"/>
             <display:column property="senha" title="Senha"/>
-            <display:column value="alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
-            <display:column value="deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
+            <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
+            <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
             <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />
         </display:table>
         <br><br>
     
        
-       <a href="alterar.jsp?pid=" >  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal">
-Criar novo usuario
-</button>
-</a>
         
 </center>   
 </body>

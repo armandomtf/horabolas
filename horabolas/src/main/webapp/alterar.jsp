@@ -1,3 +1,4 @@
+<%@page import="com.br.horabolas.entidades.Usuarioadm"%>
 <%@page import="com.br.horabolas.servlet.UsuarioControle"%>
 <%@page import="org.hibernate.Session"%>
 <%@page import="org.hibernate.Transaction"%>
@@ -30,7 +31,7 @@
 	<div class="container">
 
 		
-		<a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
+		<a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
 <ul class="navbar-nav mr-auto">
 
@@ -48,34 +49,11 @@
 <ul class="navbar-nav ml-auto">
 	<!---------------------MODAL  Entra---------------------->
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
-	Entrar
-</button>
-
-<div class="modal fade" role="dialog" id="mymodal">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h2>Login</h2>
-			</div>
-			<div class="modal-body">
-				<div class=" form-group">
-				<input type="text" name="Email" class="form-control" placeholder="Email">
-             </div>
-
-			<div class=" form-group">
-				<input type="password" name="Senha" class="form-control" placeholder="Senha">
-             </div>
-<a href="Registro.html">Não possui uma conta?</a>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-				<button type="button" class="btn btn-success" data-dismiss="modal">Seguir</button>
-			</div>
-			
-		</div>
-	</div>
-</div>
+<%
+    Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
+    %>
+<a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
+<a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
 
 <!---------------------Final MODAL Entra---------------------->
 </ul>
@@ -109,7 +87,7 @@
         }
         
         %>
-        <form id="brlongo" method="POST" action="UsuarioServletSA">
+        <form id="brlongo" method="POST" action="UsuarioServletAlterar">
             <div hidden>
                 ID<input type="text" name="pid" value="<%=id%>">
             </div>
