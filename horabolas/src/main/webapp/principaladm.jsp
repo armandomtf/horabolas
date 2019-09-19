@@ -19,7 +19,7 @@
 
 </head>
 <body>
-	    <a href="listar.jsp">link</a>
+	   
 	<!---------------------NAVBAR---------------------->
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 

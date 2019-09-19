@@ -12,18 +12,18 @@ public class UsuarioServletSA extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Captura parametros da tela
-//        String idtext = request.getParameter("pid");
-        String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
+       String idtext = request.getParameter("pid");
+       String nome = request.getParameter("nome");
+       String email = request.getParameter("email");
+       String senha = request.getParameter("senha");
 
         //Cria instancia do usuario
         Usuario usuario = new Usuario();        
         //Detecta se é usuario novo ou antigo
- //       if(!idtext.isEmpty()){
- //           Integer id = Integer.parseInt(idtext);
-//            usuario.setId(id);
-  //      }
+        if(!idtext.isEmpty()){
+            Integer id = Integer.parseInt(idtext);
+            usuario.setId(id);
+        }
         //Insere informações no objeto
         usuario.setNome(nome);
         usuario.setSenha(senha);

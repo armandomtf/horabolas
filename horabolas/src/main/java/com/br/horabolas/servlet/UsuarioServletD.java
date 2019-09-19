@@ -22,6 +22,6 @@ public class UsuarioServletD extends HttpServlet {
         UsuarioControle.deletar(usuario);
         
         //Redireciona pagina
-        response.sendRedirect("index.html");
+        response.sendRedirect("listar.jsp");
     }
 }

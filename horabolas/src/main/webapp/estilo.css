@@ -7,3 +7,12 @@ body {
 	bottom: 0;
 	background-color:#343a40; height:400px;
 	}
+        
+        table, td {
+  border: 1px solid black;
+}
+
+#myTABLE {
+  width: 100%;
+  
+}
