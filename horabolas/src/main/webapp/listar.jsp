@@ -35,12 +35,13 @@
 	<li class="nav-item">
 		<a class="nav-link " href="Agendamento.html">Agendamento</a>
 	</li>
-	<li class="nav-item">
-		<a class="nav-link " href="">Timeline</a>
-	</li>
+
 <li class="nav-item">
 		<a class="nav-link " href="a">Contato</a>
-	</li>	
+	</li>
+                <li class="nav-item">
+		<a class="nav-link " href="listar.jsp">Crud</a>
+	</li>
 </ul>
 
 <ul class="navbar-nav ml-auto">
