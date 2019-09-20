@@ -79,6 +79,7 @@
         <display:table id="myTABLE" name="usuarios">
             <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
             <display:column property="nome" title="Nome Completo"/>
+            <display:column property="email" title="Email"/>
             <display:column property="senha" title="Senha"/>
             <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
             <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>

@@ -32,7 +32,7 @@ public class UsuarioServletSA extends HttpServlet {
         //Chama de funcao para salvar ou atualizar usuario
         UsuarioControle.salvar(usuario);
         
-        //Redireciona pagina
-        response.sendRedirect("index.html");
-    }
+            response.sendRedirect("cadastroconcluido.html");
+            
 }
+    }

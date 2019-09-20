@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
+     @Id
     @Basic(optional = false)    
     @NotNull
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
@@ -50,7 +50,7 @@ public class Usuario implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "email")
     private String email;
-    @Size(max = 2147483647)
+    @Size(max = 50, min= 7)
     @Column(name = "senha")
     private String senha;
 
