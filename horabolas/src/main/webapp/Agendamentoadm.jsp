@@ -1,4 +1,4 @@
-<%@page import="com.br.horabolas.entidades.Usuario"%>
+<%@page import="com.br.horabolas.entidades.Usuarioadm"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,27 +20,30 @@
 	<div class="container">
 
 		
-		<a href="principal.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
+		<a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
 <ul class="navbar-nav mr-auto">
         <div id="borda">
 	<li class="nav-item">
-		<a class="nav-link " href="Agendamento.jsp">Agendamento</a>
+		<a class="nav-link " href="Agendamentoadm.jsp">Agendamento</a>
 	</li>
         </div>
 
 <li class="nav-item">
 		<a class="nav-link " href="a">Contato</a>
 	</li>	
+                <li class="nav-item">
+		<a class="nav-link " href="listar.jsp">CRUD</a>
+	</li>
 </ul>
 
 <ul class="navbar-nav ml-auto">
 <ul class="navbar-nav ml-auto">
 	<!---------------------MODAL  Entra---------------------->
 <%
-    Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
+    Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
     %>
-<a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
+<a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
 <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
 <!---------------------Final MODAL Entra---------------------->
 </ul>

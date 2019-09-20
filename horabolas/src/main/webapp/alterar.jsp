@@ -36,14 +36,17 @@
 <ul class="navbar-nav mr-auto">
 
 	<li class="nav-item">
-		<a class="nav-link " href="Agendamento.html">Agendamento</a>
+		<a class="nav-link " href="Agendamentoadm.jsp">Agendamento</a>
 	</li>
 <li class="nav-item">
 		<a class="nav-link " href="a">Contato</a>
 	</li>	
+                <div id="borda"
                 <li class="nav-item">
-		<a class="nav-link " href="listar.jsp">Crud</a>
+		<a class="nav-link " href="listar.jsp">CRUD</a>
+                
 	</li>
+                </div>
 </ul>
 
 <ul class="navbar-nav ml-auto">
