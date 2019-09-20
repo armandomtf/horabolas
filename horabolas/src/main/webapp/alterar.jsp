@@ -75,7 +75,9 @@
         //Criar variaveis
         Usuario usuario = new Usuario();
         String nome = "";
+        String email= "";
         String senha = "";
+
         //Captura id (se alteração)
         String id = request.getParameter("pid");
         
@@ -83,7 +85,9 @@
         if(!id.isEmpty()){
             usuario = UsuarioControle.buscar(Integer.parseInt(id));
             nome = usuario.getNome();
-            senha = usuario.getSenha();            
+            email= usuario.getEmail();           
+            senha = usuario.getSenha();  
+
         }
         else{
             id = "";
@@ -95,6 +99,8 @@
                 ID<input type="text" name="pid" value="<%=id%>">
             </div>
             Nome<input type="text" name="nome" value="<%=nome%>">
+            <br><br>
+            Email<input type="email" name="email" value="<%=email%>"> 
             <br><br>
             Senha<input type="text" name="senha" value="<%=senha%>">
             <br>
