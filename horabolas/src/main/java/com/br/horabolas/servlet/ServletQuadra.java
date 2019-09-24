@@ -8,20 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ServletQuadra extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String idtext = request.getParameter("pid");
-       String nome = request.getParameter("nome");
-       String descricao = request.getParameter("descricao");
-       //String imagem = request.getParameter("imagem");
+        String idtext = request.getParameter("pid");
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        //String imagem = request.getParameter("imagem");
 
         //Cria instancia do usuario
-        Quadras quadra = new Quadras();        
+        Quadras quadra = new Quadras();
         //Detecta se é usuario novo ou antigo
-        if(!idtext.isEmpty()){
+        if (!idtext.isEmpty()) {
             Integer id = Integer.parseInt(idtext);
-          quadra.setId(id);
+            quadra.setId(id);
         }
         //Insere informações no objeto
         quadra.setNome(nome);
@@ -30,7 +31,7 @@ public class ServletQuadra extends HttpServlet {
 
         //Chama de funcao para salvar ou atualizar usuario
         UsuarioControle.salvarquadra(quadra);
-                response.sendRedirect("index.html");
-            
-}
+        response.sendRedirect("index.html");
+
     }
+}

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.hibernate.Session;
 
 public class UsuarioAdmServletLogin extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -22,14 +23,14 @@ public class UsuarioAdmServletLogin extends HttpServlet {
         Session session = HibernateUtil.getSession();
         Usuarioadm usuarioadm = (Usuarioadm) session.createQuery("from Usuarioadm where email=? and senha=?").setString(0, email).setString(1, senha).uniqueResult();
         session.close();
-        
+
         if (usuarioadm == null) {
             response.sendRedirect("index.html");
         } else {
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("UsuarioAdmLogado", usuarioadm);
             response.sendRedirect("principaladm.jsp");
-            
-}
+
         }
     }
+}

@@ -11,85 +11,81 @@ import com.br.horabolas.util.HibernateUtil;
 public class UsuarioControle {
 
     //Função de salvar/atualizar um usuario
-    public static boolean salvarquadra(Quadras quadra){
-        try{
+    public static boolean salvarquadra(Quadras quadra) {
+        try {
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
             sessionRecheio.saveOrUpdate(quadra);
             tr.commit();
             return true;
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             return false;
-        }        
+        }
     }
 //Função de salvar/atualizar um usuario
-    public static boolean salvar(Usuario usuario){
-        try{
+
+    public static boolean salvar(Usuario usuario) {
+        try {
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
             sessionRecheio.saveOrUpdate(usuario);
             tr.commit();
             return true;
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             return false;
-        }        
+        }
     }
-        //Função de salvar/atualizar um usuario
-    public static boolean salvaradm(Usuarioadm usuarioadm){
-        try{
+    //Função de salvar/atualizar um usuario
+
+    public static boolean salvaradm(Usuarioadm usuarioadm) {
+        try {
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
             sessionRecheio.saveOrUpdate(usuarioadm);
             tr.commit();
             return true;
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             return false;
-        }        
+        }
     }
-    
+
     //Localiza um usuario pelo id
-    public static Usuario buscar(Integer id)
-    {
+    public static Usuario buscar(Integer id) {
         String idUsuario = id.toString();
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();
-        String hql = "from Usuario u where u.id='"+idUsuario+"'";
-        Usuario usuario = (Usuario)sessionRecheio.createQuery(hql).uniqueResult();
+        String hql = "from Usuario u where u.id='" + idUsuario + "'";
+        Usuario usuario = (Usuario) sessionRecheio.createQuery(hql).uniqueResult();
         tr.commit();
         return usuario;
     }
-    
+
     //Retorna todos os usuario do sistema
-    public static List<Usuario> listar()
-    {
+    public static List<Usuario> listar() {
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();
         String hql = "from Usuario u";
-        List<Usuario> lista = (List)sessionRecheio.createQuery(hql).list();
+        List<Usuario> lista = (List) sessionRecheio.createQuery(hql).list();
         tr.commit();
         return lista;
     }
-    
+
     //Função de apagar um usuario
-    public static boolean deletar(Usuario usuario){
-        try{
+    public static boolean deletar(Usuario usuario) {
+        try {
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
             sessionRecheio.delete(usuario);
             tr.commit();
             return true;
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             return false;
-        }        
-    }    
+        }
+    }
 }

@@ -42,10 +42,10 @@ public class Usuarioadm implements Serializable {
     @Column(name = "senha")
     private String senha;
     @Id
-    @Basic(optional = false)    
+    @Basic(optional = false)
     @NotNull
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
-    @SequenceGenerator(name="meugerador", sequenceName = "sq_usuarioadm")
+    @SequenceGenerator(name = "meugerador", sequenceName = "sq_usuarioadm")
     @Column(name = "id")
     private Integer id;
     @Basic(optional = false)
@@ -130,5 +130,5 @@ public class Usuarioadm implements Serializable {
     public String toString() {
         return "com.br.horabolas.entidades.Usuarioadm[ id=" + id + " ]";
     }
-    
+
 }

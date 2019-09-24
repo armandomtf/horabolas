@@ -1,4 +1,3 @@
-
 package com.br.horabolas.util;
 
 import java.awt.Graphics2D;
@@ -51,7 +50,7 @@ public class ManipularImagem {
         //--- Obtám a altura da imagem ---  
         novaImgAltura = (double) imagem.getHeight();
 
-    //--- Verifica se a altura ou largura da imagem recebida é maior do que os ---  
+        //--- Verifica se a altura ou largura da imagem recebida é maior do que os ---  
         //--- parâmetros de altura e largura recebidos para o redimensionamento   ---  
         if (novaImgLargura >= imgLargura) {
             imgProporcao = (novaImgAltura / novaImgLargura);//calcula a proporção  
@@ -60,7 +59,7 @@ public class ManipularImagem {
             //--- altura deve <= ao parâmetro imgAltura e proporcional a largura ---  
             novaImgAltura = (novaImgLargura * imgProporcao);
 
-        //--- se altura for maior do que o parâmetro imgAltura, diminui-se a largura de ---  
+            //--- se altura for maior do que o parâmetro imgAltura, diminui-se a largura de ---  
             //--- forma que a altura seja igual ao parâmetro imgAltura e proporcional a largura ---  
             while (novaImgAltura > imgAltura) {
                 novaImgLargura = (double) (--imgLargura);
@@ -70,7 +69,7 @@ public class ManipularImagem {
             imgProporcao = (novaImgLargura / novaImgAltura);//calcula a proporção  
             novaImgAltura = (double) imgAltura;
 
-        //--- se largura for maior do que o parâmetro imgLargura, diminui-se a altura de ---  
+            //--- se largura for maior do que o parâmetro imgLargura, diminui-se a altura de ---  
             //--- forma que a largura seja igual ao parâmetro imglargura e proporcional a altura ---  
             while (novaImgLargura > imgLargura) {
                 novaImgAltura = (double) (--imgAltura);
@@ -92,34 +91,30 @@ public class ManipularImagem {
         } catch (IOException ex) {
             //handle it here.... not implemented yet...
         }
-        
+
         InputStream is = new ByteArrayInputStream(baos.toByteArray());
-        
+
         return baos.toByteArray();
     }
+
     //Novo método para exibir imagem na tela
     //Recebe o label que queremos exibir E a imagem como array de bytes do banco
-    public static void exibiImagemLabel(byte[] minhaimagem, javax.swing.JLabel label)
-{
+    public static void exibiImagemLabel(byte[] minhaimagem, javax.swing.JLabel label) {
         //primeiro verifica se tem a imagem
         //se tem convert para inputstream que é o formato reconhecido pelo ImageIO
-       
-        if(minhaimagem!=null)
-        {
+
+        if (minhaimagem != null) {
             InputStream input = new ByteArrayInputStream(minhaimagem);
             try {
                 BufferedImage imagem = ImageIO.read(input);
                 label.setIcon(new ImageIcon(imagem));
             } catch (IOException ex) {
             }
-            
-        
-        }
-        else
-        {
+
+        } else {
             label.setIcon(null);
-            
+
         }
 
-}
+    }
 }

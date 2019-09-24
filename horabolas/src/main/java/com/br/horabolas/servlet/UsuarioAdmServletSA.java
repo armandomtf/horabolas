@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class UsuarioAdmServletSA extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -18,12 +19,12 @@ public class UsuarioAdmServletSA extends HttpServlet {
         String senha = request.getParameter("senha");
 
         //Cria instancia do usuario
-        Usuarioadm usuarioadm = new Usuarioadm();        
+        Usuarioadm usuarioadm = new Usuarioadm();
         //Detecta se é usuario novo ou antigo
- //       if(!idtext.isEmpty()){
- //           Integer id = Integer.parseInt(idtext);
+        //       if(!idtext.isEmpty()){
+        //           Integer id = Integer.parseInt(idtext);
 //            usuario.setId(id);
-  //      }
+        //      }
         //Insere informações no objeto
         usuarioadm.setNome(nome);
         usuarioadm.setSenha(senha);
@@ -31,7 +32,7 @@ public class UsuarioAdmServletSA extends HttpServlet {
 
         //Chama de funcao para salvar ou atualizar usuario
         UsuarioControle.salvaradm(usuarioadm);
-        
+
         //Redireciona pagina
         response.sendRedirect("index.html");
     }

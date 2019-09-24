@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -134,9 +134,6 @@ ALTER TABLE public.usuarioadm OWNER TO postgres;
 -- Data for Name: quadras; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.quadras (nome, id, imagem, descricao) FROM stdin;
-\.
-
 
 --
 -- TOC entry 2170 (class 0 OID 0)
@@ -171,9 +168,6 @@ SELECT pg_catalog.setval('public.sq_usuarioadm', 1, true);
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.usuario (id, nome, email, senha) FROM stdin;
-\.
-
 
 --
 -- TOC entry 2158 (class 0 OID 16395)
@@ -181,9 +175,6 @@ COPY public.usuario (id, nome, email, senha) FROM stdin;
 -- Data for Name: usuarioadm; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.usuarioadm (senha, id, nome, email) FROM stdin;
-123	50	Armando Tavares	armandomoraistavares@gmail.com
-\.
 
 
 --

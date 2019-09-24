@@ -10,7 +10,8 @@ package usuarioAbstrato;
  * @author mandin
  */
 public class UsuarioComum extends Usuario {
-    public void agenda(){
-    
-}
+
+    public void agenda() {
+
     }
+}

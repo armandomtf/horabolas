@@ -29,7 +29,6 @@ public class HibernateUtil {
 //            throws HibernateException {
 //        return sessionFactory.openSession();
 //    }
-    
     private static SessionFactory factory;
 
     static {

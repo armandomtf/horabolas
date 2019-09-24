@@ -39,11 +39,11 @@ public class Quadras implements Serializable {
     @Size(max = 40)
     @Column(name = "nome")
     private String nome;
-     @Id
-    @Basic(optional = false)    
+    @Id
+    @Basic(optional = false)
     @NotNull
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
-    @SequenceGenerator(name="meugerador", sequenceName = "sq_quadra")
+    @SequenceGenerator(name = "meugerador", sequenceName = "sq_quadra")
     @Column(name = "id")
     private Integer id;
     //@Lob
@@ -76,14 +76,14 @@ public class Quadras implements Serializable {
         this.id = id;
     }
 
-   /* public byte[] getImagem() {
+    /* public byte[] getImagem() {
         return imagem;
     }
 
     public void setImagem(byte[] imagem) {
         this.imagem = imagem;
     }
-*/
+     */
     public String getDescricao() {
         return descricao;
     }
@@ -116,5 +116,5 @@ public class Quadras implements Serializable {
     public String toString() {
         return "com.br.horabolas.entidades.Quadras[ id=" + id + " ]";
     }
-    
+
 }

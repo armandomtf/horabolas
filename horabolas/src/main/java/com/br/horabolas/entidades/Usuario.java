@@ -36,11 +36,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
-     @Id
-    @Basic(optional = false)    
+    @Id
+    @Basic(optional = false)
     @NotNull
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
-    @SequenceGenerator(name="meugerador", sequenceName = "sq_usuario")
+    @SequenceGenerator(name = "meugerador", sequenceName = "sq_usuario")
     @Column(name = "id")
     private Integer id;
     @Size(max = 2147483647)
@@ -50,7 +50,7 @@ public class Usuario implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "email")
     private String email;
-    @Size(max = 50, min= 7)
+    @Size(max = 50, min = 7)
     @Column(name = "senha")
     private String senha;
 
@@ -117,5 +117,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "com.br.horabolas.entidades.Usuario[ id=" + id + " ]";
     }
-    
+
 }

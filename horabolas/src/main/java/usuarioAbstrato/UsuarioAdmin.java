@@ -10,19 +10,20 @@ package usuarioAbstrato;
  * @author mandin
  */
 public class UsuarioAdmin extends Usuario {
-    public void criaQuadra(){
-        
+
+    public void criaQuadra() {
+
     }
-    
-    public void deletaQuadra(){
-        
+
+    public void deletaQuadra() {
+
     }
-    
-    public void deletaUsuario(){
-        
+
+    public void deletaUsuario() {
+
     }
-    
-    public void alteraQuadra(){
-        
+
+    public void alteraQuadra() {
+
     }
 }

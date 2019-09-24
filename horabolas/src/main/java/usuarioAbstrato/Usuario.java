@@ -10,6 +10,7 @@ package usuarioAbstrato;
  * @author mandin
  */
 public abstract class Usuario {
+
     int id;
     String nome, email, senha;
 }

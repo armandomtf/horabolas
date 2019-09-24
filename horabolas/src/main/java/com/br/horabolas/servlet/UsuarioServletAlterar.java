@@ -8,19 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class UsuarioServletAlterar extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Captura parametros da tela
-       String idtext = request.getParameter("pid");
-       String nome = request.getParameter("nome");
-       String email = request.getParameter("email");
-       String senha = request.getParameter("senha");
+        String idtext = request.getParameter("pid");
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        String senha = request.getParameter("senha");
 
         //Cria instancia do usuario
-        Usuario usuario = new Usuario();        
+        Usuario usuario = new Usuario();
         //Detecta se é usuario novo ou antigo
-        if(!idtext.isEmpty()){
+        if (!idtext.isEmpty()) {
             Integer id = Integer.parseInt(idtext);
             usuario.setId(id);
         }
@@ -31,7 +32,7 @@ public class UsuarioServletAlterar extends HttpServlet {
 
         //Chama de funcao para salvar ou atualizar usuario
         UsuarioControle.salvar(usuario);
-        
+
         //Redireciona pagina
         response.sendRedirect("listar.jsp");
     }
