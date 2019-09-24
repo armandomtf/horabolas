@@ -46,10 +46,10 @@ public class Quadras implements Serializable {
     @SequenceGenerator(name="meugerador", sequenceName = "sq_quadra")
     @Column(name = "id")
     private Integer id;
-    @Lob
-    @Column(name = "imagem")
-    private byte[] imagem;
-    @Size(max = 2147483647)
+    //@Lob
+    //@Column(name = "imagem")
+    //private byte[] imagem;
+    //@Size(max = 2147483647)
     @Column(name = "descricao")
     private String descricao;
 
@@ -76,14 +76,14 @@ public class Quadras implements Serializable {
         this.id = id;
     }
 
-    public byte[] getImagem() {
+   /* public byte[] getImagem() {
         return imagem;
     }
 
     public void setImagem(byte[] imagem) {
         this.imagem = imagem;
     }
-
+*/
     public String getDescricao() {
         return descricao;
     }

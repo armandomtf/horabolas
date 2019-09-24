@@ -28,6 +28,14 @@
         <servlet-name>UsuarioServletAlterar</servlet-name>
         <servlet-class>com.br.horabolas.servlet.UsuarioServletAlterar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletQuadra</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.ServletQuadra</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CriarQuadra</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.CriarQuadra</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
         <url-pattern>/UsuarioServletSA</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>UsuarioServletAlterar</servlet-name>
         <url-pattern>/UsuarioServletAlterar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletQuadra</servlet-name>
+        <url-pattern>/ServletQuadra</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CriarQuadra</servlet-name>
+        <url-pattern>/CriarQuadra</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

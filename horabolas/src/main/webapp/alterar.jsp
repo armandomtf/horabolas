@@ -9,90 +9,89 @@
 
 <!DOCTYPE html>
 <html>
-     <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Crud</title>
     </head>
-   <title>Horabolas-Crud</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width-device-width", initial-scale-1.0>
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <title>Horabolas-Crud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width", initial-scale-1.0>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
-	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	 <link rel="stylesheet" type="text/css"  href="estilo.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css"  href="estilo.css" />
 </head>
 <body background="imagens/fundotelaregistro.jpg">
 
 
-	<!---------------------NAVBAR---------------------->
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <!---------------------NAVBAR---------------------->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-	<div class="container">
+        <div class="container">
 
-		
-		<a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-<ul class="navbar-nav mr-auto">
+            <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-	<li class="nav-item">
-		<a class="nav-link " href="Agendamentoadm.jsp">Agendamento</a>
-	</li>
-<li class="nav-item">
-		<a class="nav-link " href="a">Contato</a>
-	</li>	
-                <div id="borda"
+            <ul class="navbar-nav mr-auto">
+
                 <li class="nav-item">
-		<a class="nav-link " href="listar.jsp">CRUD</a>
-                
-	</li>
+                    <a class="nav-link " href="Agendamentoadm.jsp">Agendamento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="a">Contato</a>
+                </li>	
+                <div id="borda"
+                     <li class="nav-item">
+                        <a class="nav-link " href="listar.jsp">CRUD</a>
+
+                    </li>
                 </div>
-</ul>
+            </ul>
 
-<ul class="navbar-nav ml-auto">
-	<!---------------------MODAL  Entra---------------------->
+            <ul class="navbar-nav ml-auto">
+                <!---------------------MODAL  Entra---------------------->
 
-<%
-    Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
-    %>
-<a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
-<a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
+                <%
+                    Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
+                %>
+                <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
+                <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
 
-<!---------------------Final MODAL Entra---------------------->
-</ul>
+                <!---------------------Final MODAL Entra---------------------->
+            </ul>
 
-		</div>
-	</div>
+        </div>
+    </div>
 
-	</nav>
+</nav>
 <!---------------------Fim NAVBAR---------------------->
 <center>
-<div class="jumbotron" style="margin-top: 150px">
-        
-        
+    <div class="jumbotron" style="margin-top: 150px">
+
+
         <h1>Leitura e alteração!</h1>
         <%
-        //Criar variaveis
-        Usuario usuario = new Usuario();
-        String nome = "";
-        String email= "";
-        String senha = "";
+            //Criar variaveis
+            Usuario usuario = new Usuario();
+            String nome = "";
+            String email = "";
+            String senha = "";
 
-        //Captura id (se alteração)
-        String id = request.getParameter("pid");
-        
-        //Localiza usuario (se alteração)
-        if(!id.isEmpty()){
-            usuario = UsuarioControle.buscar(Integer.parseInt(id));
-            nome = usuario.getNome();
-            email= usuario.getEmail();           
-            senha = usuario.getSenha();  
+            //Captura id (se alteração)
+            String id = request.getParameter("pid");
 
-        }
-        else{
-            id = "";
-        }
-        
+            //Localiza usuario (se alteração)
+            if (!id.isEmpty()) {
+                usuario = UsuarioControle.buscar(Integer.parseInt(id));
+                nome = usuario.getNome();
+                email = usuario.getEmail();
+                senha = usuario.getSenha();
+
+            } else {
+                id = "";
+            }
+
         %>
         <form id="brlongo" method="POST" action="UsuarioServletAlterar">
             <div hidden>
@@ -107,6 +106,6 @@
             <input type="submit">
         </form>
 </center>
-    </body>
+</body>
 </html>
 
