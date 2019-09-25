@@ -63,7 +63,16 @@ public class UsuarioControle {
         tr.commit();
         return usuario;
     }
-
+    public static Quadras buscarquadra(Integer id) {
+        String idQuadra = id.toString();
+        Session sessionRecheio;
+        sessionRecheio = HibernateUtil.getSession();
+        Transaction tr = sessionRecheio.beginTransaction();
+        String hql = "from Quadras u where u.id='" + idQuadra + "'";
+        Quadras quadra = (Quadras) sessionRecheio.createQuery(hql).uniqueResult();
+        tr.commit();
+        return quadra;
+    }
     //Retorna todos os usuario do sistema
     public static List<Usuario> listar() {
         Session sessionRecheio;

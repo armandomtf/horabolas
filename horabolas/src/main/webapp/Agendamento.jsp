@@ -1,3 +1,5 @@
+<%@page import="com.br.horabolas.servlet.UsuarioControle"%>
+<%@page import="com.br.horabolas.entidades.Quadras"%>
 <%@page import="com.br.horabolas.entidades.Usuario"%>
 <!DOCTYPE html>
 <html>
@@ -55,13 +57,32 @@
     <p></p>	
 
     <!---------------------Cards---------------------->
+    <%      Quadras quadra = new Quadras();
+            String nome = "";
+            String descricao = "";
+            String imagem = "";
+
+            //Captura id (se alteração)
+            String id = request.getParameter("pid");
+
+            //Localiza usuario (se alteração)
+            if (!id.isEmpty()) {
+                quadra = UsuarioControle.buscarquadra(Integer.parseInt(id));
+                nome = quadra.getNome();
+                descricao = quadra.getDescricao();
+                //imagem = quadra.getSenha();
+
+            } else {
+                id = "";
+            }
+        %>
     <div class="row">
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
                     <img src="imagens/ginasiopoliesportivo.jpg" width="700 px">
-                    <h5 class="card-title">Ginasio Poliesportivo</h5>
-                    <p class="card-text">A maior e principal quadra de Quissamã</p>
+                    <h5 class="card-title" value="<%=nome%>"></h5>
+                    <p class="card-text" <%=descricao%>></p>
 
                     <!--modal de horarios-->
 
