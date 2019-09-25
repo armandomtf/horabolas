@@ -73,9 +73,9 @@
             request.setAttribute("quadras", lista);
         %>
         <display:table id="myTABLE" name="quadras">
-            <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
-            <display:column property="nome" title="Nome Completo"/>
-            <display:column property="descricao" title="Descrição"/>
+            <display:column property="id" title="ID" paramProperty="checkbox"/> 
+            <display:column value="abc" title="Nome Completo"/>
+            <display:column value="abc" title="Descrição"/>
             <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
             <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
             <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />
@@ -84,18 +84,21 @@
 
 
 
-        </center>   
+        </center>  
     <div class="row">
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/ginasiopoliesportivo.jpg" width="700 px">
+                    <center>
+                        <h4 class="card-title">Ginásio Poliesportivo</h4><br>
+                        <img src="imagens/ginasiopoliesportivo.jpg" width="650 px"><br>
+                        <p class="card-text">aaaaaaa</p>
 
                     <!--modal de horarios-->
-
+                    
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
                         Escolha seu horario
-                    </button>
+                    </button></center>
 
                     <div class="modal fade" role="dialog" id="mymodal1">
                         <div class="modal-dialog">
@@ -105,12 +108,12 @@
                                 </div>
                                 <div class="modal-body">
 
-                                    <button> 8:00 as 10:00 </button>
-                                    <button> 10:00 as 12:00 </button>
-                                    <button> 13:00 as 15:00 </button>
-                                    <button> 15:00 as 17:00 </button>
-                                    <button> 17:00 as 19:00 </button>
-                                    <button> 19:00 as 21:00 </button>
+                                    <center><button> 8:00 as 10:00 </button><br><br>
+                                    <button> 10:00 as 12:00 </button><br><br>
+                                    <button> 13:00 as 15:00 </button><br><br>
+                                    <button> 15:00 as 17:00 </button><br><br>
+                                    <button> 17:00 as 19:00 </button><br><br>
+                                    <button> 19:00 as 21:00 </button><br></center>
 
                                 </div>
                             </div>
@@ -128,15 +131,16 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/quadradocarmo.jpg" width="700 px">
-                    <h5 class="card-title">Quadra do carmo</h5>
+                    <center>
+                    <h4 class="card-title">Quadra do carmo</h4><br>
+                    <img src="imagens/quadradocarmo.jpg" width="650 px"><br>
                     <p class="card-text">Uma das maiores e mais usadas quadras de Quissamã.</p>
 
                     <!--modal de horarios-->
 
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal2">
                         Escolha seu horario
-                    </button>
+                    </button></center>
 
                     <div class="modal fade" role="dialog" id="mymodal2">
                         <div class="modal-dialog">
@@ -172,15 +176,16 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/quadracantodasaudade.jpg" width="700 px">
-                    <h5 class="card-title">Quadra do canto da saudade</h5>
+                    <center>
+                    <h4 class="card-title">Quadra do canto da saudade</h4><br>
+                    <img src="imagens/quadracantodasaudade.jpg" width="650 px"><br>
                     <p class="card-text">Localizada proxima ao simiterio da cidade, é uma das menores quadras da cidade.</p>
 
                     <!--modal de horarios-->
 
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal3">
                         Escolha seu horario
-                    </button>
+                    </button></center>
 
                     <div class="modal fade" role="dialog" id="mymodal3">
                         <div class="modal-dialog">
@@ -213,15 +218,16 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/parqueaquatico.jpg" width="700 px">
-                    <h5 class="card-title">Parque Aquático</h5>
+                    <center>
+                    <h4 class="card-title">Parque Aquático</h4><br>
+                    <img src="imagens/parqueaquatico.jpg" width="650 px"><br>
                     <p class="card-text">....</p>
 
                     <!--modal de horarios-->
 
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal4">
                         Escolha seu horario
-                    </button>
+                    </button></center>
 
                     <div class="modal fade" role="dialog" id="mymodal4">
                         <div class="modal-dialog">
