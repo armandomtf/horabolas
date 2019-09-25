@@ -1,4 +1,10 @@
-<%@page import="com.br.horabolas.servlet.UsuarioControle"%>
+<%@page import="java.util.List"%>
+<%@page import="org.hibernate.Transaction"%>
+<%@page import="com.br.horabolas.util.HibernateUtil"%>
+<%@page import="org.hibernate.Session"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://displaytag.sf.net" prefix="display"%>
+<%@page import="com.br.horabolas.servlet.ControladorDB"%>
 <%@page import="com.br.horabolas.entidades.Quadras"%>
 <%@page import="com.br.horabolas.entidades.Usuario"%>
 <!DOCTYPE html>
@@ -57,32 +63,33 @@
     <p></p>	
 
     <!---------------------Cards---------------------->
-    <%      Quadras quadra = new Quadras();
-            String nome = "";
-            String descricao = "";
-            String imagem = "";
+    <center>
+    <div class="jumbotron" style="margin-top: 150px">
 
-            //Captura id (se alteração)
-            String id = request.getParameter("pid");
 
-            //Localiza usuario (se alteração)
-            if (!id.isEmpty()) {
-                quadra = UsuarioControle.buscarquadra(Integer.parseInt(id));
-                nome = quadra.getNome();
-                descricao = quadra.getDescricao();
-                //imagem = quadra.getSenha();
 
-            } else {
-                id = "";
-            }
+        <%
+            List<Quadras> lista = ControladorDB.listarquadras();
+            request.setAttribute("quadras", lista);
         %>
+        <display:table id="myTABLE" name="quadras">
+            <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
+            <display:column property="nome" title="Nome Completo"/>
+            <display:column property="descricao" title="DescriÃ§Ã£o"/>
+            <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
+            <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
+            <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />
+        </display:table>
+        <br><br>
+
+
+
+        </center>   
     <div class="row">
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
                     <img src="imagens/ginasiopoliesportivo.jpg" width="700 px">
-                    <h5 class="card-title" value="<%=nome%>"></h5>
-                    <p class="card-text" <%=descricao%>></p>
 
                     <!--modal de horarios-->
 
@@ -123,7 +130,7 @@
                 <div class="card-body">
                     <img src="imagens/quadradocarmo.jpg" width="700 px">
                     <h5 class="card-title">Quadra do carmo</h5>
-                    <p class="card-text">Uma das maiores e mais usadas quadras de Quissamã.</p>
+                    <p class="card-text">Uma das maiores e mais usadas quadras de QuissamÃ£.</p>
 
                     <!--modal de horarios-->
 
@@ -167,7 +174,7 @@
                 <div class="card-body">
                     <img src="imagens/quadracantodasaudade.jpg" width="700 px">
                     <h5 class="card-title">Quadra do canto da saudade</h5>
-                    <p class="card-text">Localizada proxima ao simiterio da cidade, é uma das menores quadras da cidade.</p>
+                    <p class="card-text">Localizada proxima ao simiterio da cidade, Ã© uma das menores quadras da cidade.</p>
 
                     <!--modal de horarios-->
 
@@ -207,7 +214,7 @@
             <div class="card">
                 <div class="card-body">
                     <img src="imagens/parqueaquatico.jpg" width="700 px">
-                    <h5 class="card-title">Parque Aquático</h5>
+                    <h5 class="card-title">Parque AquÃ¡tico</h5>
                     <p class="card-text">....</p>
 
                     <!--modal de horarios-->
@@ -247,7 +254,7 @@
 <!---------------------Fim Cards---------------------->
 
 
-<!-----------rodapé----------------->
+<!-----------rodapÃ©----------------->
 <p></p>
 <div id="rodape">
     <center>
@@ -259,7 +266,7 @@
 
 </div>
 
-<!-----------Fim do rodapé-------------------------->
+<!-----------Fim do rodapÃ©-------------------------->
 
 </body>
 </html>

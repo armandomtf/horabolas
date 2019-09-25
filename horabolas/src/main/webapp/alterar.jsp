@@ -1,5 +1,5 @@
 <%@page import="com.br.horabolas.entidades.Usuarioadm"%>
-<%@page import="com.br.horabolas.servlet.UsuarioControle"%>
+<%@page import="com.br.horabolas.servlet.ControladorDB"%>
 <%@page import="org.hibernate.Session"%>
 <%@page import="org.hibernate.Transaction"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -83,7 +83,7 @@
 
             //Localiza usuario (se alteração)
             if (!id.isEmpty()) {
-                usuario = UsuarioControle.buscar(Integer.parseInt(id));
+                usuario = ControladorDB.buscar(Integer.parseInt(id));
                 nome = usuario.getNome();
                 email = usuario.getEmail();
                 senha = usuario.getSenha();

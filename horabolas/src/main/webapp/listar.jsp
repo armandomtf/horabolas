@@ -1,5 +1,6 @@
+<%@page import="com.br.horabolas.entidades.Quadras"%>
 <%@page import="com.br.horabolas.entidades.Usuarioadm"%>
-<%@page import="com.br.horabolas.servlet.UsuarioControle"%>
+<%@page import="com.br.horabolas.servlet.ControladorDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://displaytag.sf.net" prefix="display"%>
 <jsp:directive.page import="com.br.horabolas.entidades.Usuario" />
@@ -73,7 +74,7 @@
 
 
         <%
-            List<Usuario> lista = UsuarioControle.listar();
+            List<Usuario> lista = ControladorDB.listar();
             request.setAttribute("usuarios", lista);
         %>
         <display:table id="myTABLE" name="usuarios">

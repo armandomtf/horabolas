@@ -30,7 +30,7 @@ public class ServletQuadra extends HttpServlet {
         //quadra.setImagem(imagem);
 
         //Chama de funcao para salvar ou atualizar usuario
-        UsuarioControle.salvarquadra(quadra);
+        ControladorDB.salvarquadra(quadra);
         response.sendRedirect("index.html");
 
     }

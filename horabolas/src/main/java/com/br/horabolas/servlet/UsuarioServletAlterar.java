@@ -31,7 +31,7 @@ public class UsuarioServletAlterar extends HttpServlet {
         usuario.setEmail(email);
 
         //Chama de funcao para salvar ou atualizar usuario
-        UsuarioControle.salvar(usuario);
+        ControladorDB.salvar(usuario);
 
         //Redireciona pagina
         response.sendRedirect("listar.jsp");

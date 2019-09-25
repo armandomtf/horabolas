@@ -20,7 +20,7 @@ public class UsuarioServletD extends HttpServlet {
         usuario.setId(Integer.parseInt(idtext));
 
         //Chama de funcao para apagar usuario
-        UsuarioControle.deletar(usuario);
+        ControladorDB.deletar(usuario);
 
         //Redireciona pagina
         response.sendRedirect("listar.jsp");

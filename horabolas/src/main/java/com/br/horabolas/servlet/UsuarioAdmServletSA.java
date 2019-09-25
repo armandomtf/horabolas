@@ -31,7 +31,7 @@ public class UsuarioAdmServletSA extends HttpServlet {
         usuarioadm.setEmail(email);
 
         //Chama de funcao para salvar ou atualizar usuario
-        UsuarioControle.salvaradm(usuarioadm);
+        ControladorDB.salvaradm(usuarioadm);
 
         //Redireciona pagina
         response.sendRedirect("index.html");

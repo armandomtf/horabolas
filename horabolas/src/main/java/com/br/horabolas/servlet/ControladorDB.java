@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import com.br.horabolas.util.HibernateUtil;
 
-public class UsuarioControle {
+public class ControladorDB {
 
     //Função de salvar/atualizar um usuario
     public static boolean salvarquadra(Quadras quadra) {
@@ -63,16 +63,6 @@ public class UsuarioControle {
         tr.commit();
         return usuario;
     }
-    public static Quadras buscarquadra(Integer id) {
-        String idQuadra = id.toString();
-        Session sessionRecheio;
-        sessionRecheio = HibernateUtil.getSession();
-        Transaction tr = sessionRecheio.beginTransaction();
-        String hql = "from Quadras u where u.id='" + idQuadra + "'";
-        Quadras quadra = (Quadras) sessionRecheio.createQuery(hql).uniqueResult();
-        tr.commit();
-        return quadra;
-    }
     //Retorna todos os usuario do sistema
     public static List<Usuario> listar() {
         Session sessionRecheio;
@@ -83,6 +73,16 @@ public class UsuarioControle {
         tr.commit();
         return lista;
     }
+        public static List<Quadras> listarquadras() {
+        Session sessionRecheio;
+        sessionRecheio = HibernateUtil.getSession();
+        Transaction tr = sessionRecheio.beginTransaction();
+        String hql = "from Quadras u";
+        List<Quadras> lista = (List) sessionRecheio.createQuery(hql).list();
+        tr.commit();
+        return lista;
+    }
+
 
     //Função de apagar um usuario
     public static boolean deletar(Usuario usuario) {

@@ -31,7 +31,7 @@ public class UsuarioServletSA extends HttpServlet {
         usuario.setEmail(email);
 
         //Chama de funcao para salvar ou atualizar usuario
-        UsuarioControle.salvar(usuario);
+        ControladorDB.salvar(usuario);
 
         response.sendRedirect("cadastroconcluido.html");
 
