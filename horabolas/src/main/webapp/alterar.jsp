@@ -31,7 +31,7 @@
         <div class="container">
 
 
-            <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
+            <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
 
             <ul class="navbar-nav mr-auto">
 

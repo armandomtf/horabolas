@@ -53,7 +53,7 @@
 
                 <div class="container">
 
-                    <a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
+                    <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
                 </div>
 
             </div>
