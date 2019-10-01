@@ -15,7 +15,7 @@
 
 
         <!---------------------NAVBAR---------------------->
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark ">
 
             <div class="container">
 
@@ -62,7 +62,8 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/ginasiopoliesportivo.jpg" width="700 px">
+                    
+                    <img src="imagens/ginasiopoliesportivo.jpg" style="max-width: 100%; height:auto;" alt="Arcondicinados" title="Ar condicionados e Climatizadores" >
                     <h5 class="card-title">Ginasio Poliesportivo</h5>
                     <p class="card-text">A maior e principal quadra de Quissamã</p>
 
@@ -103,7 +104,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/quadradocarmo.jpg" width="700 px">
+                    <img src="imagens/quadradocarmo.jpg" style="max-width: 100%; height:auto;">
                     <h5 class="card-title">Quadra do carmo</h5>
                     <p class="card-text">Uma das maiores e mais usadas quadras de Quissamã.</p>
 
@@ -147,7 +148,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/quadracantodasaudade.jpg" width="700 px">
+                    <img src="imagens/quadracantodasaudade.jpg" style="max-width: 100%; height:auto;">
                     <h5 class="card-title">Quadra do canto da saudade</h5>
                     <p class="card-text">Localizada proxima ao simiterio da cidade, é uma das menores quadras da cidade.</p>
 
@@ -188,7 +189,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="imagens/parqueaquatico.jpg" width="700 px">
+                    <img src="imagens/parqueaquatico.jpg" style="max-width: 100%; height:auto;">
                     <h5 class="card-title">Parque Aquático</h5>
                     <p class="card-text">....</p>
 
@@ -233,7 +234,7 @@
 <p></p>
 <div id="rodape">
     <center>
-        <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
+        <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto;">
         <img src="imagens/nomedosenvolvidos.png"  width="300px;">
     </center>
 
