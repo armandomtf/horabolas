@@ -15,7 +15,8 @@ public class ServletQuadra extends HttpServlet {
         String idtext = request.getParameter("pid");
         String nome = request.getParameter("nome");
         String descricao = request.getParameter("descricao");
-        //String imagem = request.getParameter("imagem");
+        String imagem = request.getParameter("imagem");
+        
 
         //Cria instancia do usuario
         Quadras quadra = new Quadras();

@@ -29,8 +29,8 @@
         <servlet-class>com.br.horabolas.servlet.ServletQuadra</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CriarQuadra</servlet-name>
-        <servlet-class>com.br.horabolas.servlet.CriarQuadra</servlet-class>
+        <servlet-name>ManipularImagem</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.ManipularImagem</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
@@ -61,8 +61,8 @@
         <url-pattern>/ServletQuadra</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CriarQuadra</servlet-name>
-        <url-pattern>/CriarQuadra</url-pattern>
+        <servlet-name>ManipularImagem</servlet-name>
+        <url-pattern>/ManipularImagem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
