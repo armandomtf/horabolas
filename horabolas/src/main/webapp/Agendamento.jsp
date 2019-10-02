@@ -53,7 +53,7 @@
 
                 <div class="container">
 
-                    <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
+                    <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="Hora Bolas"/>  </a>
                 </div>
 
             </div>
@@ -63,49 +63,49 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link " href="Agendamento.html">Agendamento</a>
+                        <a class="nav-link " href="Agendamento.jsp" alt="agendamento" title="Agendamento">Agendamento</a>
                     </li>
                 </ul>
-
 
             </div>
 
             <div class="left">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="a">Contato</a>
+                        <a class="nav-link " href="a"alt="contato" title="Contato">Contato</a>
 
-                    </li>	
+                    </li>
+                    </div>
                 </ul>
-            </div>
+            
 
             <!---------------------MODAL  Entra---------------------->
             <div class="right">
 
-              <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto">
                     <ul class="navbar-nav ml-auto">
                         <!---------------------MODAL  Entra---------------------->
                         <%
-                            Usuario usuario= (Usuario) session.getAttribute("UsuarioLogado");
+                            Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
                         %>
-                        <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
-                        <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
+                        <a class="nav-link" alt="bem vindo" title="Mensagem de Bem vindo">Bem vindo, <%=usuario.getNome()%>!</a>
+                        <a href="index.html"><button type="button" class="btn btn-default" alt="Sair" title="Sair">Sair</button></a>
                         <!---------------------Final MODAL Entra---------------------->
                     </ul>
                 </ul>
-            <!---------------------Final MODAL Entra---------------------->
-        </ul>
-    </ul>
+                <!---------------------Final MODAL Entra---------------------->
+                </ul>
+                </ul>
 
-</div>
-</div>
+            </div>
+        </div>
 
-</nav>
-<!---------------------Fim NAVBAR---------------------->
+    </nav>
+    <!---------------------Fim NAVBAR---------------------->
 
-<p></p>	
+    <p></p>	
 
-<!---------------------Cards---------------------->
+    <!---------------------Cards---------------------->
 <center>
     <div class="jumbotron" style="margin-top: 150px">
 
@@ -137,12 +137,14 @@
                                 <h4 class="card-title">Ginásio Poliesportivo</h4><br>
                                 <img src="imagens/ginasiopoliesportivo.jpg" style="max-width: 100%; height:auto;" ><br>
                                 <p class="card-text">aaaaaaa</p>
+                            </center>
 
-                                <!--modal de horarios-->
-                        </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
-                            Escolha seu horario
-                        </button></center>
+                            <!--modal de horarios-->
+                        </div><br>
+                        <center>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+                                Escolha seu horario
+                            </button></center>
 
                         <div class="modal fade" role="dialog" id="mymodal1">
                             <div class="modal-dialog">
@@ -307,11 +309,24 @@
 
 <!-----------rodapé----------------->
 <p></p>
-<div id="rodape">
-    <center>
-        <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto;"">
-        <img src="imagens/nomedosenvolvidos.png"  width="300px;">
-    </center>
+
+        <!---------------------MODAL  Entra---------------------->
+
+
+        <div class="modal fade" role="dialog" id="mymodal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Login</h2>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+</div>
+
+</center>
 
 
 
