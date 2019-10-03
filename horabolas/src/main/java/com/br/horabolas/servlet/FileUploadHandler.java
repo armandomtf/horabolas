@@ -48,7 +48,7 @@ public class FileUploadHandler extends HttpServlet {
                         fileInputStream.read(picInBytes);
                         fileInputStream.close();
                         Imagens imagem = new Imagens();
-                        imagem.setCdImagem(5);
+                        imagem.setCdImagem(1234);
                         imagem.setImagem(picInBytes);
                         Session sessionRecheio;
                         sessionRecheio = HibernateUtil.getSession();
@@ -69,7 +69,8 @@ public class FileUploadHandler extends HttpServlet {
                     "Sorry this Servlet only handles file upload request");
         }
 
-        request.getRequestDispatcher("/result.jsp").forward(request, response);
+        //request.getRequestDispatcher("/result.jsp").forward(request, response);
+         response.sendRedirect("uparimagem.jsp");
 
     }
 
