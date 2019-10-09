@@ -149,7 +149,7 @@
     
         <marquee>
            
-        <img src="imagens/logonaoumgruposomosumtime.png" width="300px;" title="TG">
+        <img src="imagens/tgg.png" width="300px;" title="TG">
         <img src="imagens/nomedosenvolvidos.png"  width="300px;">
             
         </marquee>

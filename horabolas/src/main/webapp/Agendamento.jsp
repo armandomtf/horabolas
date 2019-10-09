@@ -94,8 +94,6 @@
                     </ul>
                 </ul>
                 <!---------------------Final MODAL Entra---------------------->
-                </ul>
-                </ul>
 
             </div>
         </div>
@@ -106,24 +104,6 @@
     <p></p>	
 
     <!---------------------Cards---------------------->
-<center>
-    <div class="jumbotron" style="margin-top: 150px">
-
-
-
-        <%
-            List<Quadras> lista = ControladorDB.listarquadras();
-            request.setAttribute("quadras", lista);
-        %>
-        <display:table id="myTABLE" name="quadras">
-            <display:column property="id" title="ID" paramProperty="checkbox"/> 
-            <display:column value="abc" title="Nome Completo"/>
-            <display:column value="abc" title="Descrição"/>
-            <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
-            <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
-            <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />
-        </display:table>
-        <br><br>
 
 
 

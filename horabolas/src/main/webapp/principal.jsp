@@ -144,7 +144,7 @@
     <p></p>
     <div id="rodape">
         <center>
-            <img src="imagens/logonaoumgruposomosumtime.png" width="300px;" alt="TG" title="TG">
+            <img src="imagens/tgg.png" width="300px;" alt="TG" title="TG">
             <img src="imagens/nomedosenvolvidos.png"  width="300px;">
         </center>
 
