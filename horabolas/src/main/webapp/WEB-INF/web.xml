@@ -29,8 +29,8 @@
         <servlet-class>com.br.horabolas.servlet.ServletQuadra</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>FileUploadHandler</servlet-name>
-        <servlet-class>com.br.horabolas.servlet.FileUploadHandler</servlet-class>
+        <servlet-name>ImagemServletS</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.ImagemServletS</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
@@ -61,8 +61,8 @@
         <url-pattern>/ServletQuadra</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>FileUploadHandler</servlet-name>
-        <url-pattern>/FileUploadHandler</url-pattern>
+        <servlet-name>ImagemServletS</servlet-name>
+        <url-pattern>/ImagemServletS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

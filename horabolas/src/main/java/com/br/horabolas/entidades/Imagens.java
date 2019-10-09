@@ -9,12 +9,15 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -26,16 +29,24 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Imagens.findAll", query = "SELECT i FROM Imagens i")
-    , @NamedQuery(name = "Imagens.findByCdImagem", query = "SELECT i FROM Imagens i WHERE i.cdImagem = :cdImagem")})
+    , @NamedQuery(name = "Imagens.findByCdImagem", query = "SELECT i FROM Imagens i WHERE i.cdImagem = :cdImagem")
+    , @NamedQuery(name = "Imagens.findByExtensao", query = "SELECT i FROM Imagens i WHERE i.extensao = :extensao")})
 public class Imagens implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @Basic(optional = false)
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
+    @SequenceGenerator(name = "meugerador", sequenceName = "sq_imagem")
     @Column(name = "cd_imagem")
     private Integer cdImagem;
-    @Lob
+    //@Lob
     @Column(name = "imagem")
     private byte[] imagem;
+    @Size(max = 2147483647)
+    @Column(name = "extensao")
+    private String extensao;
 
     public Imagens() {
     }
@@ -58,6 +69,14 @@ public class Imagens implements Serializable {
 
     public void setImagem(byte[] imagem) {
         this.imagem = imagem;
+    }
+
+    public String getExtensao() {
+        return extensao;
+    }
+
+    public void setExtensao(String extensao) {
+        this.extensao = extensao;
     }
 
     @Override
