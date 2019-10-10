@@ -1,21 +1,26 @@
 package com.br.horabolas.servlet;
 
-import com.br.horabolas.entidades.Quadras;
+import com.br.horabolas.entidades.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-public class ServletQuadra extends HttpServlet {
-
+import org.apache.commons.io.IOUtils;
+import java.io.InputStream;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.Part;
+@MultipartConfig
+public class QuadraServlet extends HttpServlet {
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String idtext = request.getParameter("pid");
         String nome = request.getParameter("nome");
         String descricao = request.getParameter("descricao");
-        String imagem = request.getParameter("imagem");
+        Part filePart = request.getPart("foto");
+        InputStream inputStream = filePart.getInputStream();
         
 
         //Cria instancia do usuario
@@ -28,11 +33,12 @@ public class ServletQuadra extends HttpServlet {
         //Insere informações no objeto
         quadra.setNome(nome);
         quadra.setDescricao(descricao);
-        //quadra.setImagem(imagem);
+        quadra.setFoto(IOUtils.toByteArray(inputStream));            
+        quadra.setExtensao(filePart.getContentType());
 
         //Chama de funcao para salvar ou atualizar usuario
-        ControladorDB.salvarquadra(quadra);
-        response.sendRedirect("index.html");
+        QuadraControle.salvarquadra(quadra);
+        response.sendRedirect("listarquadras.jsp");
 
     }
 }

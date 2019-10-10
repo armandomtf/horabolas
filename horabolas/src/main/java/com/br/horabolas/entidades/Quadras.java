@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
+//import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
@@ -32,7 +32,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Quadras.findAll", query = "SELECT q FROM Quadras q")
     , @NamedQuery(name = "Quadras.findByNome", query = "SELECT q FROM Quadras q WHERE q.nome = :nome")
     , @NamedQuery(name = "Quadras.findById", query = "SELECT q FROM Quadras q WHERE q.id = :id")
-    , @NamedQuery(name = "Quadras.findByDescricao", query = "SELECT q FROM Quadras q WHERE q.descricao = :descricao")})
+    , @NamedQuery(name = "Quadras.findByDescricao", query = "SELECT q FROM Quadras q WHERE q.descricao = :descricao")
+    , @NamedQuery(name = "Quadras.findByExtensao", query = "SELECT q FROM Quadras q WHERE q.extensao = :extensao")})
 public class Quadras implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -46,12 +47,15 @@ public class Quadras implements Serializable {
     @SequenceGenerator(name = "meugerador", sequenceName = "sq_quadra")
     @Column(name = "id")
     private Integer id;
-    //@Lob
-    //@Column(name = "imagem")
-    //private byte[] imagem;
-    //@Size(max = 2147483647)
+    @Size(max = 2147483647)
     @Column(name = "descricao")
     private String descricao;
+    //@Lob
+    @Column(name = "foto")
+    private byte[] foto;
+    @Size(max = 2147483647)
+    @Column(name = "extensao")
+    private String extensao;
 
     public Quadras() {
     }
@@ -76,20 +80,28 @@ public class Quadras implements Serializable {
         this.id = id;
     }
 
-    /* public byte[] getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(byte[] imagem) {
-        this.imagem = imagem;
-    }
-     */
     public String getDescricao() {
         return descricao;
     }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public String getExtensao() {
+        return extensao;
+    }
+
+    public void setExtensao(String extensao) {
+        this.extensao = extensao;
     }
 
     @Override
@@ -116,5 +128,5 @@ public class Quadras implements Serializable {
     public String toString() {
         return "com.br.horabolas.entidades.Quadras[ id=" + id + " ]";
     }
-
+    
 }

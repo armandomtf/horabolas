@@ -17,13 +17,13 @@ and open the template in the editor.
     </head>
     <body>
         <div id="content">
-            <form action="ServletQuadra" method="post">
+            <form action="QuadraServlet" method="post" enctype="multipart/form-data">
                 <div hidden>
                     ID<input type="text" name="pid" value="">
                 </div>
                 Nome:<input type="text" name="nome" placeholder="Nome da Quadra"><br><br>
                 Descrição:<textarea name="descricao" placeholder="Descrição da Quadra" rows="4" cols="50"></textarea><br><br>
-                <!-- Imagem:<input type="file" name="imagem"><br><br> -->
+                Foto:<input type="file" name="foto"><br><br> 
                 <input type="submit">
             </form>
 
