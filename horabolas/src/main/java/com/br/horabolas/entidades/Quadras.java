@@ -6,6 +6,7 @@
 package com.br.horabolas.entidades;
 
 import java.io.Serializable;
+import java.util.Base64;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;

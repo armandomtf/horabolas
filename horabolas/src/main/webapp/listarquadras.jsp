@@ -17,7 +17,7 @@
         <h1>Quadras</h1>
         <%
             List<Quadras> lista = QuadraControle.listarquadras();
-            Quadras q = lista.get(2);
+            Quadras q = lista.get(0);
             byte[] imagem = q.getFoto();
             String encodedImage = Base64.getEncoder().encodeToString(imagem);
             request.setAttribute("quadras", lista);
@@ -28,6 +28,7 @@
             <display:column title="Foto">
                 <img src="data:image/png;image/jpg;base64,<%=encodedImage%>" width='300' height='300'>
             </display:column>
+                <%}%>
             <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />
         </display:table>
         
