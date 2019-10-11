@@ -28,7 +28,6 @@
             <display:column title="Foto">
                 <img src="data:image/png;image/jpg;base64,<%=encodedImage%>" width='300' height='300'>
             </display:column>
-                <%}%>
             <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />
         </display:table>
         

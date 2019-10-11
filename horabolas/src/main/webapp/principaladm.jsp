@@ -40,6 +40,10 @@
                     <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
                     </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav ml-auto">

@@ -35,6 +35,10 @@
                     <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
@@ -62,7 +66,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    
+
                     <img src="imagens/ginasiopoliesportivo.jpg" style="max-width: 100%; height:auto;" alt="Logo Hora Bolas"  title="GinasioPoliesportivo" >
                     <h5 class="card-title">Ginasio Poliesportivo</h5>
                     <p class="card-text">A maior e principal quadra de Quissamã</p>

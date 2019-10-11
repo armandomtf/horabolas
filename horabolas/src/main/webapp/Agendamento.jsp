@@ -61,10 +61,11 @@
             <div class="left">
 
                 <ul class="navbar-nav mr-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link " href="Agendamento.html">Agendamento</a>
-                    </li>
+                    <div id="borda">
+                        <li class="nav-item">
+                            <a class="nav-link " href="Agendamento.jsp">Agendamento</a>
+                        </li>
+                    </div>
                 </ul>
 
 
@@ -82,30 +83,30 @@
             <!---------------------MODAL  Entra---------------------->
             <div class="right">
 
-              <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto">
                     <ul class="navbar-nav ml-auto">
                         <!---------------------MODAL  Entra---------------------->
                         <%
-                            Usuario usuario= (Usuario) session.getAttribute("UsuarioLogado");
+                            Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
                         %>
                         <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
                         <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
                         <!---------------------Final MODAL Entra---------------------->
                     </ul>
                 </ul>
-            <!---------------------Final MODAL Entra---------------------->
-        </ul>
-    </ul>
+                <!---------------------Final MODAL Entra---------------------->
+                </ul>
+                </ul>
 
-</div>
-</div>
+            </div>
+        </div>
 
-</nav>
-<!---------------------Fim NAVBAR---------------------->
+    </nav>
+    <!---------------------Fim NAVBAR---------------------->
 
-<p></p>	
+    <p></p>	
 
-<!---------------------Cards---------------------->
+    <!---------------------Cards---------------------->
 <center>
     <div class="jumbotron" style="margin-top: 150px">
 

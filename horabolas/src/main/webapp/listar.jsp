@@ -45,6 +45,9 @@
                         <a class="nav-link " href="listar.jsp">CRUD</a>
                     </li>
                 </div>
+                <li class="nav-item">
+                    <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
@@ -81,7 +84,6 @@
             <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
             <display:column property="nome" title="Nome Completo"/>
             <display:column property="email" title="Email"/>
-            <display:column property="senha" title="Senha"/>
             <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
             <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
             <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />

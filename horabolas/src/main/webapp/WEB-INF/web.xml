@@ -27,6 +27,11 @@
     <servlet>
         <servlet-name>QuadraServlet</servlet-name>
         <servlet-class>com.br.horabolas.servlet.QuadraServlet</servlet-class>
+        <multipart-config>
+            <max-file-size>418018841</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>418018841</file-size-threshold>
+        </multipart-config>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>

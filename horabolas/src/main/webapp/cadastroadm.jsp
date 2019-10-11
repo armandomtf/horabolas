@@ -11,9 +11,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Crud</title>
+        <title>Cadastrar Administrador</title>
     </head>
-    <title>Horabolas-Crud</title>
+    <title>Cadastrar Administrador</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width", initial-scale-1.0>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -41,15 +41,16 @@
                 <li class="nav-item">
                     <a class="nav-link " href="a">Contato</a>
                 </li>	
+
+                <li class="nav-item">
+                    <a class="nav-link " href="listar.jsp">CRUD</a>
+
+                </li>
                 <div id="borda">
                     <li class="nav-item">
-                        <a class="nav-link " href="listar.jsp">CRUD</a>
-
+                        <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
                     </li>
-                </div>
-                <li class="nav-item">
-                    <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
-                </li>
+                </div>            
             </ul>
 
             <ul class="navbar-nav ml-auto">
@@ -65,45 +66,20 @@
             </ul>
 
         </div>
-    </div>
 
-</nav>
-<!---------------------Fim NAVBAR---------------------->
+    </nav>
+    <!---------------------Fim NAVBAR---------------------->
 <center>
     <div class="jumbotron" style="margin-top: 150px">
 
 
-        <h1>Leitura e alteração!</h1>
-        <%
-            //Criar variaveis
-            Usuario usuario = new Usuario();
-            String nome = "";
-            String email = "";
-
-            //Captura id (se alteração)
-            String id = request.getParameter("pid");
-
-            //Localiza usuario (se alteração)
-            if (!id.isEmpty()) {
-                usuario = ControladorDB.buscar(Integer.parseInt(id));
-                nome = usuario.getNome();
-                email = usuario.getEmail();
-
-            } else {
-                id = "";
-            }
-
-        %>
-        <form id="brlongo" method="POST" action="UsuarioServletAlterar">
-            <div hidden>
-                ID<input type="text" name="pid" value="<%=id%>">
-            </div>
-            Nome<input type="text" name="nome" value="<%=nome%>">
-            <br><br>
-            Email<input type="email" name="email" value="<%=email%>"> 
-            <br><br>
-            <input type="submit">
-        </form>
+        <h1>Cadastrar um novo administrador</h1>
+        <form method="post" action="UsuarioAdmServletSA">
+            Email:<input type="email" name="email"><br><br>
+            Nome: <input type="text" name="nome"><br><br>
+            Senha: <input type="password" name="senha"><br><br>
+            <input type="submit"></form>
+    </div>
 </center>
 </body>
 </html>
