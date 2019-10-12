@@ -30,7 +30,7 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link " href="Agendamentoadm.jsp">Agendamento</a>
+                        <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                     </li>
 
 
@@ -40,9 +40,12 @@
                     <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
                     </li>
                 </ul>
 

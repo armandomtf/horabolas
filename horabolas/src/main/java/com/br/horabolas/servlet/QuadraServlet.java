@@ -37,7 +37,7 @@ public class QuadraServlet extends HttpServlet {
 
         //Chama de funcao para salvar ou atualizar usuario
         QuadraControle.salvarquadra(quadra);
-        response.sendRedirect("listarquadras.jsp");
+        response.sendRedirect("agendamentoadm.jsp");
 
     }
 }
