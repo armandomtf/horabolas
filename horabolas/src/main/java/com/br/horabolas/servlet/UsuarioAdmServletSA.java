@@ -34,7 +34,7 @@ public class UsuarioAdmServletSA extends HttpServlet {
         ControladorDB.salvaradm(usuarioadm);
 
         //Redireciona pagina
-        response.sendRedirect("cadastraradm.jsp");
+        response.sendRedirect("cadastroadm.jsp");
         
     }
 }
