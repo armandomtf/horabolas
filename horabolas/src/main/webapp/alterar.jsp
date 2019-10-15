@@ -36,17 +36,23 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link " href="Agendamentoadm.jsp">Agendamento</a>
+                    <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="a">Contato</a>
                 </li>	
-                <div id="borda"
-                     <li class="nav-item">
+                <div id="borda">
+                    <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
 
                     </li>
                 </div>
+                <li class="nav-item">
+                    <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
@@ -76,7 +82,6 @@
             Usuario usuario = new Usuario();
             String nome = "";
             String email = "";
-            String senha = "";
 
             //Captura id (se alteração)
             String id = request.getParameter("pid");
@@ -86,7 +91,6 @@
                 usuario = ControladorDB.buscar(Integer.parseInt(id));
                 nome = usuario.getNome();
                 email = usuario.getEmail();
-                senha = usuario.getSenha();
 
             } else {
                 id = "";
@@ -101,8 +105,6 @@
             <br><br>
             Email<input type="email" name="email" value="<%=email%>"> 
             <br><br>
-            Senha<input type="text" name="senha" value="<%=senha%>">
-            <br>
             <input type="submit">
         </form>
 </center>

@@ -1,17 +1,19 @@
-<%@page import="com.br.horabolas.entidades.Quadras"%>
 <%@page import="com.br.horabolas.entidades.Usuarioadm"%>
 <%@page import="com.br.horabolas.servlet.ControladorDB"%>
+<%@page import="org.hibernate.Session"%>
+<%@page import="org.hibernate.Transaction"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://displaytag.sf.net" prefix="display"%>
 <jsp:directive.page import="com.br.horabolas.entidades.Usuario" />
-<jsp:directive.page import="java.util.List" />
+<jsp:directive.page import="java.util.*" />
+<jsp:directive.page import="com.br.horabolas.util.HibernateUtil" />
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Crud</title>
+        <title>Cadastrar Administrador</title>
     </head>
-    <title>Horabolas-Crud</title>
+    <title>Cadastrar Administrador</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width", initial-scale-1.0>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -36,18 +38,19 @@
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link " href="a">Contato</a>
+                </li>	
+
+                <li class="nav-item">
+                    <a class="nav-link " href="listar.jsp">CRUD</a>
+
                 </li>
                 <div id="borda">
                     <li class="nav-item">
-                        <a class="nav-link " href="listar.jsp">CRUD</a>
+                        <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
                     </li>
                 </div>
-                <li class="nav-item">
-                    <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
                 </li>
@@ -62,39 +65,44 @@
                 <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
                 <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
 
-
-
                 <!---------------------Final MODAL Entra---------------------->
             </ul>
 
         </div>
+
+    </nav>
+    <!---------------------Fim NAVBAR---------------------->
+<center>
+    <div class="card">
+        <div class="card-body">
+            <h1>Cadastrar um novo administrador</h1>
+            <div class="modal-body">
+                <div class="modal-dialog modal-sm">
+                 <div class="jumbotron" style="margin-top: 100px">
+                    
+                         
+                        <form method="post" action="UsuarioAdmServletSA">
+                            Email:<input type="email" name="email"><br><br>
+                            Nome: <input type="text" name="nome"><br><br>
+                            Senha: <input type="password" name="senha"><br><br>
+                            <input type="submit" onclick="alerta()">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 
-</nav>
-<!---------------------Fim NAVBAR---------------------->
+</center>
+<script>
+    function alerta() {
+        alert('Seu cadastro foi concluído com sucesso! Agora faça o login.');
+        location.replace("cadastroadm.jsp");
+    }
+</script>
+</body>
+</html>
 
-
-<center>
-    <div class="jumbotron" style="margin-top: 150px">
-
-
-
-        <%
-            List<Usuario> lista = ControladorDB.listar();
-            request.setAttribute("usuarios", lista);
-        %>
-        <display:table id="myTABLE" name="usuarios">
-            <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
-            <display:column property="nome" title="Nome Completo"/>
-            <display:column property="email" title="Email"/>
-            <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
-            <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
-            <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />
-        </display:table>
-        <br><br>
-
-
-
-        </center>   
-        </body>
-        </html>

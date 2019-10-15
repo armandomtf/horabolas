@@ -1,15 +1,11 @@
 body {
-    background-image: url("imagens/fundodepagina.jpg");
-    
-    background-size: 100%;
+    background-image: url("imagens/fundodepagina.jpg") ;
+
 }
 #rodape {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background-color:#343a40; height:400px;
-    width: 100%;
-    
-    
 }
 
 table, td {

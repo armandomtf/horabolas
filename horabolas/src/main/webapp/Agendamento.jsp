@@ -1,3 +1,6 @@
+<%@page import="java.util.Base64"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.br.horabolas.servlet.QuadraControle"%>
 <%@page import="java.util.List"%>
 <%@page import="org.hibernate.Transaction"%>
 <%@page import="com.br.horabolas.util.HibernateUtil"%>
@@ -53,7 +56,7 @@
 
                 <div class="container">
 
-                    <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="Hora Bolas"/>  </a>
+                    <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
                 </div>
 
             </div>
@@ -61,23 +64,24 @@
             <div class="left">
 
                 <ul class="navbar-nav mr-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link " href="Agendamento.jsp" alt="agendamento" title="Agendamento">Agendamento</a>
-                    </li>
+                    <div id="borda">
+                        <li class="nav-item">
+                            <a class="nav-link " href="Agendamento.jsp">Agendamento</a>
+                        </li>
+                    </div>
                 </ul>
+
 
             </div>
 
             <div class="left">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="a"alt="contato" title="Contato">Contato</a>
+                        <a class="nav-link " href="a">Contato</a>
 
-                    </li>
-                    </div>
+                    </li>	
                 </ul>
-            
+            </div>
 
             <!---------------------MODAL  Entra---------------------->
             <div class="right">
@@ -88,15 +92,16 @@
                         <%
                             Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
                         %>
-                        <a class="nav-link" alt="bem vindo" title="Mensagem de Bem vindo">Bem vindo, <%=usuario.getNome()%>!</a>
-                        <a href="index.html"><button type="button" class="btn btn-default" alt="Sair" title="Sair">Sair</button></a>
+                        <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
+                        <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
                         <!---------------------Final MODAL Entra---------------------->
                     </ul>
                 </ul>
                 <!---------------------Final MODAL Entra---------------------->
+                </ul>
+                </ul>
 
             </div>
-        </div>
 
     </nav>
     <!---------------------Fim NAVBAR---------------------->
@@ -104,27 +109,34 @@
     <p></p>	
 
     <!---------------------Cards---------------------->
+<center>
+    <div class="jumbotron" style="margin-top: 150px">
+        <%
+            List<Quadras> lista = QuadraControle.listarquadras();
+            request.setAttribute("quadras", lista);
+            for (Iterator it = lista.iterator(); it.hasNext();) {
+
+                Quadras quadra = (Quadras) it.next();
+                byte[] imagem = quadra.getFoto();
+                String quadraFoto = Base64.getEncoder().encodeToString(imagem);
 
 
-
-        </center>  
+        %>
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <div class="ar">
-                            <center>
-                                <h4 class="card-title">Ginásio Poliesportivo</h4><br>
-                                <img src="imagens/ginasiopoliesportivo.jpg" style="max-width: 100%; height:auto;" ><br>
-                                <p class="card-text">aaaaaaa</p>
-                            </center>
 
-                            <!--modal de horarios-->
-                        </div><br>
-                        <center>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
-                                Escolha seu horario
-                            </button></center>
+                        <img src="data:image/png;image/jpg;base64,<%=quadraFoto%>" style="max-width: 100%; max-height: 100%;" alt="Logo Hora Bolas"/>
+                        <h5 class="card-title"><%=quadra.getNome()%></h5>
+                        <p class="card-text"><%=quadra.getDescricao()%></p>
+
+                        <!--modal de horarios-->
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+                            Escolha seu horario
+                        </button>
+
 
                         <div class="modal fade" role="dialog" id="mymodal1">
                             <div class="modal-dialog">
@@ -134,94 +146,6 @@
                                     </div>
                                     <div class="modal-body">
 
-                                        <center><button> 8:00 as 10:00 </button><br><br>
-                                            <button> 10:00 as 12:00 </button><br><br>
-                                            <button> 13:00 as 15:00 </button><br><br>
-                                            <button> 15:00 as 17:00 </button><br><br>
-                                            <button> 17:00 as 19:00 </button><br><br>
-                                            <button> 19:00 as 21:00 </button><br></center>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--modal de horarios final-->
-
-                    </div>
-                </div>
-            </div>
-
-            <!------------------------------>
-
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <center>
-                            <h4 class="card-title">Quadra do carmo</h4><br>
-                            <img src="imagens/quadradocarmo.jpg" style="max-width: 100%; height:auto;"><br>
-                            <p class="card-text">Uma das maiores e mais usadas quadras de Quissamã.</p>
-
-                            <!--modal de horarios-->
-
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal2">
-                                Escolha seu horario
-                            </button></center>
-
-                        <div class="modal fade" role="dialog" id="mymodal2">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2>Divirta Se!</h2>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <button> 8:00 as 10:00 </button>
-                                        <button> 10:00 as 12:00 </button>
-                                        <button> 13:00 as 15:00 </button>
-                                        <button> 15:00 as 17:00 </button>
-                                        <button> 17:00 as 19:00 </button>
-                                        <button> 19:00 as 21:00 </button>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--modal de horarios final-->
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-------------------------->
-        <p></p>
-        <!------------------------------>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-
-                        <center>
-                            <h4 class="card-title">Quadra do canto da saudade</h4><br>
-                            <img src="imagens/quadracantodasaudade.jpg" style="max-width: 100%; height:auto;" alt="Arcondicinados" title="Ar condicionados e Climatizadores" ><br>
-                            <p class="card-text">Localizada proxima ao simiterio da cidade, é uma das menores quadras da cidade.</p>
-
-                            <!--modal de horarios-->
-
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal3">
-                                Escolha seu horario
-                            </button></center>
-
-                        <div class="modal fade" role="dialog" id="mymodal3">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2>Divirta Se!</h2>
-                                    </div>
-                                    <div class="modal-body">
-
                                         <button> 8:00 as 10:00 </button>
                                         <button> 10:00 as 12:00 </button>
                                         <button> 13:00 as 15:00 </button>
@@ -233,86 +157,39 @@
                                 </div>
                             </div>
                         </div>
-
+                                                    
                         <!--modal de horarios final-->
 
-                    </div>
-                </div>
-            </div>
-
-            <!-------------------------->
-            <!------------------------------>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <center>
-                            <h4 class="card-title">Parque Aquático</h4><br>
-                            <img src="imagens/parqueaquatico.jpg" style="max-width: 100%; height:auto;"><br>
-                            <p class="card-text">....</p>
-
-                            <!--modal de horarios-->
-
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal4">
-                                Escolha seu horario
-                            </button></center>
-
-                        <div class="modal fade" role="dialog" id="mymodal4">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2>Divirta Se!</h2>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <button> 8:00 as 10:00 </button>
-                                        <button> 10:00 as 12:00 </button>
-                                        <button> 13:00 as 15:00 </button>
-                                        <button> 15:00 as 17:00 </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--modal de horarios final-->
 
                     </div>
+               
                 </div>
+
             </div>
+
         </div>
+
     </div>
-</div>
-<!-------------------------->
+               <%}%>
 
-<!---------------------Fim Cards---------------------->
+    <!-------------------------->
 
-
-<!-----------rodapé----------------->
-<p></p>
-
-        <!---------------------MODAL  Entra---------------------->
+    <!---------------------Fim Cards---------------------->
 
 
-        <div class="modal fade" role="dialog" id="mymodal1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Login</h2>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-</div>
-
-</center>
+    <!-----------rodapé----------------->
+    <p></p>
+    <div id="rodape">
+        <center>
+            <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto; width:300px;"/>
+            <img src="imagens/nomedosenvolvidos.png"  width="300px;">
+        </center>
 
 
 
-</div>
+    </div>
 
-<!-----------Fim do rodapé-------------------------->
+    <!-----------Fim do rodapé-------------------------->
 
 </body>
 </html>

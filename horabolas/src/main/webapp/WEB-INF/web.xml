@@ -25,12 +25,13 @@
         <servlet-class>com.br.horabolas.servlet.UsuarioServletAlterar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletQuadra</servlet-name>
-        <servlet-class>com.br.horabolas.servlet.ServletQuadra</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ManipularImagem</servlet-name>
-        <servlet-class>com.br.horabolas.servlet.ManipularImagem</servlet-class>
+        <servlet-name>QuadraServlet</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.QuadraServlet</servlet-class>
+        <multipart-config>
+            <max-file-size>418018841</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>418018841</file-size-threshold>
+        </multipart-config>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
@@ -57,12 +58,8 @@
         <url-pattern>/UsuarioServletAlterar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletQuadra</servlet-name>
-        <url-pattern>/ServletQuadra</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ManipularImagem</servlet-name>
-        <url-pattern>/ManipularImagem</url-pattern>
+        <servlet-name>QuadraServlet</servlet-name>
+        <url-pattern>/QuadraServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

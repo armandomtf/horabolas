@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author mandin
+ * @author aluno
  */
 @Entity
 @Table(name = "usuarioadm")
@@ -130,5 +130,5 @@ public class Usuarioadm implements Serializable {
     public String toString() {
         return "com.br.horabolas.entidades.Usuarioadm[ id=" + id + " ]";
     }
-
+    
 }

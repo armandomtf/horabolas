@@ -18,83 +18,36 @@
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css"  href="estilo.css" />
-        
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-            
-            .left{
-                
-                padding: 20px;
-                float: left;
-                width: 20%;
-                margin-right: 50px;
-            }
-            
-            .right{
-                
-                padding: 20px;
-                float: right;
-                width: 20%;
-                margin-left: 500px; 
-            }
-            
-        </style>
-
 
     </head>
     <body>
 
         <!---------------------NAVBAR---------------------->
-         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-            <div class="left">
+            <div class="container">
 
-                <div class="container">
 
-                    <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
-                </div>
-
-            </div>
-
-            <div class="left">
-
+                <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link " href="Agendamento.jsp" alt="Agendamento" title="Agendamento">Agendamento</a>
+                        <a class="nav-link " href="Agendamento.jsp">Agendamento</a>
                     </li>
-                </ul>
 
-
-            </div>
-
-            <div class="left">
-                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="a" alt="Contato" title="Contato">Contato</a>
-
+                        <a class="nav-link " href="a">Contato</a>
                     </li>	
                 </ul>
-            </div>
-
-            <!---------------------MODAL  Entra---------------------->
-            <div class="right">
 
                 <ul class="navbar-nav ml-auto">
-                    <ul class="navbar-nav ml-auto">
-                        <!---------------------MODAL  Entra---------------------->
-                        <%
-                            Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
-                        %>
-                        <a class="nav-link" title="Mensagem de Bem Vindo">Bem vindo, <%=usuario.getNome()%>!</a>
-                        <a href="index.html"><button type="button" class="btn btn-default" alt="Sair" title="Sair">Sair</button></a>
-                        <!---------------------Final MODAL Entra---------------------->
-                    </ul>
-                </ul>
-                <!---------------------Final MODAL Entra---------------------->
-                </ul>
+                    <!---------------------MODAL  Entra---------------------->
+                    <%
+                        Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
+                    %>
+                    <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
+                    <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
+                    <!---------------------Final MODAL Entra---------------------->
                 </ul>
 
             </div>
@@ -116,13 +69,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="imagens/quadradocarmo.jpg" alt="Primeiro Slide" title="Quadra do Carmo">
+                        <img class="d-block w-100" src="imagens/quadradocarmo.jpg" alt="Primeiro Slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="imagens/ginasiopoliesportivo.jpg" alt="Segundo Slide" title="Ginásio Poliestivo" >
+                        <img class="d-block w-100" src="imagens/ginasiopoliesportivo.jpg" alt="Segundo Slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="imagens/quadracantodasaudade.jpg" alt="Terceiro Slide" title="Quadra do Canto da Saudade">
+                        <img class="d-block w-100" src="imagens/quadracantodasaudade.jpg" alt="Terceiro Slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -144,7 +97,7 @@
     <p></p>
     <div id="rodape">
         <center>
-            <img src="imagens/tgg.png" width="300px;" alt="TG" title="TG">
+            <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
             <img src="imagens/nomedosenvolvidos.png"  width="300px;">
         </center>
 
