@@ -33,6 +33,14 @@
             <file-size-threshold>418018841</file-size-threshold>
         </multipart-config>
     </servlet>
+    <servlet>
+        <servlet-name>UsuarioAdmServletLogout</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.UsuarioAdmServletLogout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UsuarioServletLogout</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.UsuarioServletLogout</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
         <url-pattern>/UsuarioServletSA</url-pattern>
@@ -60,6 +68,14 @@
     <servlet-mapping>
         <servlet-name>QuadraServlet</servlet-name>
         <url-pattern>/QuadraServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioAdmServletLogout</servlet-name>
+        <url-pattern>/UsuarioAdmServletLogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioServletLogout</servlet-name>
+        <url-pattern>/UsuarioServletLogout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
