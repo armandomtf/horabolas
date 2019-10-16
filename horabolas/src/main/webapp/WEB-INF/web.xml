@@ -41,6 +41,10 @@
         <servlet-name>UsuarioServletLogout</servlet-name>
         <servlet-class>com.br.horabolas.servlet.UsuarioServletLogout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AgendamentoServlet</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.AgendamentoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
         <url-pattern>/UsuarioServletSA</url-pattern>
@@ -76,6 +80,10 @@
     <servlet-mapping>
         <servlet-name>UsuarioServletLogout</servlet-name>
         <url-pattern>/UsuarioServletLogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgendamentoServlet</servlet-name>
+        <url-pattern>/AgendamentoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

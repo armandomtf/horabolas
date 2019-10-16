@@ -7,20 +7,25 @@ package com.br.horabolas.entidades;
 
 import java.io.Serializable;
 import java.util.Base64;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 //import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -37,6 +42,12 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Quadras.findByExtensao", query = "SELECT q FROM Quadras q WHERE q.extensao = :extensao")})
 public class Quadras implements Serializable {
 
+    @Lob
+    @Column(name = "foto")
+    private byte[] foto;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idQuadraIda")
+    private Collection<Agendamento> agendamentoCollection;
+
     private static final long serialVersionUID = 1L;
     @Size(max = 40)
     @Column(name = "nome")
@@ -51,9 +62,6 @@ public class Quadras implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "descricao")
     private String descricao;
-    //@Lob
-    @Column(name = "foto")
-    private byte[] foto;
     @Size(max = 2147483647)
     @Column(name = "extensao")
     private String extensao;
@@ -89,13 +97,6 @@ public class Quadras implements Serializable {
         this.descricao = descricao;
     }
 
-    public byte[] getFoto() {
-        return foto;
-    }
-
-    public void setFoto(byte[] foto) {
-        this.foto = foto;
-    }
 
     public String getExtensao() {
         return extensao;
@@ -128,6 +129,23 @@ public class Quadras implements Serializable {
     @Override
     public String toString() {
         return "com.br.horabolas.entidades.Quadras[ id=" + id + " ]";
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    @XmlTransient
+    public Collection<Agendamento> getAgendamentoCollection() {
+        return agendamentoCollection;
+    }
+
+    public void setAgendamentoCollection(Collection<Agendamento> agendamentoCollection) {
+        this.agendamentoCollection = agendamentoCollection;
     }
     
 }
