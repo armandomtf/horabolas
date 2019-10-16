@@ -21,14 +21,9 @@
     <link rel="stylesheet" type="text/css"  href="estilo.css" />
 </head>
 <body background="imagens/fundotelaregistro.jpg">
-
-
     <!---------------------NAVBAR---------------------->
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-
         <div class="container">
-
-
             <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
 
             <ul class="navbar-nav mr-auto">
@@ -61,23 +56,13 @@
                 %>
                 <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
                 <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
-
-
                 <!---------------------Final MODAL Entra---------------------->
             </ul>
-
         </div>
-    </div>
-
-</nav>
-<!---------------------Fim NAVBAR---------------------->
-
-
+    </nav>
+    <!---------------------Fim NAVBAR---------------------->
 <center>
     <div class="jumbotron" style="margin-top: 150px">
-
-
-
         <%
             List<Usuario> lista = ControladorDB.listar();
             request.setAttribute("usuarios", lista);
@@ -91,9 +76,7 @@
             <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />
         </display:table>
         <br><br>
-
-
-
-        </center>   
-        </body>
-        </html>
+    </div>
+</center>   
+</body>
+</html>
