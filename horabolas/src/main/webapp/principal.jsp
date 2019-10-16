@@ -46,12 +46,11 @@
                         Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
                     %>
                     <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
-                    <a href="index.html"><button type="button" class="btn btn-default" >Sair</button></a>
+                    <a href="UsuarioServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
                     <!---------------------Final MODAL Entra---------------------->
                 </ul>
 
             </div>
-        </div>
 
     </nav>
     <!---------------------Fim NAVBAR---------------------->

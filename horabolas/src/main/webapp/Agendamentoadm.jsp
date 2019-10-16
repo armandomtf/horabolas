@@ -88,8 +88,7 @@
                             Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
                         %>
                         <a class="nav-link" alt="bem vindo" title="Mensagem de Bem vindo">Bem vindo, <%=usuarioadm.getNome()%>, lindão</a>
-                        <a href="index.html"><button type="button" class="btn btn-default" alt="sair" title="Sair">Sair</button></a>
-                        <!---------------------Final MODAL Entra---------------------->
+                         <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>                        <!---------------------Final MODAL Entra---------------------->
                     </ul>
                 </ul>
                         
