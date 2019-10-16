@@ -85,12 +85,8 @@
 
 
     %>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-
-                    <img src="data:image/png;image/jpg;base64,<%=quadraFoto%>" style="max-width: 100%; max-height: 100%;" alt="Logo Hora Bolas"/>
+                      
+                    <img width="200" height="126" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas" usemap="#planetmap"/>
                     <h5 class="card-title"><%=quadra.getNome()%></h5>
                     <p class="card-text"><%=quadra.getDescricao()%></p>
 
@@ -125,7 +121,9 @@
                 </div>
             </div>
         </div>
-
+          
+                  
+                    
         <%}%>
 
 </body>
