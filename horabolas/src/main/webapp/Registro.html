@@ -9,70 +9,67 @@
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css"  href="estilo.css" />
+        
+         <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            .left{
+                
+                padding: 20px;
+                float: left;
+                width: 20%;
+                margin-right: 50px;
+            }
+            
+            .right{
+                
+                padding: 10px;
+                float: right;
+                width: 30%;
+                margin-left: 500px; 
+            }
+            
+        </style>
+
     </head>
     <body background="imagens/fundotelaregistro.jpg">
 
 
         <!---------------------NAVBAR---------------------->
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            
+            <div class="left">
 
             <div class="container">
-
-
-                <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
+                    
+                <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/> </a>
+            </div>
+                
+            </div>
+            
+             <div class="left">
 
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link " href="Agendamento.html">Agendamento</a>
+                        <a class="nav-link " href="Agendamento.html" alt="Slide Quadra do canto da saudade" >Agendamento</a>
                     </li>
-
+                </ul>
+                    
+                    
+             </div>
+            
+                    <div class="left">
+                    <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="a">Contato</a>
+                        <a class="nav-link " href="a" alt="Slide Quadra do canto da saudade" >Contato</a>
+                        
                     </li>	
                 </ul>
-
-                <ul class="navbar-nav ml-auto">
-                    <!---------------------MODAL  Entra---------------------->
-
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal">
-                        Entrar
-                    </button>
-
-                    <div class="modal fade" role="dialog" id="mymodal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h2>Login</h2>
-                                </div>
-                                <div class="modal-body">
-                                    <div hidden>
-                                        ID<input type="text" name="pid" value="<%=id%>">
-                                    </div>
-                                    <div class=" form-group">
-                                        <input type="email" name="Email" class="form-control" placeholder="Email">
-                                    </div>
-
-                                    <div class=" form-group">
-                                        <input type="password" name="Senha" class="form-control" placeholder="Senha">
-                                    </div>
-                                    <a href="Registro.html">Não possui uma conta?</a>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">Seguir</button>
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
-
-                    <!---------------------Final MODAL Entra---------------------->
-                </ul>
-
-            </div>
-        </div>
-
+                   
     </nav>
     <!---------------------Fim NAVBAR---------------------->
 
@@ -102,7 +99,7 @@
                         </div>
 
 
-                        <input type="submit" value="Enviar">
+                        <input type="submit" class="btn btn-primary" value="Enviar">
                         </form>
 
                     </div>
