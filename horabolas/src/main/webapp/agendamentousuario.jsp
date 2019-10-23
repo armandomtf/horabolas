@@ -66,7 +66,7 @@
                 <ul class="navbar-nav mr-auto">
                     <div id="borda">
                         <li class="nav-item">
-                            <a class="nav-link " href="Agendamento.jsp">Agendamento</a>
+                            <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
                         </li>
                     </div>
                 </ul>
@@ -103,93 +103,83 @@
 
             </div>
 
-    </nav>
-    <!---------------------Fim NAVBAR---------------------->
+        </nav>
+        <!---------------------Fim NAVBAR---------------------->
 
-    <p></p>	
+        <p></p>	
 
-    <!---------------------Cards---------------------->
-<center>
-    <div class="jumbotron" style="margin-top: 150px">
-        <%
-            List<Quadras> lista = QuadraControle.listarquadras();
-            request.setAttribute("quadras", lista);
-            for (Iterator it = lista.iterator(); it.hasNext();) {
+        <!---------------------Cards---------------------->
+        <div id="divao">
+            <%
+                List<Quadras> lista = QuadraControle.listarquadras();
+                request.setAttribute("quadras", lista);
+                for (Iterator it = lista.iterator(); it.hasNext();) {
 
-                Quadras quadra = (Quadras) it.next();
-                byte[] imagem = quadra.getFoto();
-                String quadraFoto = Base64.getEncoder().encodeToString(imagem);
-
-
-        %>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-
-                        <img src="data:image/png;image/jpg;base64,<%=quadraFoto%>" style="max-width: 100%; max-height: 100%;" alt="Logo Hora Bolas"/>
-                        <h5 class="card-title"><%=quadra.getNome()%></h5>
-                        <p class="card-text"><%=quadra.getDescricao()%></p>
-
-                        <!--modal de horarios-->
-
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
-                            Escolha seu horario
-                        </button>
+                    Quadras quadra = (Quadras) it.next();
+                    String codigo = quadra.getId().toString();
+                    byte[] imagem = quadra.getFoto();
+                    String quadraFoto = Base64.getEncoder().encodeToString(imagem);
 
 
-                        <div class="modal fade" role="dialog" id="mymodal1">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2>Divirta Se!</h2>
-                                    </div>
-                                    <div class="modal-body">
+            %>
 
-                                        <button> 8:00 as 10:00 </button>
-                                        <button> 10:00 as 12:00 </button>
-                                        <button> 13:00 as 15:00 </button>
-                                        <button> 15:00 as 17:00 </button>
-                                        <button> 17:00 as 19:00 </button>
-                                        <button> 19:00 as 21:00 </button>
+            <div class="imagens">
 
-                                    </div>
-                                </div>
+                <img class="quadraimg" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas"/>
+                <h5 class="card-title"><%=quadra.getNome()%></h5>
+                <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
+
+                <!--modal de horarios-->
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+                    Escolha seu horario
+                </button>
+
+                <div class="modal fade" role="dialog" id="mymodal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Divirta Se!</h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <button> 8:00 as 10:00 </button>
+                                <button> 10:00 as 12:00 </button>
+                                <button> 13:00 as 15:00 </button>
+                                <button> 15:00 as 17:00 </button>
+                                <button> 17:00 as 19:00 </button>
+                                <button> 19:00 as 21:00 </button>
+
                             </div>
                         </div>
-                                                    
-                        <!--modal de horarios final-->
-
-
                     </div>
-               
                 </div>
+
+                <!--modal de horarios final-->
 
             </div>
 
+
+            <%}%>
+        </div>
+        <!-------------------------->
+
+        <!---------------------Fim Cards---------------------->
+
+
+        <!-----------rodapé----------------->
+        <p></p>
+        <div id="rodape">
+            <center>
+                <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto; width:300px;"/>
+                <img src="imagens/nomedosenvolvidos.png"  width="300px;">
+            </center>
+
+
+
         </div>
 
-    </div>
-               <%}%>
+        <!-----------Fim do rodapé-------------------------->
 
-    <!-------------------------->
-
-    <!---------------------Fim Cards---------------------->
-
-
-    <!-----------rodapé----------------->
-    <p></p>
-    <div id="rodape">
-        <center>
-            <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto; width:300px;"/>
-            <img src="imagens/nomedosenvolvidos.png"  width="300px;">
-        </center>
-
-
-
-    </div>
-
-    <!-----------Fim do rodapé-------------------------->
-
-</body>
+    </body>
 </html>
