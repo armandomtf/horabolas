@@ -64,6 +64,7 @@
                 %>
                 <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
                 <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+
                 <!---------------------Final MODAL Entra---------------------->
             </ul>
 
@@ -72,36 +73,17 @@
     </nav>
     <!---------------------Fim NAVBAR---------------------->
 <center>
-    <div class="card">
-        <div class="card-body">
-            <h1>Cadastrar um novo administrador</h1>
-            <div class="modal-body">
-                <div class="modal-dialog modal-sm">
-                 <div class="jumbotron" style="margin-top: 100px">
-                    
-                         
-                        <form method="post" action="UsuarioAdmServletSA">
-                            Email:<input type="email" name="email"><br><br>
-                            Nome: <input type="text" name="nome"><br><br>
-                            Senha: <input type="password" name="senha"><br><br>
-                            <input type="submit" onclick="alerta()">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="jumbotron" style="margin-top: 150px">
 
 
-
+        <h1>Cadastrar um novo administrador</h1>
+        <form method="post" action="UsuarioAdmServletSA">
+            Email:<input type="email" name="email"><br><br>
+            Nome: <input type="text" name="nome"><br><br>
+            Senha: <input type="password" name="senha"><br><br>
+            <input type="submit"></form>
     </div>
-
 </center>
-<script>
-    function alerta() {
-        alert('Seu cadastro foi concluído com sucesso! Agora faça o login.');
-        location.replace("cadastroadm.jsp");
-    }
-</script>
 </body>
 </html>
 

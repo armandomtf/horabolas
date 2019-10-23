@@ -9,121 +9,121 @@
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css"  href="estilo.css" />
-        
+
         <style>
             * {
                 box-sizing: border-box;
             }
-            
+
             .left{
-                
+
                 padding: 20px;
                 float: left;
-                width: 20%;
+                width: 120%;
                 margin-right: 50px;
             }
-            
+
             .right{
-                
+
                 padding: 20px;
                 float: right;
                 width: 20%;
                 margin-left: 500px; 
             }
-            
-            font-style: fantasy;
-            
+
+            .menu{
+                margin-bottom: -20px;
+            }
+
         </style>
 
     </head>
     <body>
 
         <!---------------------NAVBAR---------------------->
-       
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            
-            <div class="left">
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-            <div class="container">
-                    
-                <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/> </a>
-            </div>
-                
-            </div>
-            
-             <div class="left">
+                <div class="left">
 
-                <ul class="navbar-nav mr-auto">
+                    <div class="container">
 
-                    <li class="nav-item">
-                        <a class="nav-link " href="Agendamento.html" alt="Slide Quadra do canto da saudade" >Agendamento</a>
-                    </li>
-                </ul>
-                    
-                    
-             </div>
-            
-                    <div class="left">
+                        <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/> </a>
+                    </div>
+
+                </div>
+
+                <div class="left">
+
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="Agendamento.html" alt="Slide Quadra do canto da saudade" >Agendamento</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+                <div class="left">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link " href="a" alt="Slide Quadra do canto da saudade" font-style: fantasy>Contato</a>
-                        
-                    </li>	
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link " href="a" alt="Slide Quadra do canto da saudade" >Contato</a>
+
+                        </li>	
+                    </ul>
+                </div>
+
+
+
+
+
+        <!---------------------MODAL  Entra---------------------->
+
+        <div class="right">
+
+            <button type="button" class="btn btn-default" alt="Entrar" data-toggle="modal" data-target="#mymodal">
+                Entrar
+            </button>
+
+        </div>
+
+        <div class="modal fade" role="dialog" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Login</h2>
                     </div>
-                 
-                
-         
-                
-                    
-                    
-                    <!---------------------MODAL  Entra---------------------->
-                    
-                    <div class="right">
-                        
-                    <button type="button" class="btn btn-primary" alt="Entrar" data-toggle="modal" data-target="#mymodal">
-                        Entrar
-                    </button>
-                        
-                    </div>
+                    <form action="UsuarioServletLogin" method="post"> 
+                        <div class="modal-body">
+                            Email:
+                            <div class=" form-group"> 
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
 
-                    <div class="modal fade" role="dialog" id="mymodal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h2>Login</h2>
-                                </div>
-                                <form action="UsuarioServletLogin" method="post"> 
-                                    <div class="modal-body">
-                                        Email:
-                                        <div class=" form-group"> 
-                                            <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
-
-
-                                        </div>
-                                        Senha:
-                                        <div class=" form-group">
-                                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
-                                            <input type="submit" value="Entrar" class="btn btn-primary">
-                                        </div>
-                                </form>
-
-
-                                <a href="Registro.html">Não possui uma conta?</a>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
 
                             </div>
+                            Senha:
+                            <div class=" form-group">
+                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
+                                <input type="submit" value="Entrar" class="btn-btn-default">
+                            </div>
+                    </form>
 
-                        </div>
-                    </div>
+
+                    <a href="cadastro.html">Não possui uma conta?</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+
+                </div>
+
             </div>
-
-            <!---------------------Final MODAL Entra---------------------->
-        </ul>
-
+        </div>
     </div>
+
+    <!---------------------Final MODAL Entra---------------------->
+</ul>
+
+</div>
 </div>
 
 </nav>
@@ -174,8 +174,8 @@
         <img src="imagens/nomedosenvolvidos.png"  width="300px;">
         <!---------------------MODAL  Entra---------------------->
 
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#mymodal1">
-            Administração
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal1">
+            Área da Administração
         </button>
 
 
@@ -196,14 +196,14 @@
                             Senha:
                             <div class=" form-group">
                                 <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
-                                <input type="submit" value="Entrar" class="btn btn-primary">
+                                <input type="submit" value="Entrar" class="btn-btn-default">
                             </div>
                     </form>
 
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
 
                 </div>
 

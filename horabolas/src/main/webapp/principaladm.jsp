@@ -55,14 +55,19 @@
                         Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
                     %>
                     <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
-                    <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>                    <!---------------------Final MODAL Entra---------------------->
+                    <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+                    <!---------------------Final MODAL Entra---------------------->
                 </ul>
 
             </div>
+        </div>
+
     </nav>
     <!---------------------Fim NAVBAR---------------------->
+
     <p></p>	
     <!---------------------Carosel---------------------->
+
     <div class="container-fluid" id="container-carousel">
         <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -91,9 +96,12 @@
                     <span class="sr-only">Próximo</span>
                 </a>
             </div>
+
         </div>
     </div>
     <!---------------------Fim Carosel---------------------->
+
+
     <!-----------rodapé----------------->
     <p></p>
     <div id="rodape">
@@ -101,7 +109,14 @@
             <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
             <img src="imagens/nomedosenvolvidos.png"  width="300px;">
         </center>
+
+
+
     </div>
+
     <!-----------Fim do rodapé-------------------------->
+
+
+
 </body>
 </html>

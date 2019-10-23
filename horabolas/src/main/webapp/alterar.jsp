@@ -63,6 +63,8 @@
                 %>
                 <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
                 <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+
+
                 <!---------------------Final MODAL Entra---------------------->
             </ul>
 

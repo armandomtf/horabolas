@@ -66,6 +66,7 @@
                 %>
                 <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
                 <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+
                 <!---------------------Final MODAL Entra---------------------->
             </ul>
 
@@ -74,28 +75,20 @@
     </nav>
     <!---------------------Fim NAVBAR---------------------->
 <center>
-    
-    
-    <div class="jumbotron" style="margin-top: 5px">
+    <div class="jumbotron" style="margin-top: 150px">
 
-       
-            <h1>Cadastre uma nova quadra!</h1>
-            
-            <form action="QuadraServlet" method="post" enctype="multipart/form-data">
-                
-                <div hidden>
-                    ID<input type="text" name="pid" value="">
-                </div>
-                
-                Nome:<br> <input type="text" name="nome" placeholder="Nome da Quadra"><br><br>
-                
-                Descrição:<br><textarea name="descricao" placeholder="Descrição da Quadra" rows="2" cols="20"></textarea><br><br>
-                Foto:<br><input type="file" name="foto"><br><br>
-                
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
-    
+
+        <h1>Cadastre uma nova quadra!</h1>
+        <form action="QuadraServlet" method="post" enctype="multipart/form-data">
+            <div hidden>
+                ID<input type="text" name="pid" value="">
+            </div>
+            Nome:<input type="text" name="nome" placeholder="Nome da Quadra"><br><br>
+            Descrição:<textarea name="descricao" placeholder="Descrição da Quadra" rows="4" cols="50"></textarea><br><br>
+            Foto:<input type="file" name="foto"><br><br> 
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </center>
 </body>
 </html>

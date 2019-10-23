@@ -55,5 +55,5 @@ public class UsuarioServletLogout extends HttpServlet {
             response.sendRedirect("index.html");
         }
     }
-
-} 
+     
+}

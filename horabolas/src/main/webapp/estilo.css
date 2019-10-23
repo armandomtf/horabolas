@@ -21,9 +21,21 @@ table, td {
     text-shadow: 0px 0px #A9A9A9;
 }
 
-#img2{
-    width:700px;
-    float: left;
-  margin: 0 10px 10px 0;
+#divao{
+    display: table-cell;
+}
 
+.imagens{
+    width: 700px;
+    height: 100%;
+    padding: 15px;
+    background-color:white; 
+    float: left;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.quadraimg{
+    width:665px;
+    height: 500px;
 }

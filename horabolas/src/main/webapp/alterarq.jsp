@@ -1,12 +1,14 @@
 <%@page import="com.br.horabolas.servlet.QuadraControle"%>
-<%@page import="com.br.horabolas.servlet.QuadraServletD"%>
 <%@page import="com.br.horabolas.entidades.Quadras"%>
 <%@page import="com.br.horabolas.entidades.Usuarioadm"%>
 <%@page import="com.br.horabolas.servlet.ControladorDB"%>
+<%@page import="org.hibernate.Session"%>
+<%@page import="org.hibernate.Transaction"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://displaytag.sf.net" prefix="display"%>
 <jsp:directive.page import="com.br.horabolas.entidades.Usuario" />
-<jsp:directive.page import="java.util.List" />
+<jsp:directive.page import="java.util.*" />
+<jsp:directive.page import="com.br.horabolas.util.HibernateUtil" />
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,13 +40,13 @@
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link " href="a">Contato</a>
-                </li>
+                </li>	
                 <div id="borda">
                     <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
+
                     </li>
                 </div>
                 <li class="nav-item">
@@ -65,7 +67,6 @@
                 <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
 
 
-
                 <!---------------------Final MODAL Entra---------------------->
             </ul>
 
@@ -74,44 +75,45 @@
 
 </nav>
 <!---------------------Fim NAVBAR---------------------->
-
-
 <center>
     <div class="jumbotron" style="margin-top: 150px">
 
 
-
+        <h1>Leitura e alteração!</h1>
         <%
-            List<Usuario> lista = ControladorDB.listar();
-            request.setAttribute("usuarios", lista);
+            //Criar variaveis
+            Quadras q = new Quadras();
+            String nome = "";
+            String descricao = "";
+
+
+            //Captura id (se alteração)
+            String id = request.getParameter("pid");
+
+            //Localiza usuario (se alteração)
+            if (!id.isEmpty()) {
+                q = QuadraControle.buscar(Integer.parseInt(id));
+                nome = q.getNome();
+                descricao = q.getDescricao();
+
+            } else {
+                id = "";
+            }
+
         %>
-        <display:table id="myTABLE" name="usuarios">
-            <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
-            <display:column property="nome" title="Nome Completo"/>
-            <display:column property="email" title="Email"/>
-            <display:column value="Alterar" title="Alterar" href="alterar.jsp" paramId="pid" paramProperty="id" />             
-            <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/UsuarioServletD"/>
-            <display:setProperty name="basic.msg.empty_list" value="Sem usuarios" />
-        </display:table>
-        <br><br>
+        <form id="brlongo" method="POST" action="QuadraServletAlterar" enctype="multipart/form-data">
+            <div hidden>
+                ID<input type="text" name="pid" value="<%=id%>">
+            </div>
+            Nome<input type="text" name="nome" value="<%=nome%>">
+            <br><br>
+            Descrição<input type="text" name="descricao" value="<%=descricao%>"> 
+            <br><br>
+            Foto <input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png">
+            
+            <input type="submit">
+        </form>
+</center>
+</body>
+</html>
 
-        <%
-            List<Quadras> listaq = QuadraControle.listarquadras();
-            request.setAttribute("quadras", listaq);
-        %>
-
-        <display:table id="myTABLE" name="quadras">
-            <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
-            <display:column property="nome" title="Nome"/>
-            <display:column property="descricao" title="Descricao"/>
-            <display:column property="foto" title="foto"/>
-            <display:column value="Alterar" title="Alterar" href="alterarq.jsp" paramId="pid" paramProperty="id" />             
-            <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/QuadraServletD"/>
-            <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />
-        </display:table>
-
-
-
-        </center>   
-        </body>
-        </html>

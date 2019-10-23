@@ -63,7 +63,9 @@
                             Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
                         %>
                         <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
-                         <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>                        <!---------------------Final MODAL Entra---------------------->
+                        <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+
+                        <!---------------------Final MODAL Entra---------------------->
                     </ul>
                 </ul>
 
@@ -72,58 +74,58 @@
 
     </nav>
     <p></p>
-    <%
-        List<Quadras> lista = QuadraControle.listarquadras();
-        request.setAttribute("quadras", lista);
-        for (Iterator it = lista.iterator(); it.hasNext();) {
+    <div id="divao">
+        <%
+            List<Quadras> lista = QuadraControle.listarquadras();
+            request.setAttribute("quadras", lista);
+            for (Iterator it = lista.iterator(); it.hasNext();) {
 
-            Quadras quadra = (Quadras) it.next();
-            String codigo = quadra.getId().toString();
-            byte[] imagem = quadra.getFoto();
-            String quadraFoto = Base64.getEncoder().encodeToString(imagem);
+                Quadras quadra = (Quadras) it.next();
+                String codigo = quadra.getId().toString();
+                byte[] imagem = quadra.getFoto();
+                String quadraFoto = Base64.getEncoder().encodeToString(imagem);
 
 
-    %>
-                      
-                    <img width="200" height="126" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas" usemap="#planetmap"/>
-                    <h5 class="card-title"><%=quadra.getNome()%></h5>
-                    <p class="card-text"><%=quadra.getDescricao()%></p>
+        %>
 
-                    <!--modal de horarios-->
+        <div class="imagens">
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
-                        Escolha seu horario
-                    </button>
+            <img class="quadraimg" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas"/>
+            <h5 style="font-size: 50px;"class="card-title"><%=quadra.getNome()%></h5>
+            <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
-                    <div class="modal fade" role="dialog" id="mymodal1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h2>Divirta Se!</h2>
-                                </div>
-                                <div class="modal-body">
+            <!--modal de horarios-->
 
-                                    <button> 8:00 as 10:00 </button>
-                                    <button> 10:00 as 12:00 </button>
-                                    <button> 13:00 as 15:00 </button>
-                                    <button> 15:00 as 17:00 </button>
-                                    <button> 17:00 as 19:00 </button>
-                                    <button> 19:00 as 21:00 </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+                Escolha seu horario
+            </button>
 
-                                </div>
-                            </div>
+            <div class="modal fade" role="dialog" id="mymodal1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Divirta Se!</h2>
+                        </div>
+                        <div class="modal-body">
+
+                            <button> 8:00 as 10:00 </button>
+                            <button> 10:00 as 12:00 </button>
+                            <button> 13:00 as 15:00 </button>
+                            <button> 15:00 as 17:00 </button>
+                            <button> 17:00 as 19:00 </button>
+                            <button> 19:00 as 21:00 </button>
+
                         </div>
                     </div>
-
-                    <!--modal de horarios final-->
-
                 </div>
             </div>
-        </div>
-          
-                  
-                    
-        <%}%>
 
+            <!--modal de horarios final-->
+
+        </div>
+
+
+        <%}%>
+    </div>
 </body>
 </html>

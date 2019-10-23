@@ -74,7 +74,7 @@
 
                      <div class="right">
                         
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal">
                         Entrar
                     </button>
                         
@@ -95,11 +95,11 @@
                                     <div class=" form-group">
                                         <input type="password" name="Senha" class="form-control" placeholder="Senha">
                                     </div>
-                                    <a href="Registro.html">Não possui uma conta?</a>
+                                    <a href="cadastro.html">Não possui uma conta?</a>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Seguir</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Seguir</button>
                                 </div>
 
                             </div>
@@ -294,11 +294,46 @@
 <p></p>
 <div id="rodape">
     <center>
-        <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
-        <img src="imagens/nomedosenvolvidos.png"  width="300px;">
+        <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto;">
+        <img src="imagens/nomedosenvolvidos.png"  style="max-width: 100%; height:auto;">
         <!---------------------MODAL  Entra---------------------->
 
-     
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mymodal1">
+            Área da Administração
+        </button>
+
+
+        <div class="modal fade" role="dialog" id="mymodal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Login</h2>
+                    </div>
+                    <form action="UsuarioAdmServletLogin" method="post"> 
+                        <div class="modal-body" align="left">
+                            Email:
+                            <div class=" form-group"> 
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
+
+
+                            </div>
+                            Senha:
+                            <div class=" form-group">
+                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
+                                <input type="submit" value="Entrar" class="btn-btn-default">
+                            </div>
+                    </form>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+
+                </div>
+
+            </div>
+        </div>
+</div>
 
 </center>
 

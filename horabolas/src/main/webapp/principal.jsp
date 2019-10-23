@@ -32,7 +32,7 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link " href="Agendamento.jsp">Agendamento</a>
+                        <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
                     </li>
 
                     <li class="nav-item">
@@ -51,6 +51,7 @@
                 </ul>
 
             </div>
+        </div>
 
     </nav>
     <!---------------------Fim NAVBAR---------------------->
