@@ -91,7 +91,7 @@
         <div class="imagens">
 
             <img class="quadraimg" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas"/>
-            <h5 class="card-title"><%=quadra.getNome()%></h5>
+            <h5 style="font-size: 50px;"class="card-title"><%=quadra.getNome()%></h5>
             <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
             <!--modal de horarios-->

@@ -41,6 +41,19 @@
         <servlet-name>UsuarioServletLogout</servlet-name>
         <servlet-class>com.br.horabolas.servlet.UsuarioServletLogout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuadraServletD</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.QuadraServletD</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuadraServletAlterar</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.QuadraServletAlterar</servlet-class>
+        <multipart-config>
+            <max-file-size>418018841</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>418018841</file-size-threshold>
+        </multipart-config>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
         <url-pattern>/UsuarioServletSA</url-pattern>
@@ -76,6 +89,14 @@
     <servlet-mapping>
         <servlet-name>UsuarioServletLogout</servlet-name>
         <url-pattern>/UsuarioServletLogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuadraServletD</servlet-name>
+        <url-pattern>/QuadraServletD</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuadraServletAlterar</servlet-name>
+        <url-pattern>/QuadraServletAlterar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
