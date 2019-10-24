@@ -134,6 +134,7 @@
                 <form action="AgendamentoServlet" method="post">
                     <div hidden>
                     <input type="text" name="pid" value="">
+                    <input type="text" id="idquadra" name="idquadra" value="<%=codigo%>">
                     </div>
                     <input type="submit" value="Agendar">
                 </form>

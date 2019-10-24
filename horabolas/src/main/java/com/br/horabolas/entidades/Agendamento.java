@@ -10,14 +10,11 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,7 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author mandin
+ * @author aluno
  */
 @Entity
 @Table(name = "agendamento")
@@ -43,8 +40,6 @@ public class Agendamento implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
-    @SequenceGenerator(name = "meugerador", sequenceName = "sq_agendamento")
     @Column(name = "ida")
     private Integer ida;
     @Column(name = "data_uso")
@@ -53,6 +48,9 @@ public class Agendamento implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "aprovacao")
     private String aprovacao;
+    @JoinColumn(name = "id_quadra_ida", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Quadras idQuadraIda;
     @JoinColumn(name = "id_usuario_ida", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Usuario idUsuarioIda;
@@ -88,6 +86,14 @@ public class Agendamento implements Serializable {
         this.aprovacao = aprovacao;
     }
 
+    public Quadras getIdQuadraIda() {
+        return idQuadraIda;
+    }
+
+    public void setIdQuadraIda(Quadras idQuadraIda) {
+        this.idQuadraIda = idQuadraIda;
+    }
+
     public Usuario getIdUsuarioIda() {
         return idUsuarioIda;
     }
@@ -120,5 +126,5 @@ public class Agendamento implements Serializable {
     public String toString() {
         return "com.br.horabolas.entidades.Agendamento[ ida=" + ida + " ]";
     }
-
+    
 }

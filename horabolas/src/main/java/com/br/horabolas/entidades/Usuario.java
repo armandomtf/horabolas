@@ -39,6 +39,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Usuario.findBySenha", query = "SELECT u FROM Usuario u WHERE u.senha = :senha")})
 public class Usuario implements Serializable {
 
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -121,5 +122,7 @@ public class Usuario implements Serializable {
     public String toString() {
         return "com.br.horabolas.entidades.Usuario[ id=" + id + " ]";
     }
+
+
 
 }

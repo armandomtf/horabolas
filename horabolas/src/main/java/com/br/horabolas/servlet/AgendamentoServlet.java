@@ -76,7 +76,10 @@ public class AgendamentoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String idtext = request.getParameter("pid");
+        Integer idq = Integer.parseInt(request.getParameter("idquadra"));
         Agendamento a = new Agendamento();
+        Quadras quadra = new Quadras();
+        quadra.setId(idq);
 
         if (!idtext.isEmpty()) {
             Integer id = Integer.parseInt(idtext);
@@ -90,6 +93,8 @@ public class AgendamentoServlet extends HttpServlet {
 
         Usuario usuario = (Usuario) request.getSession().getAttribute("UsuarioLogado");
         a.setIdUsuarioIda(usuario);
+        
+        a.setIdQuadraIda(quadra);
 
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
