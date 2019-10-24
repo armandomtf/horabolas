@@ -23,15 +23,18 @@ table, td {
 
 #divao{
     display: table-cell;
+    position: relative;
+    left: 7%;
+    width: 100%;
 }
 
 .imagens{
     width: 700px;
     height: 100%;
-    padding: 15px;
+    padding: 17px;
     background-color:white; 
     float: left;
-    margin: 5px;
+    margin: 20px;
     border-radius: 10px;
 }
 

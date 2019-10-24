@@ -131,31 +131,30 @@
 
                 <!--modal de horarios-->
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
-                    Escolha seu horario
-                </button>
+                <form action="AgendamentoServlet" method="post">
+                    <input type="submit" value="Agendar">
+                </form>
+                    <div class="modal fade" role="dialog" id="mymodal1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Divirta Se!</h2>
+                                </div>
+                                <div class="modal-body">
 
-                <div class="modal fade" role="dialog" id="mymodal1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2>Divirta Se!</h2>
-                            </div>
-                            <div class="modal-body">
+                                    <button> 8:00 as 10:00 </button>
+                                    <button> 10:00 as 12:00 </button>
+                                    <button> 13:00 as 15:00 </button>
+                                    <button> 15:00 as 17:00 </button>
+                                    <button> 17:00 as 19:00 </button>
+                                    <button> 19:00 as 21:00 </button>
 
-                                <button> 8:00 as 10:00 </button>
-                                <button> 10:00 as 12:00 </button>
-                                <button> 13:00 as 15:00 </button>
-                                <button> 15:00 as 17:00 </button>
-                                <button> 17:00 as 19:00 </button>
-                                <button> 19:00 as 21:00 </button>
-
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!--modal de horarios final-->
+                    <!--modal de horarios final-->
 
             </div>
 

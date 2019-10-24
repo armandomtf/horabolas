@@ -5,6 +5,7 @@
  */
 package com.br.horabolas.util;
 
+import com.br.horabolas.entidades.Agendamento;
 import com.br.horabolas.entidades.Quadras;
 import com.br.horabolas.entidades.Usuario;
 import com.br.horabolas.entidades.Usuarioadm;
@@ -37,6 +38,7 @@ public class HibernateUtil {
         cfg.addAnnotatedClass(Usuario.class);
         cfg.addAnnotatedClass(Usuarioadm.class);
         cfg.addAnnotatedClass(Quadras.class);
+        cfg.addAnnotatedClass(Agendamento.class);
         factory = cfg.buildSessionFactory();
     }
 

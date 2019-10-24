@@ -95,11 +95,11 @@
             <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
             <!--modal de horarios-->
-
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
-                Escolha seu horario
+            <form action="AgendamentoServlet" method="post">
+            <button type="button" type="submit">
+                Agendar
             </button>
-
+            </form>
             <div class="modal fade" role="dialog" id="mymodal1">
                 <div class="modal-dialog">
                     <div class="modal-content">
