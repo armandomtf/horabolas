@@ -40,7 +40,7 @@ public class AgendamentoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AgendamentoServlet</title>");            
+            out.println("<title>Servlet AgendamentoServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet AgendamentoServlet at " + request.getContextPath() + "</h1>");
@@ -75,12 +75,19 @@ public class AgendamentoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String idtext = request.getParameter("pid");
         Agendamento a = new Agendamento();
+
+        if (!idtext.isEmpty()) {
+            Integer id = Integer.parseInt(idtext);
+            a.setIda(id);
+        }
+
         a.setAprovacao("Em espera");
-        
+
         Date data = new Date();
         a.setDataUso(data);
-        
+
         Usuario usuario = (Usuario) request.getSession().getAttribute("UsuarioLogado");
         a.setIdUsuarioIda(usuario);
 
@@ -90,7 +97,7 @@ public class AgendamentoServlet extends HttpServlet {
         sessionRecheio.saveOrUpdate(a);
         tr.commit();
         sessionRecheio.close();
-        response.sendRedirect("agendamentoadm.jsp");
+        response.sendRedirect("agendamentousuario.jsp");
     }
 
     /**

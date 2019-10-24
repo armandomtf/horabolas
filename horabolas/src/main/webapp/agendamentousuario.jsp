@@ -132,6 +132,9 @@
                 <!--modal de horarios-->
 
                 <form action="AgendamentoServlet" method="post">
+                    <div hidden>
+                    <input type="text" name="pid" value="">
+                    </div>
                     <input type="submit" value="Agendar">
                 </form>
                     <div class="modal fade" role="dialog" id="mymodal1">
