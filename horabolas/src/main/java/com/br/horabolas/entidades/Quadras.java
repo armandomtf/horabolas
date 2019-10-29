@@ -36,12 +36,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Quadras.findByDescricao", query = "SELECT q FROM Quadras q WHERE q.descricao = :descricao")
     , @NamedQuery(name = "Quadras.findByExtensao", query = "SELECT q FROM Quadras q WHERE q.extensao = :extensao")})
 public class Quadras implements Serializable {
-
+    private static final long serialVersionUID = 1L;
     //@Lob
     @Column(name = "foto")
     private byte[] foto;
-
-    private static final long serialVersionUID = 1L;
     @Size(max = 40)
     @Column(name = "nome")
     private String nome;
@@ -90,7 +88,6 @@ public class Quadras implements Serializable {
         this.descricao = descricao;
     }
 
-
     public String getExtensao() {
         return extensao;
     }
@@ -132,5 +129,4 @@ public class Quadras implements Serializable {
         this.foto = foto;
     }
 
-    
 }

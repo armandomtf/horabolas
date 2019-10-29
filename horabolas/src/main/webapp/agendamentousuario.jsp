@@ -130,35 +130,39 @@
                 <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
                 <!--modal de horarios-->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+                    Escolha seu horario
+                </button>
 
-                <form action="AgendamentoServlet" method="post">
-                    <div hidden>
-                    <input type="text" name="pid" value="">
-                    <input type="text" id="idquadra" name="idquadra" value="<%=codigo%>">
-                    </div>
-                    <input type="submit" value="Agendar">
-                </form>
-                    <div class="modal fade" role="dialog" id="mymodal1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h2>Divirta Se!</h2>
-                                </div>
-                                <div class="modal-body">
+                <div class="modal fade" role="dialog" id="mymodal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Horários:</h2>
+                            </div>
+                            <div class="modal-body">
+                                <form action="AgendamentoServlet" method="post">
+                                    <div hidden> 
+                                        <input type="text" name="pid" value="">
+                                        <input type="text" id="idquadra" name="idquadra" value="<%=codigo%>">
+                                    </div> 
+                                    <select name="data_quadra">
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                    </select> 
+                                    <br> <br>
+                                    <input type="submit" value="Agendar">
+                                </form>
 
-                                    <button> 8:00 as 10:00 </button>
-                                    <button> 10:00 as 12:00 </button>
-                                    <button> 13:00 as 15:00 </button>
-                                    <button> 15:00 as 17:00 </button>
-                                    <button> 17:00 as 19:00 </button>
-                                    <button> 19:00 as 21:00 </button>
-
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!--modal de horarios final-->
+                <!--modal de horarios final-->
 
             </div>
 

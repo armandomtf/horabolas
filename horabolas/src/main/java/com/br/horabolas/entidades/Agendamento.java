@@ -10,11 +10,14 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,14 +36,17 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Agendamento.findAll", query = "SELECT a FROM Agendamento a")
     , @NamedQuery(name = "Agendamento.findByIda", query = "SELECT a FROM Agendamento a WHERE a.ida = :ida")
     , @NamedQuery(name = "Agendamento.findByDataUso", query = "SELECT a FROM Agendamento a WHERE a.dataUso = :dataUso")
-    , @NamedQuery(name = "Agendamento.findByAprovacao", query = "SELECT a FROM Agendamento a WHERE a.aprovacao = :aprovacao")})
+    , @NamedQuery(name = "Agendamento.findByAprovacao", query = "SELECT a FROM Agendamento a WHERE a.aprovacao = :aprovacao")
+    , @NamedQuery(name = "Agendamento.findByDataQuadra", query = "SELECT a FROM Agendamento a WHERE a.dataQuadra = :dataQuadra")})
 public class Agendamento implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "ida")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meugerador")
+    @SequenceGenerator(name = "meugerador", sequenceName = "sq_quadra")
+    @Column(name="ida")
     private Integer ida;
     @Column(name = "data_uso")
     @Temporal(TemporalType.TIMESTAMP)
@@ -48,6 +54,9 @@ public class Agendamento implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "aprovacao")
     private String aprovacao;
+    @Size(max = 2147483647)
+    @Column(name = "data_quadra")
+    private String dataQuadra;
     @JoinColumn(name = "id_quadra_ida", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Quadras idQuadraIda;
@@ -84,6 +93,14 @@ public class Agendamento implements Serializable {
 
     public void setAprovacao(String aprovacao) {
         this.aprovacao = aprovacao;
+    }
+
+    public String getDataQuadra() {
+        return dataQuadra;
+    }
+
+    public void setDataQuadra(String dataQuadra) {
+        this.dataQuadra = dataQuadra;
     }
 
     public Quadras getIdQuadraIda() {

@@ -87,6 +87,7 @@ public class AgendamentoServlet extends HttpServlet {
         }
 
         a.setAprovacao("Em espera");
+        a.setDataQuadra(request.getParameter("data_quadra"));
 
         Date data = new Date();
         a.setDataUso(data);
