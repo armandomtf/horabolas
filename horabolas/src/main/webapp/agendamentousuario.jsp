@@ -46,6 +46,23 @@
         </style>
 
     </head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+   
+    <script>
+$(function() {
+    $("#calendario").datepicker({
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+    });
+});
+</script>
+    
     <body>
 
 
@@ -82,6 +99,15 @@
                     </li>	
                 </ul>
             </div>
+            
+            <div class="left">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
+                    </li>	
+                </ul>
+            </div>
+
 
             <!---------------------MODAL  Entra---------------------->
             <div class="right">
@@ -146,6 +172,7 @@
                                         <input type="text" name="pid" value="">
                                         <input type="text" id="idquadra" name="idquadra" value="<%=codigo%>">
                                     </div> 
+                                    <p>Data: <input type="text" id="calendario" /></p>
                                     <select name="data_quadra">
                                         <option value="13:00">13:00</option>
                                         <option value="14:00">14:00</option>

@@ -59,42 +59,32 @@
 
     </nav>
     <!---------------------Fim NAVBAR---------------------->
+    
+    <center>
+<div class="jumbotron" style="margin-top: 150px">
 
-    <p></p>	
-    <!---------------------Carosel---------------------->
 
-    <div class="container-fluid" id="container-carousel">
-        <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="imagens/quadradocarmo.jpg" alt="Primeiro Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="imagens/ginasiopoliesportivo.jpg" alt="Segundo Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="imagens/quadracantodasaudade.jpg" alt="Terceiro Slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
-            </div>
+        <h1>Meus agendamentos</h1>
+        <table style="width:100%">
+ <div class="jumbotron" style="margin-top: 150px">
 
-        </div>
-    </div>
-    <!---------------------Fim Carosel---------------------->
+
+        <%
+            List<Quadras> listaq = QuadraControle.listarquadras();
+            request.setAttribute("meusagendamentos", listaq);
+        %>
+
+        <display:table id="myTABLE" name="agendamento">
+            <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
+            <display:column property="nome" title="Data"/>
+            <display:column property="descricao" title="Hora"/>
+            <display:column property="foto" title="Quadra"/>
+            <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />
+        </display:table>
+
+        
+</div>
+</center>
 
 
     <!-----------rodapé----------------->
