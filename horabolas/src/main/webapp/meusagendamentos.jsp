@@ -7,6 +7,7 @@
 <jsp:directive.page import="com.br.horabolas.entidades.*" />
 <jsp:directive.page import="com.br.horabolas.servlet.*" />
 <jsp:directive.page import="java.util.*" />
+<%@taglib uri="http://displaytag.sf.net" prefix="display"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,12 +39,12 @@
                     <li class="nav-item">
                         <a class="nav-link " href="a">Contato</a>
                     </li>	
-                
-                <li class="nav-item">
-                     <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
                     </li>	
                 </ul>
-                
+
                 <ul class="navbar-nav ml-auto">
                     <!---------------------MODAL  Entra---------------------->
                     <%
@@ -59,49 +60,50 @@
 
     </nav>
     <!---------------------Fim NAVBAR---------------------->
-    
-    <center>
-<div class="jumbotron" style="margin-top: 150px">
+
+<center>
+    <div class="jumbotron" style="margin-top: 150px">
 
 
         <h1>Meus agendamentos</h1>
         <table style="width:100%">
- <div class="jumbotron" style="margin-top: 150px">
+            <div class="jumbotron" style="margin-top: 150px">
 
 
-        <%
-            List<Quadras> listaq = QuadraControle.listarquadras();
-            request.setAttribute("meusagendamentos", listaq);
-        %>
-
-        <display:table id="myTABLE" name="agendamento">
-            <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
-            <display:column property="nome" title="Data"/>
-            <display:column property="descricao" title="Hora"/>
-            <display:column property="foto" title="Quadra"/>
-            <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />
-        </display:table>
-
-        
-</div>
-</center>
-
-
-    <!-----------rodapé----------------->
-    <p></p>
-    <div id="rodape">
-        <center>
-            <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
-            <img src="imagens/nomedosenvolvidos.png"  width="300px;">
-        </center>
+                <%
+                    List<Agendamento> listaag = AgendamentoControle.listaragendamentos();
+                    request.setAttribute("meusagendamentos", listaag);
+                    Agendamento a = new Agendamento();
+                %>
+                <display:table id="myTABLE" name="meusagendamentos">
+                    <display:column property="data_quadra" title="Nome"/>
+                    <display:column property="data_uso" title="Descricao"/>
+                    <display:column property="<%=a.getIdQuadraIda().getNome()%>" title="quadra"/>
+                    <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />
+                </display:table>
 
 
 
-    </div>
 
-    <!-----------Fim do rodapé-------------------------->
+            </div>
+            </center>
+
+
+            <!-----------rodapé----------------->
+            <p></p>
+            <div id="rodape">
+                <center>
+                    <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
+                    <img src="imagens/nomedosenvolvidos.png"  width="300px;">
+                </center>
 
 
 
-</body>
-</html>
+            </div>
+
+            <!-----------Fim do rodapé-------------------------->
+
+
+
+            </body>
+            </html>

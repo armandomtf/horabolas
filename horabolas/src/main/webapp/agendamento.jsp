@@ -23,17 +23,6 @@
         <link rel="stylesheet" type="text/css"  href="estilo.css" />
 
         <style>
-            * {
-                box-sizing: border-box;
-            }
-
-            .left{
-
-                padding: 20px;
-                float: left;
-                width: 20%;
-                margin-right: 50px;
-            }
 
             .right{
 
@@ -43,117 +32,171 @@
                 margin-left: 500px; 
             }
 
-        </style>
-
-    </head>
-    <body>
+            function myFunction() {
+                alert("Hello! I am an alert box!");
 
 
-        <!---------------------NAVBAR---------------------->
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-            <div class="left">
+            </style>
+
+        </head>
+        <body>
+
+
+            <!---------------------NAVBAR---------------------->
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
                 <div class="container">
 
+
                     <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
-                </div>
+                    <ul class="navbar-nav mr-auto">
 
-            </div>
-
-            <div class="left">
-
-                <ul class="navbar-nav mr-auto">
-                    <div id="borda">
                         <li class="nav-item">
-                            <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
+                            <a class="nav-link " href="agendamento.jsp">Agendamento</a>
                         </li>
-                    </div>
-                </ul>
 
+                        <li class="nav-item">
+                            <a class="nav-link " href="a">Contato</a>
+                        </li>	
 
-            </div>
+                    </ul>
 
-            <div class="left">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link " href="a">Contato</a>
-
-                    </li>	
-                </ul>
-            </div>
-
-            <!---------------------MODAL  Entra---------------------->
-            <div class="right">
-
-                <ul class="navbar-nav ml-auto">
                     <ul class="navbar-nav ml-auto">
                         <!---------------------MODAL  Entra---------------------->
-                        
-                        <!---------------------Final MODAL Entra---------------------->
-                    </ul>
-                </ul>
+
+                        <div class="right">
+
+                            <button type="button" class="btn btn-default" alt="Entrar" data-toggle="modal" data-target="#mymodal">
+                                Entrar
+                            </button>
+
+                        </div>
+
+                        <div class="modal fade" role="dialog" id="mymodal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2>Login</h2>
+                                    </div>
+                                    <form action="UsuarioServletLogin" method="post"> 
+                                        <div class="modal-body">
+                                            Email:
+                                            <div class=" form-group"> 
+                                                <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
+
+
+                                            </div>
+                                            Senha:
+                                            <div class=" form-group">
+                                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
+                                                <input type="submit" value="Entrar" class="btn-btn-default">
+                                            </div>
+                                    </form>
+
+
+                                    <a href="cadastro.html">Não possui uma conta?</a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+
                 <!---------------------Final MODAL Entra---------------------->
-                </ul>
-                </ul>
-
-            </div>
-
-        </nav>
-        <!---------------------Fim NAVBAR---------------------->
-
-        <p></p>	
-
-        <!---------------------Cards---------------------->
-        <div id="divao">
-            <%
-                List<Quadras> lista = QuadraControle.listarquadras();
-                request.setAttribute("quadras", lista);
-                for (Iterator it = lista.iterator(); it.hasNext();) {
-
-                    Quadras quadra = (Quadras) it.next();
-                    String codigo = quadra.getId().toString();
-                    byte[] imagem = quadra.getFoto();
-                    String quadraFoto = Base64.getEncoder().encodeToString(imagem);
-
-
-            %>
-
-            <div class="imagens">
-
-                <img class="quadraimg" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas"/>
-                <h5 class="card-title"><%=quadra.getNome()%></h5>
-                <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
-
-                <!--modal de horarios-->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
-                    Escolha seu horario
-                </button>
-                <!--modal de horarios final-->
-
-            </div>
-
-
-            <%}%>
-        </div>
-        <!-------------------------->
-
-        <!---------------------Fim Cards---------------------->
-
-
-        <!-----------rodapé----------------->
-        <p></p>
-        <div id="rodape">
-            <center>
-                <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto; width:300px;"/>
-                <img src="imagens/nomedosenvolvidos.png"  width="300px;">
-            </center>
-
-
+            </ul>
 
         </div>
+    </div>
 
-        <!-----------Fim do rodapé-------------------------->
+</nav>
+<!---------------------Fim NAVBAR---------------------->
 
-    </body>
+<p></p>	
+
+<!---------------------Cards---------------------->
+<div id="divao">
+    <%
+        List<Quadras> lista = QuadraControle.listarquadras();
+        request.setAttribute("quadras", lista);
+        for (Iterator it = lista.iterator(); it.hasNext();) {
+
+            Quadras quadra = (Quadras) it.next();
+            String codigo = quadra.getId().toString();
+            byte[] imagem = quadra.getFoto();
+            String quadraFoto = Base64.getEncoder().encodeToString(imagem);
+
+
+    %>
+
+    <div class="imagens">
+
+        <img class="quadraimg" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas"/>
+        <h5 class="card-title"><%=quadra.getNome()%></h5>
+        <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
+
+        <!--modal de horarios-->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+            Escolha seu horario
+        </button>
+
+        <div class="modal fade" role="dialog" id="mymodal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Horários:</h2>
+                    </div>
+
+                    <center>
+                        <input type="button" name="data_quadra" value="13:00">
+                        <input type="button" name="data_quadra" value="14:00">
+                        <input type="button" name="data_quadra" value="15:00">
+                        <input type="button" name="data_quadra" value="16:00"><br> <br>
+                        <input type="button" name="data_quadra" value="17:00"> 
+                        <br> <br>
+                        <input type="submit" onclick="myFunction()" value="Agendar">
+                        <b></b>
+                        <script>
+                            function myFunction() {
+                                alert("Você precisa cadastrar-se no nosso site. Clique no botão 'Entrar' no topo do site.");
+
+                            }
+                        </script>
+                    </center>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal de horarios final-->
+
+</div>
+
+
+<%}%>
+</div>
+<!-------------------------->
+
+<!---------------------Fim Cards---------------------->
+
+
+<!-----------rodapé----------------->
+<p></p>
+<div id="rodape">
+    <center>
+        <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto; width:300px;"/>
+        <img src="imagens/nomedosenvolvidos.png"  width="300px;">
+    </center>
+
+
+
+</div>
+
+<!-----------Fim do rodapé-------------------------->
+
+</body>
 </html>

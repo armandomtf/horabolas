@@ -103,7 +103,7 @@ public class AgendamentoServlet extends HttpServlet {
         sessionRecheio.saveOrUpdate(a);
         tr.commit();
         sessionRecheio.close();
-        response.sendRedirect("agendamentousuario.jsp");
+        response.sendRedirect("meusagendamentos.jsp");
     }
 
     /**
