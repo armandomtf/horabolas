@@ -21,6 +21,22 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css"  href="estilo.css" />
+    
+    <style>
+        #tamanho{
+            height: 570px;
+            width: 500px;
+            background-color: #d9d9d9;  
+        }
+        
+         #tamanho2{
+            height: 800px;
+            width: 100%;
+            background-color: #FFF2020;  
+        }
+        
+        
+    </style>
 </head>
 <body background="imagens/fundotelaregistro.jpg">
 
@@ -75,19 +91,22 @@
     </nav>
     <!---------------------Fim NAVBAR---------------------->
 <center>
-    <div class="jumbotron" style="margin-top: 150px">
+    <div id="tamanho2" class="jumbotron" style="margin-top: 40px">
+        
+        <h1>Cadastre uma nova quadra!</h1><br>
 
-
-        <h1>Cadastre uma nova quadra!</h1>
+        <div id="tamanho" class="jumbotron">
+       
         <form action="QuadraServlet" method="post" enctype="multipart/form-data">
             <div hidden>
                 ID<input type="text" name="pid" value="">
             </div>
-            Nome:<input type="text" name="nome" placeholder="Nome da Quadra"><br><br>
-            Descrição:<textarea name="descricao" placeholder="Descrição da Quadra" rows="4" cols="50"></textarea><br><br>
-            Foto:<input type="file" name="foto"><br><br> 
+            Nome:<br> <input type="text" name="nome" placeholder="Nome da Quadra"><br><br>
+            Descrição:<br> <textarea name="descricao" placeholder="Descrição da Quadra" rows="4" cols="25"></textarea><br><br>
+            Foto:<br> <input type="file" name="foto"><br><br> 
             <input type="submit" value="Enviar">
         </form>
+        </div>
     </div>
 </center>
 </body>

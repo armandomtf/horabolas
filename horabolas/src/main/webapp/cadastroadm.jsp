@@ -21,6 +21,22 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css"  href="estilo.css" />
+
+    <style>
+        #tadm{
+            height: 350px;
+            width: 590px;
+            background-color: #d9d9d9;  
+        }
+
+        #tadm2{
+            height: 650px;
+            width: 100%;
+            background-color: #FFF2020;  
+        }
+
+
+    </style>
 </head>
 <body background="imagens/fundotelaregistro.jpg">
 
@@ -73,15 +89,17 @@
     </nav>
     <!---------------------Fim NAVBAR---------------------->
 <center>
-    <div class="jumbotron" style="margin-top: 150px">
+    <div id="tadm2" class="jumbotron" style="margin-top: 40px">
+        <h1>Cadastrar um novo administrador</h1><br>
 
+        <div id="tadm" class="jumbotron">
 
-        <h1>Cadastrar um novo administrador</h1>
-        <form method="post" action="UsuarioAdmServletSA">
-            Email:<input type="email" name="email"><br><br>
-            Nome: <input type="text" name="nome"><br><br>
-            Senha: <input type="password" name="senha"><br><br>
-            <input type="submit"></form>
+            <form method="post" action="UsuarioAdmServletSA">
+                Email:<input type="email" name="email"><br><br>
+                Nome: <input type="text" name="nome"><br><br>
+                Senha: <input type="password" name="senha"><br><br>
+                <input type="submit"></form>
+        </div>
     </div>
 </center>
 </body>
