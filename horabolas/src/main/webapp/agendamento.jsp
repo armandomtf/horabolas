@@ -32,9 +32,7 @@
                 margin-left: 500px; 
             }
 
-            function myFunction() {
-                alert("Hello! I am an alert box!");
-            }
+           
 
 
             </style>
@@ -45,33 +43,40 @@
 
             <!---------------------NAVBAR---------------------->
             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-
+                
+                
+                <div class="left">
                 <div class="container">
 
 
                     <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
                     <ul class="navbar-nav mr-auto">
+                        
+                </div>
+                </div>
+                
+                <div class="left">
 
-                        <li class="nav-item">
+                        <div class="nav-item">
                             <a class="nav-link" href="agendamento.jsp">Agendamento</a>
-                        </li>
+                        </div>
+                        
+                </div>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="a">Contato</a>
-                        </li>	
+                        
 
                     </ul>
 
                     <ul class="navbar-nav ml-auto">
                         <!---------------------MODAL  Entra---------------------->
 
-                        <div class="right">
+                     
 
                             <button type="button" class="btn btn-default" alt="Entrar" data-toggle="modal" data-target="#mymodal">
                                 Entrar
                             </button>
 
-                        </div>
+                       
 
                         <div class="modal fade" role="dialog" id="mymodal">
                             <div class="modal-dialog">
@@ -188,8 +193,8 @@
 <p></p>
 <div id="rodape">
     <center>
-        <img src="imagens/logonaoumgruposomosumtime.png" style="max-width: 100%; height:auto; width:300px;"/>
-        <img src="imagens/nomedosenvolvidos.png"  width="300px;">
+        <img src="imagens/logonaoumgruposomosumtime.png" id="imgrodape""/>
+        <img src="imagens/nomedosenvolvidos.png"  id="imgrodape"">
     </center>
 
 

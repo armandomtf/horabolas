@@ -22,32 +22,34 @@
 
         <!---------------------NAVBAR---------------------->
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            
+            
+           <div class="left">
+                <div class="container">
 
-            <div class="container">
+
+                    <a href="principalamd.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
 
 
-                <a href="principaladm.jsp"> <<img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
-                <ul class="navbar-nav mr-auto">
-
-                    <li class="nav-item">
+                </div>
+            </div>
+                
+                    
+                    <div class="nav-item">
                         <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link " href="a">Contato</a>
-                    </li>	
-                    <li class="nav-item">
+                    </div>
+	
+                    <div class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
-                    </li>
+                    </div>
 
-                    <li class="nav-item">
+                    <div class="nav-item">
                         <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
-                    </li>
-                    <li class="nav-item">
+                    </div>
+                    <div class="nav-item">
                         <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
-                    </li>
-                </ul>
+                    </div>
+               
 
                 <ul class="navbar-nav ml-auto">
                     <!---------------------MODAL  Entra---------------------->
@@ -106,8 +108,8 @@
     <p></p>
     <div id="rodape">
         <center>
-            <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
-            <img src="imagens/nomedosenvolvidos.png"  width="300px;">
+            <img src="imagens/logonaoumgruposomosumtime.png" id="imgrodape">
+            <img src="imagens/nomedosenvolvidos.png"  id="imgrodape">
         </center>
 
 

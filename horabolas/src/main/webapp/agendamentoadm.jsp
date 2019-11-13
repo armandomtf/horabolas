@@ -29,32 +29,32 @@
         <!---------------------NAVBAR---------------------->
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark ">
 
-            <div class="container">
+          <div class="left">
+                <div class="container">
 
 
-                <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
+                    <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
 
-                <ul class="navbar-nav mr-auto">
-                    <div id="borda">
-                        <li class="nav-item">
-                            <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
-                        </li>
+
+                </div>
+            </div>
+                
+                    
+                    <div class="nav-item">
+                        <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
+                    </div>
+	
+                    <div class="nav-item">
+                        <a class="nav-link " href="listar.jsp">CRUD</a>
                     </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link " href="a">Contato</a>
-                    </li>	
-                    <li class="nav-item">
-                        <a class="nav-link " href="listar.jsp">CRUD</a>
-                    </li>
-
-                    <li class="nav-item">
+                    <div class="nav-item">
                         <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
-                    </li>
-                    <li class="nav-item">
+                    </div>
+                    <div class="nav-item">
                         <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
-                    </li>
-                </ul>
+                    </div>
+               
 
                 <ul class="navbar-nav ml-auto">
                     <ul class="navbar-nav ml-auto">

@@ -25,91 +25,97 @@
         <!---------------------NAVBAR---------------------->
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-            <div class="container">
+
+            <div class="left">
+                <div class="container">
 
 
-                <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
-                <ul class="navbar-nav mr-auto">
+                    <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link " href="a">Contato</a>
-                    </li>	
-                
-                <li class="nav-item">
-                     <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
-                    </li>	
-                </ul>
-                
-                <ul class="navbar-nav ml-auto">
-                    <!---------------------MODAL  Entra---------------------->
-                    <%
-                        Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
-                    %>
-                    <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
-                    <a href="UsuarioServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
-                    <!---------------------Final MODAL Entra---------------------->
-                </ul>
-
-            </div>
-        </div>
-
-    </nav>
-    <!---------------------Fim NAVBAR---------------------->
-
-    <p></p>	
-    <!---------------------Carosel---------------------->
-
-    <div class="container-fluid" id="container-carousel">
-        <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="imagens/quadradocarmo.jpg" alt="Primeiro Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="imagens/ginasiopoliesportivo.jpg" alt="Segundo Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="imagens/quadracantodasaudade.jpg" alt="Terceiro Slide">
-                    </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
             </div>
+
+            <div class="left">
+                <div class="nav-item">
+                    <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
+                </div>
+            </div>
+
+
+            <div class="left">
+                <div class="nav-item">
+                    <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
+                </div>
+            </div>
+
+
+            <ul class="navbar-nav ml-auto">
+                <!---------------------MODAL  Entra---------------------->
+                <%
+                    Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
+                %>
+                <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
+                <a href="UsuarioServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+                <!---------------------Final MODAL Entra---------------------->
+            </ul>
 
         </div>
     </div>
-    <!---------------------Fim Carosel---------------------->
 
+</nav>
+<!---------------------Fim NAVBAR---------------------->
 
-    <!-----------rodapé----------------->
-    <p></p>
-    <div id="rodape">
-        <center>
-            <img src="imagens/logonaoumgruposomosumtime.png" width="300px;">
-            <img src="imagens/nomedosenvolvidos.png"  width="300px;">
-        </center>
+<p></p>	
+<!---------------------Carosel---------------------->
 
-
+<div class="container-fluid" id="container-carousel">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="imagens/quadradocarmo.jpg" alt="Primeiro Slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="imagens/ginasiopoliesportivo.jpg" alt="Segundo Slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="imagens/quadracantodasaudade.jpg" alt="Terceiro Slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
 
     </div>
+</div>
+<!---------------------Fim Carosel---------------------->
 
-    <!-----------Fim do rodapé-------------------------->
+
+<!-----------rodapé----------------->
+<p></p>
+<div id="rodape">
+    <center>
+        <img src="imagens/logonaoumgruposomosumtime.png" id="imgrodape">
+        <img src="imagens/nomedosenvolvidos.png"  id="imgrodape">
+    </center>
+
+
+
+</div>
+
+<!-----------Fim do rodapé-------------------------->
 
 
 
