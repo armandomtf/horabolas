@@ -114,6 +114,7 @@
 
                 Quadras quadra = (Quadras) it.next();
                 String codigo = quadra.getId().toString();
+                System.out.println(codigo);
                 byte[] imagem = quadra.getFoto();
                 String quadraFoto = Base64.getEncoder().encodeToString(imagem);
 
@@ -127,11 +128,11 @@
             <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
             <!--modal de horarios-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%=codigo%>">
                 Escolha seu horario
             </button>
 
-            <div class="modal fade" role="dialog" id="mymodal1">
+            <div class="modal fade" role="dialog" id="<%=codigo%>">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -139,9 +140,9 @@
                         </div>
                         <div class="modal-body">
                             <form action="AgendamentoServlet" method="post">
-                                <div hidden> 
+                                <div > 
                                     <input type="text" name="pid" value="">
-                                    <input type="text" id="idquadra" name="idquadra" value="<%=codigo%>">
+                                    <input type="text" name="idquadra" value="<%=codigo%>">
                                 </div> 
                                 <center>
                                     <select name="data_quadra">
@@ -153,8 +154,7 @@
                                     </select> 
                                     <br> <br>
                                     <input type="submit" value="Agendar">
-
-
+                                    </form>
                                 </center>
 
                         </div>
@@ -162,12 +162,12 @@
                 </div>
             </div>
 
-            <!--modal de horarios final-->
 
         </div>
-
-
+        <!--modal de horarios final-->
         <%}%>
+
+
     </div>
     <!-------------------------->
 

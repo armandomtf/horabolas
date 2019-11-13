@@ -69,16 +69,21 @@
 
 
                 <%
-                    Quadras q = new Quadras();
                     List<Agendamento> listaag = AgendamentoControle.listaragendamentos(usuario.getId());
                     
                     request.setAttribute("meusagendamentos", listaag);
                     
                     
+                    
                     for (Iterator it = listaag.iterator(); it.hasNext();) {
 
                         Agendamento a = (Agendamento) it.next();
+                        Quadras q = a.getIdQuadraIda();
+                        System.out.println(q);
                 %>
+               
+                
+                
                 <div class="agendamentos">
                 Horário da quadra:
                 <p><%=a.getDataQuadra()%></p>
@@ -86,7 +91,8 @@
                 <p><%=a.getAprovacao()%></p>
                 Data do agendamento:
                 <p><%=a.getDataUso()%></p>
-
+                Quadra:
+                <p><%=q.getNome()%></p>
                 </div>
                 <%}%>
 
