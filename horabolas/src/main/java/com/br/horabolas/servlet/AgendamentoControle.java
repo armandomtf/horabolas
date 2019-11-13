@@ -23,7 +23,6 @@ public class AgendamentoControle {
         }
     }
 
-
     //Localiza um usuario pelo id
     public static Quadras buscar(Integer id) {
         String idQuadra = id.toString();
@@ -36,16 +35,25 @@ public class AgendamentoControle {
         return quadra;
     }
 
-        public static List<Agendamento> listaragendamentos() {
+    public static List<Agendamento> listaragendamentos(Integer idUsuario) {
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();
-        String hql = "from Agendamento a";
+        String hql = "from Agendamento a where a.idUsuarioIda.id=" + idUsuario.toString();
         List<Agendamento> lista = (List) sessionRecheio.createQuery(hql).list();
         tr.commit();
         return lista;
     }
 
+    public static List<Quadras> listarquadrasagendadas(Integer idQuadra) {
+        Session sessionRecheio;
+        sessionRecheio = HibernateUtil.getSession();
+        Transaction tr = sessionRecheio.beginTransaction();
+        String hql = "from Agendamento a where a.idQuadraIda.id=" + idQuadra.toString();
+        List<Quadras> lista = (List) sessionRecheio.createQuery(hql).list();
+        tr.commit();
+        return lista;
+    }
 
     //Função de apagar um usuario
     public static boolean deletarq(Quadras quadra) {

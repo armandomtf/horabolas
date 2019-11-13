@@ -1,5 +1,3 @@
-
-
 <%@page import="org.hibernate.Session"%>
 <%@page import="org.hibernate.Transaction"%>
 <%@page import="com.br.horabolas.util.HibernateUtil"%>
@@ -67,23 +65,30 @@
 
         <h1>Meus agendamentos</h1>
         <table style="width:100%">
-            <div class="jumbotron" style="margin-top: 150px">
+            <div class="jumbotron" style="margin-top: 10px">
 
 
                 <%
-                    List<Agendamento> listaag = AgendamentoControle.listaragendamentos();
+                    Quadras q = new Quadras();
+                    List<Agendamento> listaag = AgendamentoControle.listaragendamentos(usuario.getId());
+                    
                     request.setAttribute("meusagendamentos", listaag);
-                    Agendamento a = new Agendamento();
+                    
+                    
+                    for (Iterator it = listaag.iterator(); it.hasNext();) {
+
+                        Agendamento a = (Agendamento) it.next();
                 %>
-                <display:table id="myTABLE" name="meusagendamentos">
-                    <display:column property="data_quadra" title="Nome"/>
-                    <display:column property="data_uso" title="Descricao"/>
-                    <display:column property="<%=a.getIdQuadraIda().getNome()%>" title="quadra"/>
-                    <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />
-                </display:table>
+                <div class="agendamentos">
+                Horário da quadra:
+                <p><%=a.getDataQuadra()%></p>
+                Status:
+                <p><%=a.getAprovacao()%></p>
+                Data do agendamento:
+                <p><%=a.getDataUso()%></p>
 
-
-
+                </div>
+                <%}%>
 
             </div>
             </center>

@@ -144,17 +144,17 @@
                                     <input type="text" id="idquadra" name="idquadra" value="<%=codigo%>">
                                 </div> 
                                 <center>
-                                    
-                                    
-                                        <input type="button" name="data_quadra" value="13:00">
-                                        <input type="button" name="data_quadra" value="14:00">
-                                        <input type="button" name="data_quadra" value="15:00">
-                                        <input type="button" name="data_quadra" value="16:00"><br> <br>
-                                        <input type="button" name="data_quadra" value="17:00"> 
+                                    <select name="data_quadra">
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                    </select> 
                                     <br> <br>
                                     <input type="submit" value="Agendar">
-                                 
-                                   
+
+
                                 </center>
 
                         </div>

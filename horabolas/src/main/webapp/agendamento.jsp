@@ -34,7 +34,7 @@
 
             function myFunction() {
                 alert("Hello! I am an alert box!");
-
+            }
 
 
             </style>
@@ -53,11 +53,11 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link " href="agendamento.jsp">Agendamento</a>
+                            <a class="nav-link" href="agendamento.jsp">Agendamento</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="a">Contato</a>
+                            <a class="nav-link" href="a">Contato</a>
                         </li>	
 
                     </ul>
