@@ -28,7 +28,7 @@
                 <div class="container">
 
 
-                    <a href="principalamd.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
+                    <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
 
 
                 </div>

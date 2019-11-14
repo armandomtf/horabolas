@@ -67,7 +67,7 @@
                         <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
                     </div>
                     <div class="nav-item">
-                        <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
+                        <a class="nav-link " href="cadastroquadras.jsp">Quadrastro</a>
                     </div>
                
 
@@ -88,9 +88,9 @@
 </nav>
 <!---------------------Fim NAVBAR---------------------->
 <center id="rodape">
-    <div id="tadm2" class="jumbotron" style="margin-top: 40px">
+    <div id="tadm2" class="jumbotron" style="margin-top: 20px">
 
-        <h1>Cadastre uma nova quadra!</h1><br>
+        <h1>Quadrastro</h1><br>
 
         <div id="tamanho" class="jumbotron">
 
