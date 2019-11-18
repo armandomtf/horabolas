@@ -24,7 +24,7 @@
 
     <style>
         #tamanho{
-            height: 570px;
+            height: 400px;
             width: 500px;
             background-color: #d9d9d9;  
         }
@@ -99,11 +99,13 @@
                     ID<input type="text" name="pid" value="">
                 </div>
                 Nome:<br> <input type="text" name="nome" placeholder="Nome da Quadra"><br><br>
-                Descrição:<br> <textarea name="descricao" placeholder="Descrição da Quadra" rows="4" cols="25"></textarea><br><br>
+                Descrição:<br> <textarea name="descricao" placeholder="Descrição da Quadra" rows="2" cols="20"></textarea><br><br>
                 Foto:<br> <input type="file" name="foto"><br><br> 
                 <input type="submit" value="Enviar">
             </form>
+            
         </div>
+        
     </div>
 </center>
 </body>
