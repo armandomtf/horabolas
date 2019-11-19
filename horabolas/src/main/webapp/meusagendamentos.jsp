@@ -22,25 +22,26 @@
     <body>
 
         <!---------------------NAVBAR---------------------->
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-            <div class="left">
-                <div class="container">
+	<div class="container">
 
+		
+            <a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-                    <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
-                    <ul class="navbar-nav mr-auto">
+<ul class="navbar-nav mr-auto">
 
-                </div>
-            </div>
+	<li class="nav-item">
+		<a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
+	</li>
+        
+        <li class="nav-item">
+		<a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
+	</li>
 
+</ul>
 
-            <div class="nav-item">
-                <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
-            </div>	
-
-
-            <ul class="navbar-nav ml-auto">
+<ul class="navbar-nav ml-auto">
                 <!---------------------MODAL  Entra---------------------->
                 <%
                     Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");

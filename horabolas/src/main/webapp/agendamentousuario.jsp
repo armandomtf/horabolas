@@ -86,14 +86,13 @@
 
 
             <ul class="navbar-nav ml-auto">
-                <!---------------------MODAL  Entra---------------------->
-                <%
-                    Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
-                %>
-                <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
-
-                <a href="UsuarioServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
-                <!---------------------Final MODAL Entra---------------------->
+               <!---------------------MODAL  Entra---------------------->
+                    <%
+                        Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
+                    %>
+                    <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
+                    <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+                    <!---------------------Final MODAL Entra---------------------->
             </ul>
 
         </div>
@@ -139,7 +138,7 @@
                     </div>
                     <div class="modal-body">
                         <form action="AgendamentoServlet" method="post">
-                            <div > 
+                            <div hidden> 
                                 <input type="text" name="pid" value="">
                                 <input type="text" name="idquadra" value="<%=codigo%>">
                             </div> 

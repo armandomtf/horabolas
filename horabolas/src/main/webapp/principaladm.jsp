@@ -21,37 +21,38 @@
     <body>
 
         <!---------------------NAVBAR---------------------->
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            
-            
-           <div class="left">
-                <div class="container">
+          <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
+	<div class="container">
 
-                    <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
+		
+            <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
+<ul class="navbar-nav mr-auto">
 
-                </div>
-            </div>
-                
-                    
-                    <div class="nav-item">
-                        <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
-                    </div>
-	
-                    <div class="nav-item">
-                        <a class="nav-link " href="listar.jsp">CRUD</a>
-                    </div>
+	<li class="nav-item">
+		<a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
+	</li>
 
-                    <div class="nav-item">
-                        <a class="nav-link " href="cadastroadm.jsp">Cadastrar ADM</a>
-                    </div>
-                    <div class="nav-item">
-                        <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
-                    </div>
-               
+	<li class="nav-item">
+		<a class="nav-link " href="listar.jsp">CRUD</a>
+	</li>
+        
+        <li class="nav-item">
+		<a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
+	</li>
 
-                <ul class="navbar-nav ml-auto">
+ <li class="nav-item">
+		<a class="nav-link " href="cadastroadm">Cadastro ADM</a>
+	</li>
+ <li class="nav-item">
+		<a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
+	</li>
+
+</ul>
+
+<ul class="navbar-nav ml-auto">
+
                     <!---------------------MODAL  Entra---------------------->
                     <%
                         Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");

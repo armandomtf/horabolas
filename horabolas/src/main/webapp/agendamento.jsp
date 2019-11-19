@@ -40,38 +40,30 @@
         </head>
         <body>
 
-
             <!---------------------NAVBAR---------------------->
-            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-                
-                
-                <div class="left">
-                <div class="container">
+             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
+	<div class="container">
 
-                    <a href="index.html"> <img  src="imagens/logo.png" width="120px" alt="Logo Hora "  title="HoraBolas"/>  </a>
-                    <ul class="navbar-nav mr-auto">
-                        
-                </div>
-                </div>
-                
-                <div class="left">
+		
+            <a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-                        <div class="nav-item">
-                            <a class="nav-link" href="agendamento.jsp">Agendamento</a>
-                        </div>
-                        
-                </div>
+<ul class="navbar-nav mr-auto">
 
-                        
+	<li class="nav-item">
+		<a class="nav-link " href="agendamento.jsp">Agendamento</a>
+	</li>
+        
+        <li class="nav-item">
+		<a class="nav-link " href="semagendamento.html">Meus agendamentos</a>
+	</li>
 
-                    </ul>
+</ul>
 
-                    <ul class="navbar-nav ml-auto">
+<ul class="navbar-nav ml-auto">
                         <!---------------------MODAL  Entra---------------------->
 
                      
-
                             <button type="button" class="btn btn-default" alt="Entrar" data-toggle="modal" data-target="#mymodal">
                                 Entrar
                             </button>
@@ -122,6 +114,9 @@
 
 <p></p>	
 
+
+<p></p>	
+
 <!---------------------Cards---------------------->
 <div id="divao">
     <%
@@ -131,6 +126,7 @@
 
             Quadras quadra = (Quadras) it.next();
             String codigo = quadra.getId().toString();
+            System.out.println(codigo);
             byte[] imagem = quadra.getFoto();
             String quadraFoto = Base64.getEncoder().encodeToString(imagem);
 
@@ -144,45 +140,46 @@
         <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
         <!--modal de horarios-->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal1">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%=codigo%>">
             Escolha seu horario
         </button>
 
-        <div class="modal fade" role="dialog" id="mymodal1">
+        <div class="modal fade" role="dialog" id="<%=codigo%>">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2>Horários:</h2>
                     </div>
+                    <div class="modal-body">
+                        <form action="AgendamentoServlet" method="post">
+                            <div hidden> 
+                                <input type="text" name="pid" value="">
+                                <input type="text" name="idquadra" value="<%=codigo%>">
+                            </div> 
+                            <center>
+                                <select name="data_quadra">
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                </select> 
+                                <br> <br>
+                                <input type="submit" value="Agendar">
+                                </form>
+                            </center>
 
-                    <center>
-                        <input type="button" name="data_quadra" value="13:00">
-                        <input type="button" name="data_quadra" value="14:00">
-                        <input type="button" name="data_quadra" value="15:00">
-                        <input type="button" name="data_quadra" value="16:00"><br> <br>
-                        <input type="button" name="data_quadra" value="17:00"> 
-                        <br> <br>
-                        <input type="submit" onclick="myFunction()" value="Agendar">
-                        <b></b>
-                        <script>
-                            function myFunction() {
-                                alert("Você precisa cadastrar-se no nosso site. Clique no botão 'Entrar' no topo do site.");
-
-                            }
-                        </script>
-                    </center>
-
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
-
     <!--modal de horarios final-->
+    <%}%>
 
-</div>
 
-
-<%}%>
 </div>
 <!-------------------------->
 
