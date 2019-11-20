@@ -9,7 +9,7 @@ body {
     height: 100%;
     position: absolute;
     background-color:#343a40; 
-    
+
 }
 
 table, td {
@@ -54,4 +54,13 @@ table, td {
 
 #imgrodape{
     width: 200px;
+}
+
+.formulario{
+    display: grid;
+    width: 20%;
+}
+
+.butao{
+    margin-top:20px;
 }

@@ -15,7 +15,7 @@
     <head>
         <title>Horabolas-Agendamento</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width-device-width", initial-scale-1.0>
+        <meta name="viewport" content="width-device-width" initial-scale-1.0>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -32,82 +32,83 @@
                 margin-left: 500px; 
             }
 
-           
 
 
-            </style>
 
-        </head>
-        <body>
+        </style>
 
-            <!---------------------NAVBAR---------------------->
-             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    </head>
+    <body>
 
-	<div class="container">
+        <!---------------------NAVBAR---------------------->
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-		
-            <a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
-
-<ul class="navbar-nav mr-auto">
-
-	<li class="nav-item">
-		<a class="nav-link " href="agendamento.jsp">Agendamento</a>
-	</li>
-        
-        <li class="nav-item">
-		<a class="nav-link " href="semagendamento.html">Meus agendamentos</a>
-	</li>
-
-</ul>
-
-<ul class="navbar-nav ml-auto">
-                        <!---------------------MODAL  Entra---------------------->
-
-                     
-                            <button type="button" class="btn btn-default" alt="Entrar" data-toggle="modal" data-target="#mymodal">
-                                Entrar
-                            </button>
-
-                       
-
-                        <div class="modal fade" role="dialog" id="mymodal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2>Login</h2>
-                                    </div>
-                                    <form action="UsuarioServletLogin" method="post"> 
-                                        <div class="modal-body">
-                                            Email:
-                                            <div class=" form-group"> 
-                                                <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
+            <div class="container">
 
 
-                                            </div>
-                                            Senha:
-                                            <div class=" form-group">
-                                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
-                                                <input type="submit" value="Entrar" class="btn-btn-default">
-                                            </div>
-                                    </form>
+                <a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
+
+                <ul class="navbar-nav mr-auto">
+                    <div id="borda">
+                        <li class="nav-item">
+                            <a class="nav-link " href="agendamento.jsp">Agendamento</a>
+                        </li>
+                    </div>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="semagendamento.html">Meus agendamentos</a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <!---------------------MODAL  Entra---------------------->
 
 
-                                    <a href="cadastro.html">Não possui uma conta?</a>
+                    <button type="button" class="btn btn-default" alt="Entrar" data-toggle="modal" data-target="#mymodal">
+                        Entrar
+                    </button>
+
+
+
+                    <div class="modal fade" role="dialog" id="mymodal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Login</h2>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                <form action="UsuarioServletLogin" method="post"> 
+                                    <div class="modal-body">
+                                        Email:
+                                        <div class=" form-group"> 
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
 
-                                </div>
+
+                                        </div>
+                                        Senha:
+                                        <div class=" form-group">
+                                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required><br>
+                                            <input type="submit" value="Entrar" class="btn-btn-default">
+                                        </div>
+                                </form>
+
+
+                                <a href="cadastro.html">Não possui uma conta?</a>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
 
                             </div>
+
                         </div>
-                </div>
+                    </div>
+            </div>
 
-                <!---------------------Final MODAL Entra---------------------->
-            </ul>
+            <!---------------------Final MODAL Entra---------------------->
+        </ul>
 
-        </div>
     </div>
+</div>
 
 </nav>
 <!---------------------Fim NAVBAR---------------------->
@@ -140,10 +141,11 @@
         <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
         <!--modal de horarios-->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%=codigo%>">
-            Escolha seu horario
-        </button>
-
+        <a href="semagendamento.html">
+            <button type="button" class="btn btn-primary">
+                Escolha seu horario
+            </button>
+        </a>
         <div class="modal fade" role="dialog" id="<%=codigo%>">
             <div class="modal-dialog">
                 <div class="modal-content">

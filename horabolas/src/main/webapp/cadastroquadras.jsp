@@ -23,22 +23,17 @@
     <link rel="stylesheet" type="text/css"  href="estilo.css" />
 
     <style>
-        #tamanho{
-            height: 400px;
-            width: 500px;
-            background-color: #d9d9d9;  
-        }
 
-        #tamanho2{
-            height: 800px;
+        #tadm2{
             width: 100%;
-            background-color: #FFF2020;  
+            margin-top: 30px;
         }
-
+        
+        
 
     </style>
 </head>
-<body background="imagens/fundotelaregistro.jpg">
+<body>
 
 
     <!---------------------NAVBAR---------------------->
@@ -59,47 +54,54 @@
                     <a class="nav-link " href="listar.jsp">CRUD</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
-                </li>
 
                 <li class="nav-item">
                     <a class="nav-link " href="cadastroadm.jsp">Cadastro ADM</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
-                </li>
-
+                <div id="borda">
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
+                    </li>
+                </div>
             </ul>
 
             <ul class="navbar-nav ml-auto">
+
+                <!---------------------MODAL  Entra---------------------->
+
+                <%
+                    Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
+                %>
+                <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
+                <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+
+
+
                 <!---------------------Final MODAL Entra---------------------->
             </ul>
 
         </div>
-
-    </nav>
-    <!---------------------Fim NAVBAR---------------------->
-<center id="rodape">
-    <div id="tadm2" class="jumbotron" style="margin-top: 20px">
-
-        <h1>Quadrastro</h1><br>
-
-        <div id="tamanho" class="jumbotron">
-
-            <form action="QuadraServlet" method="post" enctype="multipart/form-data">
-                <div hidden>
-                    ID<input type="text" name="pid" value="">
-                </div>
-                Nome:<br> <input type="text" name="nome" placeholder="Nome da Quadra"><br><br>
-                Descrição:<br> <textarea name="descricao" placeholder="Descrição da Quadra" rows="2" cols="20"></textarea><br><br>
-                Foto:<br> <input type="file" name="foto"><br><br> 
-                <input type="submit" value="Enviar">
-            </form>
-
-        </div>
-
     </div>
+
+</nav>
+<!---------------------Fim NAVBAR---------------------->
+
+<div id="tadm2" class="jumbotron" align="center">
+    <h1>Quadrastro</h1><br>
+
+    <form action="QuadraServlet" method="post" enctype="multipart/form-data" class="formulario">
+        <div hidden>
+            ID<input type="text" name="pid" value="">
+        </div>
+        Nome: <input type="text" name="nome" placeholder="Nome da Quadra">
+        Descrição: <textarea name="descricao" placeholder="Descrição da Quadra" rows="2" cols="20"></textarea>
+        Foto: <input type="file" name="foto">
+        <input type="submit" value="Enviar" class="butao">
+    </form>
+
+</div>
+
+<center id="rodape">
 </center>
 </body>
 </html>

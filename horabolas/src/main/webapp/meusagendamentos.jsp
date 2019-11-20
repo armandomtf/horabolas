@@ -22,83 +22,84 @@
     <body>
 
         <!---------------------NAVBAR---------------------->
-         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-	<div class="container">
+            <div class="container">
 
-		
-            <a href="index.html"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-<ul class="navbar-nav mr-auto">
+                <a href="principal.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-	<li class="nav-item">
-		<a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
-	</li>
-        
-        <li class="nav-item">
-		<a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
-	</li>
+                <ul class="navbar-nav mr-auto">
 
-</ul>
+                    <li class="nav-item">
+                        <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
+                    </li>
+                    <div id="borda">
+                    <li class="nav-item">
+                        <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
+                    </li>
+                    </div>
 
-<ul class="navbar-nav ml-auto">
-                <!---------------------MODAL  Entra---------------------->
-                <%
-                    Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
-                %>
-                <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
-                <a href="UsuarioServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
-                <!---------------------Final MODAL Entra---------------------->
-            </ul>
+                </ul>
 
+                <ul class="navbar-nav ml-auto">
+                    <!---------------------MODAL  Entra---------------------->
+                    <%
+                        Usuario usuario = (Usuario) session.getAttribute("UsuarioLogado");
+                    %>
+                    <a class="nav-link">Bem vindo, <%=usuario.getNome()%>!</a>
+                    <a href="UsuarioServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+                    <!---------------------Final MODAL Entra---------------------->
+                </ul>
+
+            </div>
         </div>
-    </div>
 
-</nav>
-<!---------------------Fim NAVBAR---------------------->
+    </nav>
+    <!---------------------Fim NAVBAR---------------------->
 
 <center>
     <div class="jumbotron" style="margin-top: 0px">
 
-    <h1>Meus agendamentos</h1>
-    <table style="width:100%" >
-        
-        <div class="jumbotron"  style="margin-top: 0px">
-    
-        
-        
+        <h1>Meus agendamentos</h1>
+        <table style="width:100%" >
 
-
-            <%
-                List<Agendamento> listaag = AgendamentoControle.listaragendamentos(usuario.getId());
-
-                request.setAttribute("meusagendamentos", listaag);
-
-                for (Iterator it = listaag.iterator(); it.hasNext();) {
-
-                    Agendamento a = (Agendamento) it.next();
-                    Quadras q = a.getIdQuadraIda();
-                    System.out.println(q);
-            %>
+            <div class="jumbotron"  style="margin-top: 0px">
 
 
 
-            <div class="agendamentos">
-                Horário da quadra:
-                <p><%=a.getDataQuadra()%></p>
-                Status:
-                <p><%=a.getAprovacao()%></p>
-                Data do agendamento:
-                <p><%=a.getDataUso()%></p>
-                Quadra:
-                <p><%=q.getNome()%></p>
+
+
+                <%
+                    List<Agendamento> listaag = AgendamentoControle.listaragendamentos(usuario.getId());
+
+                    request.setAttribute("meusagendamentos", listaag);
+
+                    for (Iterator it = listaag.iterator(); it.hasNext();) {
+
+                        Agendamento a = (Agendamento) it.next();
+                        Quadras q = a.getIdQuadraIda();
+                        System.out.println(q);
+                %>
+
+
+
+                <div class="agendamentos">
+                    Horário da quadra:
+                    <p><%=a.getDataQuadra()%></p>
+                    Status:
+                    <p><%=a.getAprovacao()%></p>
+                    Data do agendamento:
+                    <p><%=a.getDataUso()%></p>
+                    Quadra:
+                    <p><%=q.getNome()%></p>
+                </div>
+                <%}%>
+
             </div>
-            <%}%>
-            
+
+        </table>
     </div>
-            
-    </table>
-        </div>
 </center>
 
 <!-----------rodapé----------------->

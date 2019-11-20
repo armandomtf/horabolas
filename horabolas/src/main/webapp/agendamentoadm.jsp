@@ -29,45 +29,42 @@
         <!---------------------NAVBAR---------------------->
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-	<div class="container">
+            <div class="container">
 
-		
-            <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-<ul class="navbar-nav mr-auto">
+                <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-	<li class="nav-item">
-		<a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
-	</li>
+                <ul class="navbar-nav mr-auto">
+                    <div id="borda">
+                        <li class="nav-item">
+                            <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
+                        </li>
+                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link " href="listar.jsp">CRUD</a>
+                    </li>
 
-	<li class="nav-item">
-		<a class="nav-link " href="listar.jsp">CRUD</a>
-	</li>
-        
-        <li class="nav-item">
-		<a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
-	</li>
 
- <li class="nav-item">
-		<a class="nav-link " href="cadastroadm">Cadastro ADM</a>
-	</li>
- <li class="nav-item">
-		<a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
-	</li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroadm.jsp">Cadastro ADM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
+                    </li>
 
-</ul>
+                </ul>
 
-<ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto">
 
-                        <!---------------------MODAL  Entra---------------------->
-                        <%
-                            Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
-                        %>
-                        <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
-                        <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
+                    <!---------------------MODAL  Entra---------------------->
+                    <%
+                        Usuarioadm usuarioadm = (Usuarioadm) session.getAttribute("UsuarioAdmLogado");
+                    %>
+                    <a class="nav-link">Bem vindo, <%=usuarioadm.getNome()%>!</a>
+                    <a href="UsuarioAdmServletLogout"><button type="button" class="btn btn-default" >Sair</button></a>
 
-                        <!---------------------Final MODAL Entra---------------------->
-                    </ul>
+                    <!---------------------Final MODAL Entra---------------------->
+                </ul>
                 </ul>
 
             </div>
@@ -89,57 +86,55 @@
 
         %>
 
-         <div class="imagens">
+        <div class="imagens">
 
-        <img class="quadraimg" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas"/>
-        <h5 class="card-title"><%=quadra.getNome()%></h5>
-        <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
+            <img class="quadraimg" src="data:image/png;image/jpg;base64,<%=quadraFoto%>" alt="Logo Hora Bolas"/>
+            <h5 class="card-title"><%=quadra.getNome()%></h5>
+            <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
-        <!--modal de horarios-->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%=codigo%>">
-            Escolha seu horario
-        </button>
+            <!--modal de horarios-->
 
-        <div class="modal fade" role="dialog" id="<%=codigo%>">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Horários:</h2>
-                    </div>
-                    <div class="modal-body">
-                        <form action="AgendamentoServlet" method="post">
-                            <div hidden> 
-                                <input type="text" name="pid" value="">
-                                <input type="text" name="idquadra" value="<%=codigo%>">
-                            </div> 
-                            <center>
-                                <select name="data_quadra">
-                                    <option value="13:00">13:00</option>
-                                    <option value="14:00">14:00</option>
-                                    <option value="15:00">15:00</option>
-                                    <option value="16:00">16:00</option>
-                                    <option value="17:00">17:00</option>
-                                </select> 
-                                <br> <br>
-                                <input type="submit" value="Agendar">
-                                </form>
-                            </center>
 
+            <div class="modal fade" role="dialog" id="<%=codigo%>">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Horários:</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form action="AgendamentoServlet" method="post">
+                                <div hidden> 
+                                    <input type="text" name="pid" value="">
+                                    <input type="text" name="idquadra" value="<%=codigo%>">
+                                </div> 
+                                <center>
+                                    <select name="data_quadra">
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                    </select> 
+                                    <br> <br>
+                                    <input type="submit" value="Agendar">
+                                    </form>
+                                </center>
+
+                        </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
+        <!--modal de horarios final-->
+        <%}%>
 
 
     </div>
-    <!--modal de horarios final-->
-    <%}%>
+    <!-------------------------->
 
-
-</div>
-<!-------------------------->
-
-<!---------------------Fim Cards---------------------->
+    <!---------------------Fim Cards---------------------->
 
 
 </body>

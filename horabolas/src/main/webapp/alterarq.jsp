@@ -40,9 +40,6 @@
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="a">Contato</a>
-                </li>	
                 <div id="borda">
                     <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
@@ -86,7 +83,6 @@
             String nome = "";
             String descricao = "";
 
-
             //Captura id (se alteração)
             String id = request.getParameter("pid");
 
@@ -109,9 +105,9 @@
             <br><br>
             Descrição<input type="text" name="descricao" value="<%=descricao%>"> 
             <br><br>
-            Foto <input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png">
-            
-            <input type="submit">
+            Foto <input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png"><br><br>
+
+            <input type="submit" value="Enviar">
         </form>
 </center>
 </body>

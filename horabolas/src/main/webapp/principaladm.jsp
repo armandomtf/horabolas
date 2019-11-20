@@ -21,37 +21,33 @@
     <body>
 
         <!---------------------NAVBAR---------------------->
-          <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-	<div class="container">
+            <div class="container">
 
-		
-            <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-<ul class="navbar-nav mr-auto">
+                <a href="principaladm.jsp"> <img  src="imagens/logo.png" width="120px"/> </a>
 
-	<li class="nav-item">
-		<a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
-	</li>
+                <ul class="navbar-nav mr-auto">
 
-	<li class="nav-item">
-		<a class="nav-link " href="listar.jsp">CRUD</a>
-	</li>
-        
-        <li class="nav-item">
-		<a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
-	</li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
+                    </li>
 
- <li class="nav-item">
-		<a class="nav-link " href="cadastroadm">Cadastro ADM</a>
-	</li>
- <li class="nav-item">
-		<a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
-	</li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="listar.jsp">CRUD</a>
+                    </li>
 
-</ul>
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroadm.jsp">Cadastro ADM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="cadastroquadras.jsp">Cadastrar Quadras</a>
+                    </li>
 
-<ul class="navbar-nav ml-auto">
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
 
                     <!---------------------MODAL  Entra---------------------->
                     <%

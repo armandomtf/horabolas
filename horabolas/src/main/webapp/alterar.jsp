@@ -38,9 +38,7 @@
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="a">Contato</a>
-                </li>	
+
                 <div id="borda">
                     <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
@@ -74,7 +72,7 @@
 </nav>
 <!---------------------Fim NAVBAR---------------------->
 <center>
-    <div class="jumbotron" style="margin-top: 150px">
+    <div class="jumbotron" style="margin-top: 150px;">
 
 
         <h1>Leitura e alteração!</h1>
@@ -98,7 +96,7 @@
             }
 
         %>
-        <form id="brlongo" method="POST" action="UsuarioServletAlterar">
+        <form method="POST" action="UsuarioServletAlterar">
             <div hidden>
                 ID<input type="text" name="pid" value="<%=id%>">
             </div>
@@ -106,8 +104,9 @@
             <br><br>
             Email<input type="email" name="email" value="<%=email%>"> 
             <br><br>
-            <input type="submit">
+            <input type="submit" value="Enviar">
         </form>
+    </div>
 </center>
 </body>
 </html>
