@@ -58,6 +58,14 @@
         <servlet-name>AgendamentoServlet</servlet-name>
         <servlet-class>com.br.horabolas.servlet.AgendamentoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AgendamentoAprovar</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.AgendamentoAprovar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgendamentoRejeitar</servlet-name>
+        <servlet-class>com.br.horabolas.servlet.AgendamentoRejeitar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServletSA</servlet-name>
         <url-pattern>/UsuarioServletSA</url-pattern>
@@ -105,6 +113,14 @@
     <servlet-mapping>
         <servlet-name>AgendamentoServlet</servlet-name>
         <url-pattern>/AgendamentoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgendamentoAprovar</servlet-name>
+        <url-pattern>/AgendamentoAprovar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgendamentoRejeitar</servlet-name>
+        <url-pattern>/AgendamentoRejeitar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -38,6 +38,9 @@
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="aprovacao.jsp">Aprovação</a>
+                </li>
                 <div id="borda">
                     <li class="nav-item">
                         <a class="nav-link " href="listar.jsp">CRUD</a>
@@ -76,7 +79,7 @@
 
 
 <center>
-    <div class="jumbotron" style="margin-top: 150px">
+    <div class="jumbotron" style="margin-top: 50px">
 
 
 
@@ -84,6 +87,7 @@
             List<Usuario> lista = ControladorDB.listar();
             request.setAttribute("usuarios", lista);
         %>
+        <h1>Usuarios</h1>
         <display:table id="myTABLE" name="usuarios">
             <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
             <display:column property="nome" title="Nome Completo"/>
@@ -98,12 +102,13 @@
             List<Quadras> listaq = QuadraControle.listarquadras();
             request.setAttribute("quadras", listaq);
         %>
-
+        
+        <h1>Quadras</h1>
         <display:table id="myTABLE" name="quadras">
             <display:column property="id" title="ID" paramProperty="checkbox"/></td> 
             <display:column property="nome" title="Nome"/>
-            <display:column property="descricao" title="Descricao"/>
-            <display:column property="foto" title="foto"/>
+            <display:column property="descricao" title="Descrição"/>
+            <display:column property="foto" title="Foto"/>
             <display:column value="Alterar" title="Alterar" href="alterarq.jsp" paramId="pid" paramProperty="id" />             
             <display:column value="Deletar" title="Deletar" autolink="true"  paramId="pid" paramProperty="id" href="${pageContext.request.contextPath}/QuadraServletD"/>
             <display:setProperty name="basic.msg.empty_list" value="Sem quadras" />

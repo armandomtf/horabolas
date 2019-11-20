@@ -26,10 +26,10 @@
 
         #tadm2{
             width: 100%;
-            margin-top: 30px;
+            margin-top: 50px;
         }
-        
-        
+
+
 
     </style>
 </head>
@@ -49,7 +49,9 @@
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link " href="aprovacao.jsp">Aprovação</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link " href="listar.jsp">CRUD</a>
                 </li>

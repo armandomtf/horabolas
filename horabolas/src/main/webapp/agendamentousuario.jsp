@@ -130,7 +130,7 @@
             <p class="card-text" style="width:1000px; max-width: 100%;"><%=quadra.getDescricao()%></p>
 
             <!--modal de horarios-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%=codigo%>">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#<%=codigo%>">
                 Escolha seu horario
             </button>
 

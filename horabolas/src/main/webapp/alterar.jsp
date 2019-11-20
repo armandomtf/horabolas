@@ -38,6 +38,9 @@
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="aprovacao.jsp">Aprovação</a>
+                </li>
 
                 <div id="borda">
                     <li class="nav-item">

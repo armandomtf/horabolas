@@ -26,7 +26,7 @@
 
         #tadm2{
             width: 100%;
-            margin-top: 30px;
+            margin-top: 50px;
         }
 
 
@@ -48,6 +48,9 @@
 
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="aprovacao.jsp">Aprovação</a>
                 </li>
 
                 <li class="nav-item">
@@ -81,15 +84,15 @@
     </nav>
     <!---------------------Fim NAVBAR---------------------->       
 
-        <div id="tadm2" class="jumbotron" align="center">
-            <h1>Cadastrar um novo administrador</h1><br>
+    <div id="tadm2" class="jumbotron" align="center">
+        <h1>Cadastrar um novo administrador</h1><br>
 
-            <form method="post" action="UsuarioAdmServletSA">
-                Email:<input type="email" name="email"><br><br>
-                Nome: <input type="text" name="nome"><br><br>
-                Senha: <input type="password" name="senha"><br><br>
-                <input type="submit" value="Enviar"></form>
-        </div>
+        <form method="post" action="UsuarioAdmServletSA">
+            Email:<input type="email" name="email"><br><br>
+            Nome: <input type="text" name="nome"><br><br>
+            Senha: <input type="password" name="senha"><br><br>
+            <input type="submit" value="Enviar"></form>
+    </div>
 
 
 <center id="rodape">

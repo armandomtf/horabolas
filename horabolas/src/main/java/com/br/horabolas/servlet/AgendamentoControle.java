@@ -35,6 +35,16 @@ public class AgendamentoControle {
         return quadra;
     }
 
+    public static List<Agendamento> listaragendamentosfull() {
+        Session sessionRecheio;
+        sessionRecheio = HibernateUtil.getSession();
+        Transaction tr = sessionRecheio.beginTransaction();
+        String hql = "from Agendamento a";
+        List<Agendamento> lista = (List) sessionRecheio.createQuery(hql).list();
+        tr.commit();
+        return lista;
+    }
+    
     public static List<Agendamento> listaragendamentos(Integer idUsuario) {
         Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
@@ -56,12 +66,12 @@ public class AgendamentoControle {
     }
 
     //Função de apagar um usuario
-    public static boolean deletarq(Quadras quadra) {
+    public static boolean deletara(Agendamento a) {
         try {
             Session sessionRecheio;
             sessionRecheio = HibernateUtil.getSession();
             Transaction tr = sessionRecheio.beginTransaction();
-            sessionRecheio.delete(quadra);
+            sessionRecheio.delete(a);
             tr.commit();
             return true;
         } catch (Exception ex) {

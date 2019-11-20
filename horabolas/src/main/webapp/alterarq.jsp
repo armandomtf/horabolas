@@ -4,6 +4,7 @@
 <%@page import="com.br.horabolas.servlet.ControladorDB"%>
 <%@page import="org.hibernate.Session"%>
 <%@page import="org.hibernate.Transaction"%>
+<%@page import="java.util.Base64"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:directive.page import="com.br.horabolas.entidades.Usuario" />
 <jsp:directive.page import="java.util.*" />
@@ -39,6 +40,9 @@
 
                 <li class="nav-item">
                     <a class="nav-link " href="agendamentoadm.jsp">Agendamento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="aprovacao.jsp">Aprovação</a>
                 </li>
                 <div id="borda">
                     <li class="nav-item">
@@ -82,7 +86,7 @@
             Quadras q = new Quadras();
             String nome = "";
             String descricao = "";
-            
+            String extensao = "";
 
             //Captura id (se alteração)
             String id = request.getParameter("pid");
@@ -92,6 +96,7 @@
                 q = QuadraControle.buscar(Integer.parseInt(id));
                 nome = q.getNome();
                 descricao = q.getDescricao();
+                extensao = q.getExtensao();
 
             } else {
                 id = "";
@@ -106,7 +111,7 @@
             <p></p>
             Descrição:<input type="text" name="descricao" value="<%=descricao%>"> 
             <p></p>
-            Foto:<input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png"><br><br>
+            Foto:<input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png">
 
             <input type="submit" value="Enviar" class="butao">
         </form>

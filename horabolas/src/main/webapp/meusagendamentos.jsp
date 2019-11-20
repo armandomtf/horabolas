@@ -17,6 +17,13 @@
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css"  href="estilo.css" />
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
 
     </head>
     <body>
@@ -35,9 +42,9 @@
                         <a class="nav-link " href="agendamentousuario.jsp">Agendamento</a>
                     </li>
                     <div id="borda">
-                    <li class="nav-item">
-                        <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="meusagendamentos.jsp">Meus agendamentos</a>
+                        </li>
                     </div>
 
                 </ul>
@@ -59,64 +66,61 @@
     <!---------------------Fim NAVBAR---------------------->
 
 <center>
-    <div class="jumbotron" style="margin-top: 0px">
-
-        <h1>Meus agendamentos</h1>
-        <table style="width:100%" >
-
-            <div class="jumbotron"  style="margin-top: 0px">
+    <div class="jumbotron" style="margin-top: 50px">
 
 
-
-
-
-                <%
-                    List<Agendamento> listaag = AgendamentoControle.listaragendamentos(usuario.getId());
-
-                    request.setAttribute("meusagendamentos", listaag);
-
-                    for (Iterator it = listaag.iterator(); it.hasNext();) {
-
-                        Agendamento a = (Agendamento) it.next();
-                        Quadras q = a.getIdQuadraIda();
-                        System.out.println(q);
-                %>
+        <table>
+            <thead>
+                <tr class="table100-head">
+                    <th class="column1">Quadra</th>
+                    <th class="column2">Horário</th>
+                    <th class="column3">Status</th>
+                </tr>
+            </thead>
 
 
 
-                <div class="agendamentos">
-                    Horário da quadra:
-                    <p><%=a.getDataQuadra()%></p>
-                    Status:
-                    <p><%=a.getAprovacao()%></p>
-                    Data do agendamento:
-                    <p><%=a.getDataUso()%></p>
-                    Quadra:
-                    <p><%=q.getNome()%></p>
-                </div>
-                <%}%>
+            <%
+                List<Agendamento> listaag = AgendamentoControle.listaragendamentos(usuario.getId());
 
-            </div>
+                request.setAttribute("meusagendamentos", listaag);
 
+                for (Iterator it = listaag.iterator(); it.hasNext();) {
+
+                    Agendamento a = (Agendamento) it.next();
+                    Quadras q = a.getIdQuadraIda();
+                    System.out.println(q);
+            %>
+
+
+            <tbody>
+                <tr>
+                    <td class="column1"><%=q.getNome()%></td>
+                    <td class="column2"><%=a.getDataQuadra()%></td>
+                    <td class="column3"><%=a.getAprovacao()%></td>
+                </tr>
+
+            </tbody>
+            <%}%>
         </table>
     </div>
+
 </center>
 
 <!-----------rodapé----------------->
 <p></p>
+
+
+<!-----------Fim do rodapé-------------------------->
 <div id="rodape">
     <center>
         <img src="imagens/logonaoumgruposomosumtime.png" id="imgrodape">
         <img src="imagens/nomedosenvolvidos.png"  id="imgrodape">
     </center>
-
-
-
 </div>
 
-<!-----------Fim do rodapé-------------------------->
-
-
-
 </body>
+
+
+
 </html>
