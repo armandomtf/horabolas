@@ -19,7 +19,6 @@ public class QuadraServletAlterar extends HttpServlet {
         String idtext = request.getParameter("pid");
         String nome = request.getParameter("nome");
         String descricao = request.getParameter("descricao");
-        final Part filePart = request.getPart("foto");
         //Cria instancia do usuario
         Quadras q = new Quadras();
         //Detecta se é usuario novo ou antigo
@@ -30,8 +29,11 @@ public class QuadraServletAlterar extends HttpServlet {
         //Insere informações no objeto
         q.setNome(nome);
         q.setDescricao(descricao);
-
+        
+        
+        final Part filePart = request.getPart("foto");
         long tamPart = filePart.getSize();
+        System.out.println(tamPart);
         if (tamPart > 0) {
             InputStream inputStream = filePart.getInputStream();
             q.setFoto(IOUtils.toByteArray(inputStream));

@@ -82,6 +82,7 @@
             Quadras q = new Quadras();
             String nome = "";
             String descricao = "";
+            
 
             //Captura id (se alteração)
             String id = request.getParameter("pid");
@@ -97,17 +98,17 @@
             }
 
         %>
-        <form id="brlongo" method="POST" action="QuadraServletAlterar" enctype="multipart/form-data">
+        <form id="brlongo" method="POST" action="QuadraServletAlterar" enctype="multipart/form-data" class="formulario">
             <div hidden>
                 ID<input type="text" name="pid" value="<%=id%>">
             </div>
-            Nome<input type="text" name="nome" value="<%=nome%>">
-            <br><br>
-            Descrição<input type="text" name="descricao" value="<%=descricao%>"> 
-            <br><br>
-            Foto <input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png"><br><br>
+            Nome:<input type="text" name="nome" value="<%=nome%>">
+            <p></p>
+            Descrição:<input type="text" name="descricao" value="<%=descricao%>"> 
+            <p></p>
+            Foto:<input type="file" name="foto" accept=".gif,.jpg,.jpeg,.png"><br><br>
 
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" class="butao">
         </form>
 </center>
 </body>

@@ -93,8 +93,8 @@
         <div hidden>
             ID<input type="text" name="pid" value="">
         </div>
-        Nome: <input type="text" name="nome" placeholder="Nome da Quadra">
-        Descrição: <textarea name="descricao" placeholder="Descrição da Quadra" rows="2" cols="20"></textarea>
+        Nome: <input type="text" name="nome" placeholder="Nome da Quadra"><p></p>
+        Descrição: <textarea name="descricao" placeholder="Descrição da Quadra" rows="2" cols="20"></textarea><p></p>
         Foto: <input type="file" name="foto">
         <input type="submit" value="Enviar" class="butao">
     </form>
