@@ -68,6 +68,10 @@
                     <button type="button" class="btn btn-default" alt="Entrar" data-toggle="modal" data-target="#mymodal">
                         Entrar
                     </button>
+                    <a class="navbar navbar-expand-lg navbar navbar-dark bg-dark"></a>
+                    <button type="button" class="btn btn-default" alt="Cadastro" data-toggle="modal" data-target="#modalcadastro">
+                        Cadastro
+                    </button>
 
 
 
@@ -92,8 +96,6 @@
                                         </div>
                                 </form>
 
-
-                                <a href="cadastro.html">Não possui uma conta?</a>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -102,6 +104,42 @@
 
                         </div>
                     </div>
+            </div>
+
+            <div class="modal fade" role="dialog" id="modalcadastro">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Cadastro</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="UsuarioServletSA">
+                                <div hidden>
+                                    ID<input type="text" name="pid" value="">
+                                </div>
+
+
+                                Nome Completo:
+                                <input type="text" class="form-control" name="nome" placeholder="Insira seu nome completo">
+                                <p></p>
+                                Email:
+                                <input type="email" class="form-control" name="email" placeholder="Insira seu email">
+                                <p></p>
+                                Senha:
+                                <input type="password" name="senha" class="form-control" pattern=".{7,}" placeholder="Insira sua senha (min 7 caracteres)">
+
+                                <input type="submit" class="butao" value="Enviar">
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default"  data-dismiss="modal">Fechar</button>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
             <!---------------------Final MODAL Entra---------------------->
