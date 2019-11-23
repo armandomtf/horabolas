@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import com.br.horabolas.util.HibernateUtil;
 
+
 public class ControladorDB {
 
     public static boolean salvar(Usuario usuario) {

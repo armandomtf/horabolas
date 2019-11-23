@@ -2,6 +2,7 @@ package com.br.horabolas.servlet;
 
 import com.br.horabolas.entidades.Usuario;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,8 +33,7 @@ public class UsuarioServletSA extends HttpServlet {
 
         //Chama de funcao para salvar ou atualizar usuario
         ControladorDB.salvar(usuario);
-
-        response.sendRedirect("cadastroconcluido.html");
+        response.sendRedirect("indexsucesso.html");
 
     }
 }
